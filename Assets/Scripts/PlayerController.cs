@@ -8,12 +8,18 @@ public class PlayerController : MonoBehaviour
 {
     public static event Action GameOver;
 
+
+    private void Start()
+    {
+        this.gameObject.SetActive(true);
+    }
+
     void Update()
     {
         HandleKeyBoardMovment();
     }
 
-    // We Use Keyboard for easier testing
+    // We Use Keyboard for easier testing before checking on mobile
     private void HandleKeyBoardMovment()
     {
         float speed = 100.0f;
@@ -22,13 +28,11 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)
         {
-            print("Left Arrow Key is held down");
             horizontal = -speed * Time.deltaTime;
             TitltPlayer(-1);
         }
         else if (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)
         {
-            print("Right Arrow Key is held down");
             horizontal = speed * Time.deltaTime;
             TitltPlayer(1);
         }
@@ -39,12 +43,10 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed)
         {
-            print("Down Arrow Key is held down");
             vertical = -speed * Time.deltaTime;
         }
         else if (Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed)
         {
-            print("Up Arrow Key is held down");
             vertical = speed * Time.deltaTime;
         }
 
@@ -75,6 +77,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameOver.Invoke();
+        print("Player Collided with " + collision.gameObject.name);
+        AddActionToGameOver();
+
+        GameOver?.Invoke();
     }
+
+    private void AddActionToGameOver()
+     {
+            GameOver += () => 
+            {
+                print("Game Over Event Triggered - PlayerController");
+                gameObject.SetActive(false);
+            };
+    }
+
 }
