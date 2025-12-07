@@ -463,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astroid (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5852623501186464604, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -567,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852623501186464604, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: size
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -641,11 +645,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593977559613812471, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1593977559613812471, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.22
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 1593977559613812471, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -683,8 +687,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 79918124727328823, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

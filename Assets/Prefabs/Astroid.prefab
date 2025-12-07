@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc8d4b3989c91442a66480627fb2b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
-  size: 2
+  size: 1
   rb: {fileID: 3472159673672895264}
 --- !u!50 &3472159673672895264
 Rigidbody2D:
