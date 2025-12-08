@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 606031995}
   - component: {fileID: 606031994}
   m_Layer: 0
-  m_Name: Background_DeepSpace_wide_500_0
+  m_Name: Background_DeepSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 86fd70d79ce227a459207495d92bdb85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 1441050698}
   - component: {fileID: 1441050697}
   m_Layer: 0
-  m_Name: Background_DeepSpace_Planets_0
+  m_Name: Background_DeepSpace_Planets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,7 +499,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8d1fd30c0351b0241a0a84dea6b6c55b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 2135917299}
   - component: {fileID: 2135917298}
   m_Layer: 0
-  m_Name: Background_DeepSpace_Nebula_0
+  m_Name: Background_DeepSpace_Nebula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,7 +589,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 49de58832f51a7840a115e0d10230998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
