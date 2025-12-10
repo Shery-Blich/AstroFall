@@ -59,7 +59,6 @@ public class RotationController : MonoBehaviour
             Screen.orientation = ScreenOrientation.AutoRotation;
         }
 
-        this.SetScreenBounds();
         print($"Rotation lock set to: {shouldLock}");
     }
 }

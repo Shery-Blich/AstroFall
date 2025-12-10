@@ -1,4 +1,3 @@
-using System.Net.WebSockets;
 using UnityEngine;
 
 public class BoundryController : MonoBehaviour
@@ -6,16 +5,17 @@ public class BoundryController : MonoBehaviour
     [SerializeField]
     SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
     void Update()
     {
-        var spriteWidthRadius = spriteRenderer.bounds.extents.x;
-        var spriteHeightRadius = spriteRenderer.bounds.extents.y;
+        var spriteHalfWidth = spriteRenderer.bounds.extents.x;
+        var spriteHalfHeight = spriteRenderer.bounds.extents.y;
         var screenBounds = RotationController.Instance.ScreenBounds;
 
+        // Clamp the position of the Sprite to stay within screen bounds
+        // If the sprite is already within screen bounds, this does not affect it's position
         transform.position = new Vector2(
-            Mathf.Clamp(transform.position.x, -screenBounds.x + spriteWidthRadius, screenBounds.x - spriteWidthRadius),
-            Mathf.Clamp(transform.position.y, -screenBounds.y + spriteHeightRadius, screenBounds.y - spriteHeightRadius)
+            Mathf.Clamp(transform.position.x, -screenBounds.x + spriteHalfWidth, screenBounds.x - spriteHalfWidth),
+            Mathf.Clamp(transform.position.y, -screenBounds.y + spriteHalfHeight, screenBounds.y - spriteHalfHeight)
         );
     }
 }
