@@ -18,10 +18,19 @@ public class PlayerController : MonoBehaviour
 
     public static event Action GameOver;
     public const float MAX_MOVEMENT_SPEED = 15.0f;
+    private const float MIN_TITLT_FOR_MOVEMENT = 0.05f;
+    private const float MIN_TILT_FOR_ROTATION = 0.1f;
 
     private void Start()
     {
         this.gameObject.SetActive(true);
+
+        // We need to enable the accelerometer device explicitly for the APK to work on mobile
+        if (Accelerometer.current != null)
+        {
+            InputSystem.EnableDevice(Accelerometer.current);
+            print("Accelerometer enabled for PlayerController.");
+        }
     }
 
     // Update is called once per frame, to make tilting smooth we use Update to make sure tilting happenes at relevant frame(no delay or jitter)
@@ -41,13 +50,25 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMobileMovement()
     {
-        var accelerationXVal = Input.acceleration.x;
-        MoveToNewPos(accelerationXVal);
-        SetTiltDirection(accelerationXVal);
+        try {
+            var accelerationXVal = Accelerometer.current.acceleration.ReadValue().x;
+
+            MoveToNewPos(accelerationXVal);
+            SetTiltDirection(accelerationXVal);
+        } catch (Exception e) {
+            print($"No Accelerometer Instance found, skipping mobile movement handling. Are you running in Editor?" +
+                $"\nError:");
+            print(e);
+        }
     }
 
     private void MoveToNewPos(float accelerationXVal)
     {
+        if(!IsMobileTitltEnoughForMovement(accelerationXVal))
+        {
+            return;
+        }
+
         float currentSpeed = Mathf.Lerp(moveSpeed, MAX_MOVEMENT_SPEED, tiltDuration / 2.0f);
         var dx = accelerationXVal * currentSpeed * Time.fixedDeltaTime;
 
@@ -58,7 +79,13 @@ public class PlayerController : MonoBehaviour
 
     private void SetTiltDirection(float accelerationXVal)
     {
-        if (accelerationXVal > 0.1f)
+        if (!IsMobileTitltEnoughForMovement(accelerationXVal))
+        {
+            return;
+        }
+
+
+        if (accelerationXVal > MIN_TILT_FOR_ROTATION)
         {
             this.playerMovementDir = MovementDirection.Right;
             tiltDuration += Time.fixedDeltaTime;
@@ -66,7 +93,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (accelerationXVal < -0.1f)
+        if (accelerationXVal < -MIN_TILT_FOR_ROTATION)
         {
             this.playerMovementDir = MovementDirection.Left;
             tiltDuration += Time.fixedDeltaTime;
@@ -95,6 +122,8 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private bool IsMobileTitltEnoughForMovement(float accelerationXVal) => Mathf.Abs(accelerationXVal) > MIN_TITLT_FOR_MOVEMENT;  
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
