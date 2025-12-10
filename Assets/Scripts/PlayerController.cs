@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         // We give priority to keyboard movement if any key is pressed since it's for testing purposes
         var testMoveDir = HandleKeyBoardMovment();
-        print($"Following movement on: {(testMoveDir is null ? "Mobile": "PC")}");
         TitltPlayer(testMoveDir ?? this.playerMovementDir);
     }
 
