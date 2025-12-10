@@ -10,7 +10,7 @@ public class Asteroid : MonoBehaviour
         transform.localScale = 0.3f * size * Vector3.one;
 
         var direction = new Vector2(0, Random.value).normalized;
-        float spwanSpeed = Random.Range(1f * size, 2f * size);
+        float spwanSpeed = Random.Range(1f/size, size);
         rb.AddForce(direction * spwanSpeed, ForceMode2D.Impulse);
     }
     private void Update()
