@@ -13,7 +13,14 @@ public class Asteroid : MonoBehaviour
         transform.localScale = 0.3f * size * Vector3.one;
         minForce = 1.0f / size;
         AddForce(minForce, size);
-        PlayerController.GameOver += OnGameOver;
+        PlayerController.BadGameOver += OnGameOver;
+        FallManager.GoodGameOver += OnGameOver;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerController.BadGameOver -= OnGameOver;
+        FallManager.GoodGameOver -= OnGameOver;
     }
 
     private void AddForce(float minForce, float maxForce)

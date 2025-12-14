@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -5,6 +6,9 @@ public class FallManager : MonoBehaviour
 {
 
     public static FallManager Instance { get; private set; }
+    public static event Action GoodGameOver;
+    public bool isGameOver = false;
+
 
     public float GlobalSpeed{ get; private set; }
     private int globalUpdatePow = 1;
@@ -14,7 +18,6 @@ public class FallManager : MonoBehaviour
 
     private float currentFallSpeed;
     private float fallDistance;
-    private bool isGameOver = false;
     private const float START_FALL_SPEED = 1.0f;
     private const float FALL_ACCELERATION = 0.1f;
     private const float START_FALL_HEIGHT = 10160.0f;
@@ -46,10 +49,17 @@ public class FallManager : MonoBehaviour
 
     void Start()
     {
-        PlayerController.GameOver += OnBadGameOver;
+        PlayerController.BadGameOver += OnBadGameOver;
         currentFallSpeed = START_FALL_SPEED;
         fallDistance = 0;
-        GlobalSpeed = Random.Range(0.5f, 1f);
+        GlobalSpeed = UnityEngine.Random.Range(0.5f, 1f);
+        GoodGameOver += OnGoodGameOver;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerController.BadGameOver -= OnBadGameOver;
+        GoodGameOver -= OnGoodGameOver;
     }
 
     void FixedUpdate()
@@ -68,11 +78,6 @@ public class FallManager : MonoBehaviour
             UpdateGlobalSpeedIfNeeded();
             UpdateDistance();
         }
-    }
-
-    private void OnDestroy()
-    {
-        PlayerController.GameOver -= OnBadGameOver;
     }
 
     private void UpdateGlobalSpeedIfNeeded()
@@ -105,7 +110,7 @@ public class FallManager : MonoBehaviour
         
         if(fallDistance >= START_FALL_HEIGHT)
         {
-            OnGoodGameOver();
+           GoodGameOver?.Invoke();
         }
     }
 
