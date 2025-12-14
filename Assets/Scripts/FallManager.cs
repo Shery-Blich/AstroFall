@@ -5,17 +5,25 @@ public class FallManager : MonoBehaviour
 {
 
     public static FallManager Instance { get; private set; }
-    public float currentFallSpeed { get; private set; }
 
-    public const float START_FALL_SPEED = 1.0f;
-    public const float FALL_ACCELERATION = 0.1f;
-    public const float START_FALL_HEIGHT = 10160.0f;
-    public const float MAX_SPEED = 2.0f;
+    public float GlobalSpeed{ get; private set; }
+    private int globalUpdatePow = 1;
+    private const float globalUpdateBase = 4.8f;
+    private const float GLOBAL_SPEED_ACCELERATION = 0.5f;
+
+
+    private float currentFallSpeed;
     private float fallDistance;
     private bool isGameOver = false;
+    private const float START_FALL_SPEED = 1.0f;
+    private const float FALL_ACCELERATION = 0.1f;
+    private const float START_FALL_HEIGHT = 10160.0f;
+    private const float MAX_SPEED = 2.0f;
 
     private int updateSpeedInterval = 1;
     private float timeSinceLastSpeedUpdate = 0.0f;
+    private float timeSinceGlobalLastSpeedUpdate = 0.0f;
+
 
     [SerializeField]
     public TextMeshProUGUI distanceToFallText;
@@ -41,11 +49,13 @@ public class FallManager : MonoBehaviour
         PlayerController.GameOver += OnBadGameOver;
         currentFallSpeed = START_FALL_SPEED;
         fallDistance = 0;
+        GlobalSpeed = Random.Range(0.5f, 1f);
     }
 
     void FixedUpdate()
     {
         timeSinceLastSpeedUpdate += Time.fixedDeltaTime;
+        timeSinceGlobalLastSpeedUpdate += Time.fixedDeltaTime;
         if (!isGameOver)
         {
             if (timeSinceLastSpeedUpdate >= updateSpeedInterval)
@@ -54,12 +64,26 @@ public class FallManager : MonoBehaviour
                 timeSinceLastSpeedUpdate = 0.0f;
             }
 
+
+            UpdateGlobalSpeedIfNeeded();
             UpdateDistance();
         }
     }
+
     private void OnDestroy()
     {
         PlayerController.GameOver -= OnBadGameOver;
+    }
+
+    private void UpdateGlobalSpeedIfNeeded()
+    {
+        if (Mathf.Pow(globalUpdateBase, globalUpdatePow) <= timeSinceGlobalLastSpeedUpdate)
+        {
+            timeSinceGlobalLastSpeedUpdate = 0;
+            globalUpdatePow++;
+            GlobalSpeed += GLOBAL_SPEED_ACCELERATION;
+            print($"Global speed increased to: {GlobalSpeed}");
+        }
     }
 
     private void UpdateSpeed()
@@ -96,6 +120,6 @@ public class FallManager : MonoBehaviour
     {
         currentFallSpeed = 0;
         isGameOver = true;
-        distanceToFallText.enabled = false;
+        distanceToFallText.text = "Failed to reach earth!";
     }
 }
