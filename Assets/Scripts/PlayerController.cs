@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed = 7.0f;
 
 
-    public static event Action GameOver;
+    public static event Action BadGameOver;
     public const float MAX_MOVEMENT_SPEED = 15.0f;
     private const float MIN_TITLT_FOR_MOVEMENT = 0.05f;
     private const float MIN_TILT_FOR_ROTATION = 0.1f;
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         this.gameObject.SetActive(true);
+        FallManager.GoodGameOver += HandelGoodGameOver;
 
         // We need to enable the accelerometer device explicitly for the APK to work on mobile
         if (Accelerometer.current != null)
@@ -31,6 +32,12 @@ public class PlayerController : MonoBehaviour
             InputSystem.EnableDevice(Accelerometer.current);
             print("Accelerometer enabled for PlayerController.");
         }
+    }
+
+    private void OnDestroy()
+    {
+        BadGameOver -= HandelBadGameOver;
+        FallManager.GoodGameOver -= HandelGoodGameOver;
     }
 
     // Update is called once per frame, to make tilting smooth we use Update to make sure tilting happenes at relevant frame(no delay or jitter)
@@ -127,19 +134,29 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (FallManager.Instance.isGameOver)
+        {
+            return;
+        }
+
         print("Player Collided with " + collision.gameObject.name);
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            HandelGameOver();
+            HandelBadGameOver();
         }
     }
 
-    private void HandelGameOver()
+    private void HandelBadGameOver()
     {
         print("Game Over Event Triggered - PlayerController");
         gameObject.SetActive(false);
-        GameOver?.Invoke();
+        BadGameOver?.Invoke();
+    }
+
+    private void HandelGoodGameOver()
+    {
+        print("Game Over Event Triggered - PlayerController, Player won!");
     }
 
 
