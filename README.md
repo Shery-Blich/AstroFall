@@ -19,6 +19,7 @@
     ```
 7. Create a pull request from the branch you created to the main branch, Here: https://github.com/Shery-Blich/AstroFall/compare
 8. Make sure you are updated with the main branch before merging(should be an 'Update branch button, on the merge panel in github')
-9. Merge the pull request once it's working, ready and tested!
+9. Make sure the code is working without an issue before merging, main should always be the working version of our code!
+10. Merge the pull request once it's working, ready and tested!
 
 Using Unity 6000.2.13f1
