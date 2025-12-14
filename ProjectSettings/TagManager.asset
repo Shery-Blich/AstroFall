@@ -42,8 +42,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Game
-    uniqueID: 3337950657
+  - name: BG_Stars
+    uniqueID: 4272399379
+    locked: 0
+  - name: BG_Planets
+    uniqueID: 3158159275
+    locked: 0
+  - name: BG_Nebula
+    uniqueID: 15916887
+    locked: 0
+  - name: Player
+    uniqueID: 490960849
     locked: 0
   m_RenderingLayers:
   - Default
