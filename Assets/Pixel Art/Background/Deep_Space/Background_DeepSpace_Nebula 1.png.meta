@@ -1,37 +1,28 @@
 fileFormatVersion: 2
-guid: 49de58832f51a7840a115e0d10230998
+guid: fb921805088b39345b0cdac57fe60531
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5545915228566772980
-    second: Background_DeepSpace_Nebula_0
+      213: -6188689434116914947
+    second: Background_DeepSpace_Nebula 1_0
   - first:
-      213: 2772484378881840697
-    second: Background_DeepSpace_Nebula_1
+      213: 7967616087434629772
+    second: Background_DeepSpace_Nebula 1_1
   - first:
-      213: 5599756943521304972
-    second: Background_DeepSpace_Nebula_2
+      213: 8199851615772899562
+    second: Background_DeepSpace_Nebula 1_2
   - first:
-      213: 8937677648997872448
-    second: Background_DeepSpace_Nebula_3
+      213: -4294517543875016924
+    second: Background_DeepSpace_Nebula 1_3
   - first:
-      213: -1126779175115811797
-    second: Background_DeepSpace_Nebula_4
+      213: -2081616254647912690
+    second: Background_DeepSpace_Nebula 1_4
   - first:
-      213: -6363338226880880283
-    second: Background_DeepSpace_Nebula_5
+      213: 1835779526559922028
+    second: Background_DeepSpace_Nebula 1_5
   - first:
-      213: 2106376890032039953
-    second: Background_DeepSpace_Nebula_6
-  - first:
-      213: 8553153434889915099
-    second: Background_DeepSpace_Nebula_7
-  - first:
-      213: 5582060730515606121
-    second: Background_DeepSpace_Nebula_8
-  - first:
-      213: -490793246569737942
-    second: Background_DeepSpace_Nebula_9
+      213: -9039729829718628573
+    second: Background_DeepSpace_Nebula 1_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,7 +90,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
