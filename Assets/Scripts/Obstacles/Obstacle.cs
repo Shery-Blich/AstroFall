@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class Obstacle : MonoBehaviour
 {
-    [SerializeField]
-    public float size;  
     public Rigidbody2D rb;
 
     public float minForce;
 
+    protected float size;
+
     void Start()
     {
+        size = Random.Range(1.0f, 3.0f);
         transform.localScale = 0.3f * size * Vector3.one;
         minForce = 1.0f / size;
         AddForce(minForce, size);
