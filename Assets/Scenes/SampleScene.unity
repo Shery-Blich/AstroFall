@@ -119,6 +119,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &96888910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6296269558482682938, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &110303006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8050527472936648353, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &283988588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2057376924584349675, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1 &447716865
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,54 +194,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 447716866}
     m_Modifications:
-    - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[0]'
+    - target: {fileID: 1849576105223524430, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
+      propertyPath: distanceToFallText
       value: 
-      objectReference: {fileID: 6686656225977817579}
+      objectReference: {fileID: 504024723}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[1]'
+      propertyPath: 'obstacleControllers.Array.data[0]'
       value: 
-      objectReference: {fileID: 6686656225977817578}
+      objectReference: {fileID: 727273329}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[2]'
+      propertyPath: 'obstacleControllers.Array.data[1]'
       value: 
-      objectReference: {fileID: 6686656225977817577}
+      objectReference: {fileID: 1192263411}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[3]'
+      propertyPath: 'obstacleControllers.Array.data[2]'
       value: 
-      objectReference: {fileID: 6686656225977817576}
+      objectReference: {fileID: 1906496696}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[4]'
+      propertyPath: 'obstacleControllers.Array.data[3]'
       value: 
-      objectReference: {fileID: 6686656225977817575}
+      objectReference: {fileID: 1863794076}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[5]'
+      propertyPath: 'obstacleControllers.Array.data[4]'
       value: 
-      objectReference: {fileID: 6686656225977817574}
+      objectReference: {fileID: 2135063809}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[6]'
+      propertyPath: 'obstacleControllers.Array.data[5]'
       value: 
-      objectReference: {fileID: 6686656225977817573}
+      objectReference: {fileID: 96888910}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[7]'
+      propertyPath: 'obstacleControllers.Array.data[6]'
       value: 
-      objectReference: {fileID: 6686656225977817572}
+      objectReference: {fileID: 110303006}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[8]'
+      propertyPath: 'obstacleControllers.Array.data[7]'
       value: 
-      objectReference: {fileID: 6686656225977817571}
+      objectReference: {fileID: 1587141533}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[9]'
+      propertyPath: 'obstacleControllers.Array.data[8]'
       value: 
-      objectReference: {fileID: 6686656225977817570}
+      objectReference: {fileID: 283988588}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[10]'
+      propertyPath: 'obstacleControllers.Array.data[9]'
       value: 
-      objectReference: {fileID: 6686656225977817569}
+      objectReference: {fileID: 1490776496}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
-      propertyPath: 'asteroids.Array.data[11]'
+      propertyPath: 'obstacleControllers.Array.data[10]'
       value: 
-      objectReference: {fileID: 6686656225977817568}
+      objectReference: {fileID: 490257756}
+    - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
+      propertyPath: 'obstacleControllers.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1274067272}
     - target: {fileID: 5848221892644122421, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -263,6 +300,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6085268278297523332, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
   m_PrefabInstance: {fileID: 470376654}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &490257756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8351325196327888600, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &504024723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
+  m_PrefabInstance: {fileID: 1557398603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +534,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &727273329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1476546444727419204, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &1192263411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1566281553854086040, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &1274067272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 712570681511252182, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &1490776496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4828000336341335537, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1001 &1557398603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -572,6 +675,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
+--- !u!114 &1587141533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3262928221754741906, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &1863794076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9038234047077020215, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!114 &1906496696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2522136595923205429, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1 &1950403540
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +792,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2663017749377684712, guid: fc8d95a9763732340959418013ae7059, type: 3}
   m_PrefabInstance: {fileID: 6686656225977817567}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135063809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1536268077375516698, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 6686656225977817567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1001 &2879399081577759554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -703,18 +850,6 @@ PrefabInstance:
     - target: {fileID: 1593977559613812471, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3270353965223607281, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3270353965223607281, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -957016639
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141514607513708631, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8745709734147941252, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
       propertyPath: m_Name
@@ -795,138 +930,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc8d95a9763732340959418013ae7059, type: 3}
---- !u!114 &6686656225977817568 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1883724264302602443, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817569 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 516262041890286459, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817570 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3029198761757809112, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817571 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 864750108186063361, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1873755750709630134, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817573 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3225774170792428930, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5533789881105881209, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817575 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2343492846028064378, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817576 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6785302875163275819, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817577 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3739212758690356048, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817578 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5050618021611613140, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
---- !u!114 &6686656225977817579 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6514646150316180037, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 6686656225977817567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,9 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RotationController : MonoBehaviour
+public class ScreenController : MonoBehaviour
 {
-    public static RotationController Instance { get; private set; }
+    public static ScreenController Instance { get; private set; }
 
     public Vector2 ScreenBounds { get; private set; }
 
