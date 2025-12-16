@@ -29,11 +29,19 @@ public class RotationController : MonoBehaviour
     {
         SetRotationLock(true);
         SetScreenBounds();
+        SetObstaclesCount();
     }
 
     public void SetScreenBounds()
     {
         this.ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+    }
+
+    public void SetObstaclesCount()
+    {
+        ScreenOrientation currentOrientation = Screen.orientation;
+        ObstaclesManager.Instance.SetObstaclesToOrientation(isPortrait:
+            currentOrientation == ScreenOrientation.Portrait || currentOrientation == ScreenOrientation.PortraitUpsideDown);
     }
 
     public void SetRotationLock(bool shouldLock)
@@ -60,5 +68,11 @@ public class RotationController : MonoBehaviour
         }
 
         print($"Rotation lock set to: {shouldLock}");
+    }
+
+
+    private void OnDestroy()
+    {
+        SetRotationLock(false);
     }
 }

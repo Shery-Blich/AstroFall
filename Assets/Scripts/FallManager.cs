@@ -21,6 +21,10 @@ public class FallManager : MonoBehaviour
     private const float START_FALL_SPEED = 1.0f;
     private const float FALL_ACCELERATION = 0.1f;
     public const float START_FALL_HEIGHT = 10160.0f;
+    private float fallDistance;
+    private const float START_FALL_SPEED = 1.0f;
+    private const float FALL_ACCELERATION = 0.1f;
+    private const float START_FALL_HEIGHT = 10160.0f;
     private const float MAX_SPEED = 2.0f;
 
     private int updateSpeedInterval = 1;
