@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2632643241522630722}
   - component: {fileID: 9096166846423537522}
   m_Layer: 0
-  m_Name: Astroid
+  m_Name: Obstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

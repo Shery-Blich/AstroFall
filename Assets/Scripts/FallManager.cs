@@ -9,7 +9,6 @@ public class FallManager : MonoBehaviour
     public static event Action GoodGameOver;
     public bool isGameOver = false;
 
-
     public float GlobalSpeed{ get; private set; }
     private int globalUpdatePow = 1;
     private const float globalUpdateBase = 4.8f;
@@ -77,7 +76,25 @@ public class FallManager : MonoBehaviour
 
             UpdateGlobalSpeedIfNeeded();
             UpdateDistance();
+            UpdateObstacleTypeIfNeeded();
         }
+    }
+
+    // Change obstacle types based on how much has the player fallen
+    // Asteroids until 4000m, Trash until 7000m, Planes after that
+    private ObstacleType CalcObstacleType()
+    {
+        return fallDistance switch
+        {
+            <= 4000 => ObstacleType.Asteroid,
+            <= 7500 => ObstacleType.Trash,
+            _ => ObstacleType.Plane
+        };
+    }
+
+    private void UpdateObstacleTypeIfNeeded()
+    {   
+        ObstaclesManager.Instance.UpdateObstacleTypes(CalcObstacleType());
     }
 
     private void UpdateGlobalSpeedIfNeeded()
@@ -106,7 +123,7 @@ public class FallManager : MonoBehaviour
     private void UpdateDistance()
     {
         fallDistance += currentFallSpeed;
-        distanceToFallText.text = $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - fallDistance)} m";
+        distanceToFallText.text = $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - fallDistance)} m\n{CalcObstacleType()} Stage";
         
         if(fallDistance >= START_FALL_HEIGHT)
         {
