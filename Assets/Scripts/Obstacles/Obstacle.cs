@@ -47,15 +47,15 @@ public class Obstacle : MonoBehaviour
 
         // Randomize horizontal movement to make it less predictable.
         // Convert back into world coordinates before assigning.
-        if (viewportPosition.x < 0 || viewportPosition.x > 1)
+        if (viewportPosition.x < -0.1f || viewportPosition.x > 1.1f)
         {
             moveAdjustment.y = -viewportPosition.y;
             moveAdjustment.x = Random.Range(-0.7f, 0.7f);
             AddForce(minForce + FallManager.Instance.GlobalSpeed, Size + FallManager.Instance.GlobalSpeed);
         }
-        else if (viewportPosition.y > 1)
+        else if (viewportPosition.y > 1.1f)
         {
-            moveAdjustment.y -= 1;
+            moveAdjustment.y -= 1.1f;
             moveAdjustment.x += Random.Range(-0.2f, 0.2f);
             AddForce(minForce + FallManager.Instance.GlobalSpeed, Size + FallManager.Instance.GlobalSpeed);
         }
@@ -78,6 +78,7 @@ public class Obstacle : MonoBehaviour
     }
 
 
+    // Obstacles movement is physics based, so we use FixedUpdate
     protected void Update()
     {
         UpdateObstcale();

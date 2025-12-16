@@ -9,7 +9,7 @@ public class BoundryController : MonoBehaviour
     {
         var spriteHalfWidth = spriteRenderer.bounds.extents.x;
         var spriteHalfHeight = spriteRenderer.bounds.extents.y;
-        var screenBounds = RotationController.Instance.ScreenBounds;
+        var screenBounds = ScreenController.Instance.ScreenBounds;
 
         // Clamp the position of the Sprite to stay within screen bounds
         // If the sprite is already within screen bounds, this does not affect it's position

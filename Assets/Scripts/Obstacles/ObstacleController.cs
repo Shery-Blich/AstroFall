@@ -13,14 +13,10 @@ public class ObstacleController : MonoBehaviour
     [SerializeField]
     Trash trashScript;
 
-    public ObstacleType GameStageType { get; set; }
-
     private ObstacleType currentObstacleType;
-
+    
     private void Start()
     {
-        currentObstacleType = ObstacleType.Asteroid;
-        GameStageType = ObstacleType.Asteroid;
         ChangeActiveScripts(currentObstacleType);
     }
 
@@ -35,7 +31,7 @@ public class ObstacleController : MonoBehaviour
 
         if ((viewportPosition.x < 0 || viewportPosition.x > 1 || viewportPosition.y > 1))
         {
-            ChangeActiveScripts(GameStageType);
+            ChangeActiveScripts(ObstaclesManager.Instance.CurrentObstacleStage);
         }
     }
 
@@ -47,6 +43,7 @@ public class ObstacleController : MonoBehaviour
             return;
         }
 
+        print($"Updating Obstacle {this.gameObject.name} Type to {ObstaclesManager.Instance.CurrentObstacleStage}");
         switch (obstacleType)
         {
             case ObstacleType.Trash:
@@ -55,6 +52,7 @@ public class ObstacleController : MonoBehaviour
 
             case ObstacleType.Plane:
                 SetScriptActivation(false, false, plane: true);
+                planeScript.FreezeRotation();
                 break;
 
             // Default to Asteroid

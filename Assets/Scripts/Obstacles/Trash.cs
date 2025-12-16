@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class Trash : Obstacle
 {
-    protected override void StartObstacle()
-    {
-        base.StartObstacle();
-        AddRandomRotation();
+    [SerializeField]
+    private float minRotationSpeed = 200f;
+    private float maxRotationSpeed = 700f;
 
-    }
 
     protected override void UpdateObstcale()
     {
         base.UpdateObstcale();
-        AddRandomRotation();
+        ApplyRandomSpin();
     }
 
-    private void AddRandomRotation() => this.rb.AddTorque(Random.Range(30f, 90f));
+    public void ApplyRandomSpin()
+    {
+        transform.Rotate(Vector3.forward, Random.Range(minRotationSpeed, maxRotationSpeed) * Time.deltaTime);
+    }
 }

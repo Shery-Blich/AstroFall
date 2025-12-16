@@ -76,12 +76,16 @@ public class FallManager : MonoBehaviour
 
             UpdateGlobalSpeedIfNeeded();
             UpdateDistance();
-            UpdateObstacleTypeIfNeeded();
+
+            if (ObstaclesManager.Instance.CurrentObstacleStage != CalcObstacleType())
+            {
+                UpdateObstacleTypeIfNeeded();
+            }
         }
     }
 
     // Change obstacle types based on how much has the player fallen
-    // Asteroids until 4000m, Trash until 7000m, Planes after that
+    // Asteroids until 4000m, Trash until 7500m, Planes after that
     private ObstacleType CalcObstacleType()
     {
         return fallDistance switch
@@ -93,7 +97,8 @@ public class FallManager : MonoBehaviour
     }
 
     private void UpdateObstacleTypeIfNeeded()
-    {   
+    {
+        print($"Obstacle type changed to in fall manager: {CalcObstacleType()}");
         ObstaclesManager.Instance.UpdateObstacleTypes(CalcObstacleType());
     }
 

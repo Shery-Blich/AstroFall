@@ -1,12 +1,12 @@
 using UnityEngine;
 using System;
 
-
-
 public class ObstaclesManager : MonoBehaviour
 {
     [SerializeField]
     public ObstacleController[] obstacleControllers;
+
+    public ObstacleType CurrentObstacleStage = ObstacleType.Asteroid;
     
     public int ObstacleCountInPortrait = 4;
 
@@ -33,9 +33,6 @@ public class ObstaclesManager : MonoBehaviour
         }
     }
 
-    // TODO: find a better way to get current type
-    public ObstacleType GetCurrentType() => obstacleControllers[0].GameStageType;
-
     public void SetObstaclesToOrientation(bool isPortrait)
     {
         for (int i = 0; i < obstacleControllers.Length; i++)
@@ -48,15 +45,6 @@ public class ObstaclesManager : MonoBehaviour
 
     public void UpdateObstacleTypes(ObstacleType gameStage)
     {
-        if(gameStage == GetCurrentType())
-        {
-            return;
-        }
-
-        print("Obstecal Manager - Updating obstacle types to: " + gameStage);
-        foreach (var obstacleController in obstacleControllers)
-        {
-            obstacleController.GameStageType = gameStage;
-        }
+        this.CurrentObstacleStage = gameStage;
     }
 }
