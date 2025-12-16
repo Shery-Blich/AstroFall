@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 67430585003505739}
   - component: {fileID: 4182247452043491831}
-  - component: {fileID: 5852623501186464604}
   - component: {fileID: 3472159673672895264}
   - component: {fileID: 2632643241522630722}
+  - component: {fileID: 9096166846423537522}
   m_Layer: 0
   m_Name: Astroid
   m_TagString: Obstacle
@@ -93,20 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5852623501186464604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230926089336364517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc8d4b3989c91442a66480627fb2b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
-  rb: {fileID: 3472159673672895264}
-  minForce: 0
 --- !u!50 &3472159673672895264
 Rigidbody2D:
   serializedVersion: 5
@@ -180,3 +166,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9096166846423537522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230926089336364517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a6aa3d1e8a7f5418130a2fba884212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
+  rb: {fileID: 3472159673672895264}
+  minForce: 0

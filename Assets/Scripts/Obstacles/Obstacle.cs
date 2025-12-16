@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class Obstacle : MonoBehaviour
 {
     public Rigidbody2D rb;
 
     public float minForce;
 
-    private float size;
+    protected float size;
 
     void Start()
     {
