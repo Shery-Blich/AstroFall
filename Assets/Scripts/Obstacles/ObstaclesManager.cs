@@ -1,9 +1,12 @@
 using UnityEngine;
+using System;
 
 public class ObstaclesManager : MonoBehaviour
 {
     [SerializeField]
-    Asteroid[] asteroids;
+    public ObstacleController[] obstacleControllers;
+
+    public ObstacleType CurrentObstacleStage = ObstacleType.Asteroid;
     
     public int ObstacleCountInPortrait = 4;
 
@@ -11,6 +14,11 @@ public class ObstaclesManager : MonoBehaviour
 
     private void Awake()
     {
+        if (obstacleControllers == null || obstacleControllers.Length == 0)
+        {
+            throw new Exception("ObstaclesManager requires at least one ObstacleController assigned in the inspector.");
+        }
+
         // Singleton pattern to ensure only one instance in all scenes
         if (Instance == null)
         {
@@ -27,11 +35,16 @@ public class ObstaclesManager : MonoBehaviour
 
     public void SetObstaclesToOrientation(bool isPortrait)
     {
-        for (int i = 0; i < asteroids.Length; i++)
+        for (int i = 0; i < obstacleControllers.Length; i++)
         {
-            asteroids[i].gameObject.SetActive(
+            obstacleControllers[i].gameObject.SetActive(
                 !isPortrait || i < ObstacleCountInPortrait
             );
         }
+    }
+
+    public void UpdateObstacleTypes(ObstacleType gameStage)
+    {
+        this.CurrentObstacleStage = gameStage;
     }
 }
