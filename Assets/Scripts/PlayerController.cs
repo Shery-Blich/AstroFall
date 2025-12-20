@@ -21,6 +21,17 @@ public class PlayerController : MonoBehaviour
     private const float MIN_TITLT_FOR_MOVEMENT = 0.05f;
     private const float MIN_TILT_FOR_ROTATION = 0.1f;
 
+    /// For resetting - To have a reference to its starting position and rotation
+
+    Vector3 startPos;
+    Quaternion startRot;
+
+    private void Awake()
+    {
+        startPos = transform.position;
+        startRot = transform.rotation;
+    }
+
     private void Start()
     {
         this.gameObject.SetActive(true);

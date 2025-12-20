@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MonoBehaviour, IResettable
 {
     [SerializeField]
     protected Rigidbody2D rb;
@@ -8,8 +8,17 @@ public class Obstacle : MonoBehaviour
     protected float minForce;
     protected float Size { get; set; }
 
+    /// For resetting - To have a reference to its starting position and rotation
+
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
+
     void Start()
     {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+
         StartObstacle();
         PlayerController.BadGameOver += OnGameOver;
         FallManager.GoodGameOver += OnGameOver;
@@ -88,4 +97,21 @@ public class Obstacle : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    // / IResettable implementation
+
+    public void ResetState()
+    {
+        ResetManager.Instance.Register(this);
+        gameObject.SetActive(true);
+
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        StartObstacle();
+    }
+
 }
