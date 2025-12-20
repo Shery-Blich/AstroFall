@@ -149,5 +149,17 @@ public class FallManager : MonoBehaviour
         isGameOver = true;
         distanceToFallText.text = "Failed to reach earth!";
     }
+    public void ResetRun()
+    {
+        isGameOver = false;
+        currentFallSpeed = START_FALL_SPEED;
+        fallDistance = 0;
+        globalUpdatePow = 1;
+        timeSinceLastSpeedUpdate = 0f;
+        timeSinceGlobalLastSpeedUpdate = 0f;
 
+        if (distanceToFallText != null)
+            distanceToFallText.text =
+                $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - fallDistance)} m";
+    }
 }

@@ -62,11 +62,16 @@ public class GameUIManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Restart()
+    public void RestartGame()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
+
+        if (FallManager.Instance != null)
+        {
+            FallManager.Instance.ResetRun();
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Play();
     }
 
     public void Play()
