@@ -23,7 +23,7 @@ public class Obstacle : MonoBehaviour
 
     protected virtual float SetSize()
     {
-        Size = Random.Range(1.0f, 3.0f);
+        Size = Random.Range(1.0f, 2.0f);
         transform.localScale = 0.3f * Size * Vector3.one;
 
         return Size;

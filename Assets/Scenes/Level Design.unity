@@ -266,6 +266,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!20 &818267300 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2452593479445485814, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
+  m_PrefabInstance: {fileID: 3713737479697920199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &826912728 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9038234047077020215, guid: fc8d95a9763732340959418013ae7059, type: 3}
@@ -719,6 +724,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1416026518918788955, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 818267300}
+    - target: {fileID: 1416026518918788955, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 818267300}
+    - target: {fileID: 1416026518918788955, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
+      propertyPath: landscapeCameraSize
+      value: 2.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1849576105223524430, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
       propertyPath: distanceToFallText
       value: 
@@ -1101,6 +1118,10 @@ PrefabInstance:
     - target: {fileID: 1546892482025264165, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452593479445485814, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
+      propertyPath: orthographic size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5536574330076879539, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
       propertyPath: m_Name
