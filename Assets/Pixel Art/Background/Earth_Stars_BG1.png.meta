@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: fb921805088b39345b0cdac57fe60531
+guid: 125ccb7fff899a34eb01223cf5f3c4c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6188689434116914947
-    second: Background_DeepSpace_Nebula 1_0
-  - first:
-      213: 7967616087434629772
-    second: Background_DeepSpace_Nebula 1_1
-  - first:
-      213: 8199851615772899562
-    second: Background_DeepSpace_Nebula 1_2
-  - first:
-      213: -4294517543875016924
-    second: Background_DeepSpace_Nebula 1_3
-  - first:
-      213: -2081616254647912690
-    second: Background_DeepSpace_Nebula 1_4
-  - first:
-      213: 1835779526559922028
-    second: Background_DeepSpace_Nebula 1_5
-  - first:
-      213: -9039729829718628573
-    second: Background_DeepSpace_Nebula 1_6
+      213: 615101755246093518
+    second: Earth_Stars_BG1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:

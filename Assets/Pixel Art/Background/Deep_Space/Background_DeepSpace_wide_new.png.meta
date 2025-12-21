@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 8d1fd30c0351b0241a0a84dea6b6c55b
+guid: afcb10ca05dee134189d1e5c679ebca1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2064273815612718576
-    second: Background_DeepSpace_Planets_0
-  - first:
-      213: 5725602752630405768
-    second: Background_DeepSpace_Planets_1
+      213: 1691853975625496048
+    second: Background_DeepSpace_wide_new_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
