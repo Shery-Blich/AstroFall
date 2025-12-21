@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
+    - target: {fileID: 6489612337699265207, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529165607094910285, guid: fc8d95a9763732340959418013ae7059, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1122,6 +1126,10 @@ PrefabInstance:
     - target: {fileID: 2452593479445485814, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
       propertyPath: orthographic size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955764176333330180, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5536574330076879539, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
       propertyPath: m_Name
