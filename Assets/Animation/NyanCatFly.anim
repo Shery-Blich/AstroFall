@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NyanCat_Dash
+  m_Name: NyanCatFly
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,15 +21,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -2076959334, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
+      value: {fileID: -9131245176115081674, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
     - time: 0.083333336
-      value: {fileID: -1066178415, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
+      value: {fileID: -7105650080954133938, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
     - time: 0.16666667
-      value: {fileID: -547527661, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
+      value: {fileID: 6253084609432764049, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
     - time: 0.25
-      value: {fileID: -16016343, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
+      value: {fileID: -4378137131443483488, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Art
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -41,7 +41,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 3296235700
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -2076959334, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
-    - {fileID: -1066178415, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
-    - {fileID: -547527661, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
-    - {fileID: -16016343, guid: 8bba5c492a213d04ba2c1f781f43c10a, type: 3}
+    - {fileID: -9131245176115081674, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
+    - {fileID: -7105650080954133938, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
+    - {fileID: 6253084609432764049, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
+    - {fileID: -4378137131443483488, guid: 4921cb8589c2219428b5921b10ff25a5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

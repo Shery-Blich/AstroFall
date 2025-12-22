@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 8bba5c492a213d04ba2c1f781f43c10a
+guid: 1f2efda062779c04db79f56c35b8a45d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2736825057679345390
-    second: riding_Nyancat_0
+      213: -8294314551441626877
+    second: Just_Nyancat_0
   - first:
-      213: 7483116519761888393
-    second: riding_Nyancat_1
+      213: -33466408964975581
+    second: Just_Nyancat_1
   - first:
-      213: 2330622475528557953
-    second: riding_Nyancat_2
+      213: -5449101735081777364
+    second: Just_Nyancat_2
   - first:
-      213: 8506181227758887074
-    second: riding_Nyancat_3
+      213: 5483043823595617358
+    second: Just_Nyancat_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: riding_Nyancat_0
+      name: Just_Nyancat_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
+        x: 1
+        y: 2
         width: 32
         height: 127
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b3470eb4ae948324f9dac9afca997a7b
-      internalID: -2076959334
+      spriteID: 309e7f15cdca4ec80800000000000000
+      internalID: -8294314551441626877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: riding_Nyancat_1
+      name: Just_Nyancat_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 2
+        x: 35
+        y: 1
         width: 33
         height: 127
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 119154dfa9d86d54d9a3d851fd578ff6
-      internalID: -1066178415
+      spriteID: 3241cb57a7a198ff0800000000000000
+      internalID: -33466408964975581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: riding_Nyancat_2
+      name: Just_Nyancat_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 3
+        x: 69
+        y: 2
         width: 30
         height: 124
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b305f0c7a31648c4ba6c5bbb1b2df934
-      internalID: -547527661
+      spriteID: c276c7fa7d6e064b0800000000000000
+      internalID: -5449101735081777364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: riding_Nyancat_3
+      name: Just_Nyancat_3
       rect:
         serializedVersion: 2
-        x: 107
-        y: 3
+        x: 103
+        y: 2
         width: 32
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3e22b8e8c71f4454db170dac3333b38f
-      internalID: -16016343
+      spriteID: e4cf051ae4fa71c40800000000000000
+      internalID: 5483043823595617358
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3300b902316b8754ab01b4d3e3fe40c0
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +223,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      riding_Nyancat_0: -2076959334
-      riding_Nyancat_1: -1066178415
-      riding_Nyancat_2: -547527661
-      riding_Nyancat_3: -16016343
+      Just_Nyancat_0: -8294314551441626877
+      Just_Nyancat_1: -33466408964975581
+      Just_Nyancat_2: -5449101735081777364
+      Just_Nyancat_3: 5483043823595617358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

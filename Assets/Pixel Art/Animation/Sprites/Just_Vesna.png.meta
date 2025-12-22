@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 8bba5c492a213d04ba2c1f781f43c10a
+guid: cc7427f2e2a85584dac5279a0700bea4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2736825057679345390
-    second: riding_Nyancat_0
+      213: -3785573986897300323
+    second: Just_Vesna_0
   - first:
-      213: 7483116519761888393
-    second: riding_Nyancat_1
+      213: 896992777568930652
+    second: Just_Vesna_1
   - first:
-      213: 2330622475528557953
-    second: riding_Nyancat_2
+      213: -4563298982314709000
+    second: Just_Vesna_2
   - first:
-      213: 8506181227758887074
-    second: riding_Nyancat_3
+      213: -2052167864360902015
+    second: Just_Vesna_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: riding_Nyancat_0
+      name: Just_Vesna_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 32
-        height: 127
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3470eb4ae948324f9dac9afca997a7b
-      internalID: -2076959334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: riding_Nyancat_1
-      rect:
-        serializedVersion: 2
-        x: 37
+        x: 1
         y: 2
-        width: 33
-        height: 127
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 119154dfa9d86d54d9a3d851fd578ff6
-      internalID: -1066178415
+      spriteID: d94f6080480f67bc0800000000000000
+      internalID: -3785573986897300323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: riding_Nyancat_2
+      name: Just_Vesna_1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 3
-        width: 30
-        height: 124
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 27
+        y: 1
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b305f0c7a31648c4ba6c5bbb1b2df934
-      internalID: -547527661
+      spriteID: c5b4611cd22c27c00800000000000000
+      internalID: 896992777568930652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: riding_Nyancat_3
+      name: Just_Vesna_2
       rect:
         serializedVersion: 2
-        x: 107
-        y: 3
-        width: 32
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 53
+        y: 2
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3e22b8e8c71f4454db170dac3333b38f
-      internalID: -16016343
+      spriteID: 8ffea33c0c7eba0c0800000000000000
+      internalID: -4563298982314709000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Just_Vesna_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182eb41433c3583e0800000000000000
+      internalID: -2052167864360902015
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3b2f8a68809fb994395be41aec17833c
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +223,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      riding_Nyancat_0: -2076959334
-      riding_Nyancat_1: -1066178415
-      riding_Nyancat_2: -547527661
-      riding_Nyancat_3: -16016343
+      Just_Vesna_0: -3785573986897300323
+      Just_Vesna_1: 896992777568930652
+      Just_Vesna_2: -4563298982314709000
+      Just_Vesna_3: -2052167864360902015
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
