@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6489612337699265207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -7.59, z: 0}
+  m_LocalPosition: {x: 0.05, y: 83.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,11 +53,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.78
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.41
+      value: -3.0999947
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -95,6 +95,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1908274689, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -177,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 3830692522867605349}
+  minRotationSpeed: 200
 --- !u!50 &3830692522867605349 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3472159673672895264, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -196,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.93
+      value: -2.5799947
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -234,6 +247,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.9166666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 616640118, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -316,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 4076731782486122284}
+  minRotationSpeed: 200
 --- !u!50 &4076731782486122284 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3472159673672895264, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -331,11 +357,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.28
+      value: -4.16
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.59
+      value: -2.92
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -373,6 +399,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1672000868, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -450,6 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2307625387042803737}
+  minRotationSpeed: 200
 --- !u!4 &1208737117707494258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -474,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: -4.880006
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -512,6 +551,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -28849323, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -589,6 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2955756150804689902}
+  minRotationSpeed: 200
 --- !u!4 &1856870209813954693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -613,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.38
+      value: -4.7900057
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -651,6 +703,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2091873802, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -738,6 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2020597427434151305}
+  minRotationSpeed: 200
 --- !u!1001 &4896441868038371116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -752,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: -2.7099946
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -790,6 +855,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1082395471, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -872,6 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 8348601943265082380}
+  minRotationSpeed: 200
 --- !u!50 &8348601943265082380 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3472159673672895264, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -891,7 +969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.63
+      value: -2.8799944
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -928,6 +1006,30 @@ PrefabInstance:
     - target: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Name
       value: Obstacle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 981749849, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1011,6 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 8840732774663289356}
+  minRotationSpeed: 200
 --- !u!50 &8840732774663289356 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3472159673672895264, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1030,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: -5.1000056
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1067,6 +1170,30 @@ PrefabInstance:
     - target: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Name
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1145,6 +1272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 7086762627113340826}
+  minRotationSpeed: 200
 --- !u!4 &5951828097405697265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1169,7 +1297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: -2.8399944
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1206,6 +1334,30 @@ PrefabInstance:
     - target: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Name
       value: Obstacle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2002754017, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1284,6 +1436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 7409460349300231889}
+  minRotationSpeed: 200
 --- !u!4 &6202488026446511546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1308,7 +1461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: -4.7100058
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1346,6 +1499,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.9166666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1131807711, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -1433,6 +1598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 5950624913206795464}
+  minRotationSpeed: 200
 --- !u!1001 &7936752274035398502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1447,7 +1613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16
+      value: -5.01
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1484,6 +1650,30 @@ PrefabInstance:
     - target: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Name
       value: Obstacle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.9166666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 131933584, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1572,6 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 6776392381342342214}
+  minRotationSpeed: 200
 --- !u!1001 &9061172821004041329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1582,11 +1773,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.01
+      value: -5.66
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24
+      value: -4.930006
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1624,6 +1815,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 234983462, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -1706,6 +1909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 5589062243660281681}
+  minRotationSpeed: 200
 --- !u!4 &9029804589670450234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
