@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public const float MAX_MOVEMENT_SPEED = 15.0f;
     private const float MIN_TITLT_FOR_MOVEMENT = 0.05f;
     private const float MIN_TILT_FOR_ROTATION = 0.1f;
+    private const int MAX_WARNING_COUNT = 3;
+    private int warningCount = 0;
 
     private void Start()
     {
@@ -63,9 +65,15 @@ public class PlayerController : MonoBehaviour
             MoveToNewPos(accelerationXVal);
             SetTiltDirection(accelerationXVal);
         } catch (Exception e) {
+            if (warningCount >= MAX_WARNING_COUNT)
+            {
+                return;
+            }
+
             print($"No Accelerometer Instance found, skipping mobile movement handling. Are you running in Editor?" +
                 $"\nError:");
             print(e);
+            warningCount++;
         }
     }
 

@@ -1,25 +1,33 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Background_Controller : MonoBehaviour
 {
     public Vector2 direction = new Vector2(0, +1); 
-    public float speed = 1f;
+    private bool isScrolling = true;
 
-    // private void OnEnable()
-    //{
-    //    PlayerController.BadGameOver += ShowEndScreen;
-    //    FallManager.GoodGameOver += ShowEndScreen;
-    //}
+    private void OnEnable()
+    {
+        PlayerController.BadGameOver += StopScroll;
+        FallManager.GoodGameOver += StopScroll;
+    }
 
-    //private void OnDisable()
-    //{
-    //    PlayerController.BadGameOver -= ShowEndScreen;
-    //    FallManager.GoodGameOver -= ShowEndScreen;
-    //}
-   
+    private void OnDisable()
+    {
+        PlayerController.BadGameOver -= StopScroll;
+        FallManager.GoodGameOver -= StopScroll;
+    }
+
     void Update()
     {
-        transform.position += (Vector3)(direction.normalized * speed * Time.deltaTime);
+        if (!isScrolling) return;
+
+        transform.position += (Vector3)(direction.normalized * FallManager.Instance.GlobalSpeed * Time.deltaTime);
+    }
+
+    private void StopScroll()
+    {
+        isScrolling = false;
     }
 }

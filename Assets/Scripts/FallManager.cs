@@ -7,28 +7,47 @@ public class FallManager : MonoBehaviour
 
     public static FallManager Instance { get; private set; }
     public static event Action GoodGameOver;
-    public bool isGameOver = false;
+    public bool isGameOver { get; private set; } = false;
 
-    public float GlobalSpeed{ get; private set; }
-    private int globalUpdatePow = 1;
-    private const float globalUpdateBase = 4.8f;
-    private const float GLOBAL_SPEED_ACCELERATION = 0.5f;
+    [SerializeField]
+    public float GlobalSpeed;
 
+    //TODO: Make it simply a few constants instead of calculating power
+    [SerializeField]
+    public int GLOBAL_SPEED_UPDATE_INTERVAL_POW = 1;
 
-    private float currentFallSpeed;
-    private float fallDistance;
-    private const float START_FALL_SPEED = 1.0f;
-    private const float FALL_ACCELERATION = 0.1f;
-    private const float START_FALL_HEIGHT = 10160.0f;
-    private const float MAX_SPEED = 2.0f;
+    [SerializeField]
+    public const float GLOBAL_SPEED_INTERVAL_UPDATE_BASE = 4.8f;
 
-    private int updateSpeedInterval = 1;
-    private float timeSinceLastSpeedUpdate = 0.0f;
-    private float timeSinceGlobalLastSpeedUpdate = 0.0f;
+    [SerializeField]
+    public const float GLOBAL_SPEED_ACCELERATION = 0.5f;
 
+    [SerializeField]
+    public int UpdateSpeedIntervalForTextInMiliSeconds = 1;
+
+    [SerializeField]
+    public float StartFallSpeedForText = 1.0f;
+
+    [SerializeField]
+    public float FallAccelerationForText = 0.1f;
+
+    [SerializeField]
+    public float MaxSpeedForTextChange = 2f;
 
     [SerializeField]
     public TextMeshProUGUI distanceToFallText;
+
+    [SerializeField]
+    public float Asteroid_Stage_Length= 4000.0f;
+
+    [SerializeField]
+    public float Trash_Stage_Length = 3500.0f;
+
+    public float START_FALL_HEIGHT = 10160.0f;
+    private float timeSinceLastSpeedUpdate = 0.0f;
+    private float timeSinceGlobalLastSpeedUpdate = 0.0f;
+    private float currentFallSpeed;
+    private float fallDistance;
 
     private void Awake()
     {
@@ -49,9 +68,8 @@ public class FallManager : MonoBehaviour
     void Start()
     {
         PlayerController.BadGameOver += OnBadGameOver;
-        currentFallSpeed = START_FALL_SPEED;
+        currentFallSpeed = StartFallSpeedForText;
         fallDistance = 0;
-        GlobalSpeed = UnityEngine.Random.Range(0.5f, 1f);
         GoodGameOver += OnGoodGameOver;
     }
 
@@ -67,7 +85,7 @@ public class FallManager : MonoBehaviour
         timeSinceGlobalLastSpeedUpdate += Time.fixedDeltaTime;
         if (!isGameOver)
         {
-            if (timeSinceLastSpeedUpdate >= updateSpeedInterval)
+            if (timeSinceLastSpeedUpdate >= UpdateSpeedIntervalForTextInMiliSeconds)
             {
                 UpdateSpeed();
                 timeSinceLastSpeedUpdate = 0.0f;
@@ -85,15 +103,21 @@ public class FallManager : MonoBehaviour
     }
 
     // Change obstacle types based on how much has the player fallen
-    // Asteroids until 4000m, Trash until 7500m, Planes after that
+    // Asteroids -> Trash -> Planes, each stage has a fixed length,
+    // for the switch we check the fall distance against the cumulative lengths of each stage
     private ObstacleType CalcObstacleType()
     {
-        return fallDistance switch
+        if (fallDistance <= Asteroid_Stage_Length)
         {
-            <= 4000 => ObstacleType.Asteroid,
-            <= 7500 => ObstacleType.Trash,
-            _ => ObstacleType.Plane
-        };
+            return ObstacleType.Asteroid;
+        }
+
+        if (fallDistance <= Asteroid_Stage_Length + Trash_Stage_Length)
+        {
+            return ObstacleType.Trash;
+        }
+
+        return ObstacleType.Plane;
     }
 
     private void UpdateObstacleTypeIfNeeded()
@@ -104,10 +128,10 @@ public class FallManager : MonoBehaviour
 
     private void UpdateGlobalSpeedIfNeeded()
     {
-        if (Mathf.Pow(globalUpdateBase, globalUpdatePow) <= timeSinceGlobalLastSpeedUpdate)
+        if (Mathf.Pow(GLOBAL_SPEED_INTERVAL_UPDATE_BASE, GLOBAL_SPEED_UPDATE_INTERVAL_POW) <= timeSinceGlobalLastSpeedUpdate)
         {
             timeSinceGlobalLastSpeedUpdate = 0;
-            globalUpdatePow++;
+            GLOBAL_SPEED_UPDATE_INTERVAL_POW++;
             GlobalSpeed += GLOBAL_SPEED_ACCELERATION;
             print($"Global speed increased to: {GlobalSpeed}");
         }
@@ -115,13 +139,13 @@ public class FallManager : MonoBehaviour
 
     private void UpdateSpeed()
     {
-        if (currentFallSpeed < MAX_SPEED)
+        if (currentFallSpeed < MaxSpeedForTextChange)
         {
-            currentFallSpeed += FALL_ACCELERATION;
+            currentFallSpeed += FallAccelerationForText;
         }
         else
         {
-            currentFallSpeed = MAX_SPEED;
+            currentFallSpeed = MaxSpeedForTextChange;
         }
     }
 

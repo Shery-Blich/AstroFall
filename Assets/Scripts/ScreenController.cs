@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScreenController : MonoBehaviour
 {
     [SerializeField]
-    private Camera mainCam;
+    public Camera MainCam;
 
     [SerializeField]
     private float portraitCameraSize = 6;
@@ -36,23 +36,21 @@ public class ScreenController : MonoBehaviour
 
     private void Start()
     {
-        SetCamera();
         SetRotationLock(true);
+        SetCamera();
         SetScreenBounds();
         SetObstaclesCount();
-    
     }
 
     public void SetCamera()
     {
         if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
         {
-            mainCam.orthographicSize = portraitCameraSize;
+            MainCam.orthographicSize = portraitCameraSize;
         }
-
         else if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
         {
-            mainCam.orthographicSize = landscapeCameraSize;
+            MainCam.orthographicSize = landscapeCameraSize;
         }
     }
 
@@ -64,8 +62,10 @@ public class ScreenController : MonoBehaviour
     public void SetObstaclesCount()
     {
         ScreenOrientation currentOrientation = Screen.orientation;
-        ObstaclesManager.Instance.SetObstaclesToOrientation(isPortrait:
-            currentOrientation == ScreenOrientation.Portrait || currentOrientation == ScreenOrientation.PortraitUpsideDown);
+        var isPortrait = currentOrientation == ScreenOrientation.Portrait || currentOrientation == ScreenOrientation.PortraitUpsideDown;
+        ObstaclesManager.Instance.SetObstaclesToOrientation(isPortrait);
+
+        print($"Set obstacles for orientation: {currentOrientation}");
     }
 
     public void SetRotationLock(bool shouldLock)
