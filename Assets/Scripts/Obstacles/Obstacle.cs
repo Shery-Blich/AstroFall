@@ -17,17 +17,13 @@ public class Obstacle : MonoBehaviour, IResettable
     protected float minForce;
     protected float Size { get; set; }
 
-<<<<<<< HEAD
-
     // TODO: Use Enable & Disable instead of start and destory | multiple classes -> look for them
-=======
     /// For resetting - To have a reference to its starting position and rotation
 
     private Vector3 startPosition;
     private Quaternion startRotation;
 
 
->>>>>>> main
     void Start()
     {
         startPosition = transform.position;
