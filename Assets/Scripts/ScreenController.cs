@@ -1,5 +1,4 @@
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class ScreenController : MonoBehaviour
@@ -15,6 +14,8 @@ public class ScreenController : MonoBehaviour
     public static ScreenController Instance { get; private set; }
 
     public Vector2 ScreenBounds { get; private set; }
+
+    public static event Action ScreenOrientationUpdate;
 
 
     private void Awake()
@@ -36,10 +37,16 @@ public class ScreenController : MonoBehaviour
 
     private void Start()
     {
+        SetScreen();
+    }
+
+    public void SetScreen()
+    {
         SetRotationLock(true);
         SetCamera();
         SetScreenBounds();
         SetObstaclesCount();
+        ScreenOrientationUpdate?.Invoke();
     }
 
     public void SetCamera()
@@ -56,7 +63,7 @@ public class ScreenController : MonoBehaviour
 
     public void SetScreenBounds()
     {
-        this.ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        this.ScreenBounds = MainCam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     }
 
     public void SetObstaclesCount()
