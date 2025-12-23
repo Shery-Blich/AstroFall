@@ -1,8 +1,17 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScreenController : MonoBehaviour
 {
+    [SerializeField]
+    private Camera mainCam;
+
+    [SerializeField]
+    private float portraitCameraSize = 6;
+
+    [SerializeField]
+    private float landscapeCameraSize = 2.8f;
     public static ScreenController Instance { get; private set; }
 
     public Vector2 ScreenBounds { get; private set; }
@@ -27,9 +36,24 @@ public class ScreenController : MonoBehaviour
 
     private void Start()
     {
+        SetCamera();
         SetRotationLock(true);
         SetScreenBounds();
         SetObstaclesCount();
+    
+    }
+
+    public void SetCamera()
+    {
+        if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
+        {
+            mainCam.orthographicSize = portraitCameraSize;
+        }
+
+        else if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
+        {
+            mainCam.orthographicSize = landscapeCameraSize;
+        }
     }
 
     public void SetScreenBounds()
