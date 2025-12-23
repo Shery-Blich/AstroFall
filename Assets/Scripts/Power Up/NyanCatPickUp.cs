@@ -1,16 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class NyanCatPickUp : BasePickup
 {
     protected override void OnPickup(Collider2D collision)
     {
-        Animator animator = collision.GetComponentInChildren<Animator>();
+       PlayerController playerController = collision.GetComponent<PlayerController>();
 
-        if (animator != null )
+        if (playerController != null)
         {
-            animator.SetTrigger("CollectNyanCat");
+            playerController.ActivatePowerUp();
         }
-            
+
         Debug.Log("You hit nyan cat");
+
     }
+
 }

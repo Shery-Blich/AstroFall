@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 1f2efda062779c04db79f56c35b8a45d
+guid: 0d9df5df353ceb842a90a316e52009fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8294314551441626877
-    second: Just_Nyancat_0
+      213: -36273603376202815
+    second: Just_Vesna_Ride_0
   - first:
-      213: -33466408964975581
-    second: Just_Nyancat_1
+      213: -8895843506220787481
+    second: Just_Vesna_Ride_1
   - first:
-      213: -5449101735081777364
-    second: Just_Nyancat_2
+      213: -8527656710336273110
+    second: Just_Vesna_Ride_2
   - first:
-      213: 5483043823595617358
-    second: Just_Nyancat_3
+      213: -5642470965095234696
+    second: Just_Vesna_Ride_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Just_Nyancat_0
+      name: Just_Vesna_Ride_0
       rect:
         serializedVersion: 2
         x: 1
         y: 0
-        width: 33
-        height: 131
+        width: 25
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 309e7f15cdca4ec80800000000000000
-      internalID: -8294314551441626877
+      spriteID: 1cbb90499512f7ff0800000000000000
+      internalID: -36273603376202815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Just_Nyancat_1
+      name: Just_Vesna_Ride_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 27
         y: 0
-        width: 33
-        height: 131
+        width: 25
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3241cb57a7a198ff0800000000000000
-      internalID: -33466408964975581
+      spriteID: 7e89e3a967d9b8480800000000000000
+      internalID: -8895843506220787481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Just_Nyancat_2
+      name: Just_Vesna_Ride_2
       rect:
         serializedVersion: 2
-        x: 69
+        x: 53
         y: 0
-        width: 33
-        height: 131
+        width: 25
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c276c7fa7d6e064b0800000000000000
-      internalID: -5449101735081777364
+      spriteID: a252ee5476da7a980800000000000000
+      internalID: -8527656710336273110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Just_Nyancat_3
+      name: Just_Vesna_Ride_3
       rect:
         serializedVersion: 2
-        x: 103
+        x: 79
         y: 0
-        width: 33
-        height: 131
+        width: 25
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4cf051ae4fa71c40800000000000000
-      internalID: 5483043823595617358
+      spriteID: 8730b066d8ae1b1b0800000000000000
+      internalID: -5642470965095234696
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3300b902316b8754ab01b4d3e3fe40c0
+    spriteID: d9576828d98038d44aab4d031d063e85
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +223,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":33.0,"y":131.0},"gridSpriteOffset":{"x":1.0,"y":0.0},"gridSpritePadding":{"x":1.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":25.0,"y":40.0},"gridSpriteOffset":{"x":1.0,"y":0.0},"gridSpritePadding":{"x":1.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Just_Nyancat_0: -8294314551441626877
-      Just_Nyancat_1: -33466408964975581
-      Just_Nyancat_2: -5449101735081777364
-      Just_Nyancat_3: 5483043823595617358
+      Just_Vesna_Ride_0: -36273603376202815
+      Just_Vesna_Ride_1: -8895843506220787481
+      Just_Vesna_Ride_2: -8527656710336273110
+      Just_Vesna_Ride_3: -5642470965095234696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
