@@ -171,6 +171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 3830692522867605349}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &984452111908383457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 3830692522867605349}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &5029315389005886053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 3830692522867605349}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!50 &3830692522867605349 stripped
 Rigidbody2D:
@@ -257,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Size.x
-      value: 2.58
+      value: 1.61
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Size.y
@@ -265,16 +274,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.3333333
+      value: 1.6666666
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.9166666
+      value: 1.5833334
       objectReference: {fileID: 0}
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 616640118, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -331,6 +340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 4076731782486122284}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8707436574232912290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 4076731782486122284}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3401550057728759268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 4076731782486122284}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!50 &4076731782486122284 stripped
 Rigidbody2D:
@@ -482,6 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 2307625387042803737}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &4072272736288362070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +516,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 2307625387042803737}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3474119923441377911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2307625387042803737}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!58 &3443964090110293502
 CircleCollider2D:
@@ -674,6 +701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 2955756150804689902}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2176516351636923142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,6 +717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 2955756150804689902}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8411236110756641593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +733,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2955756150804689902}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!58 &3145776547895166317
 CircleCollider2D:
@@ -876,6 +912,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 2020597427434151305}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &4894286819605772841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,6 +928,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 2020597427434151305}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8789050662243030481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,6 +944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2020597427434151305}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!58 &8603317043076920516
 CircleCollider2D:
@@ -1063,6 +1108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 8348601943265082380}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &974566873664585318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,6 +1124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 8348601943265082380}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &1386745776432078833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,6 +1140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 8348601943265082380}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!58 &4153027459864600204
 CircleCollider2D:
@@ -1267,6 +1321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 8840732774663289356}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &6117466998454828590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 8840732774663289356}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3051516152995738006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,6 +1353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 8840732774663289356}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!58 &5890175576306478208
 CircleCollider2D:
@@ -1466,6 +1529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 7086762627113340826}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3876008523829886187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,6 +1545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 7086762627113340826}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2492607808127526524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,6 +1561,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 7086762627113340826}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!58 &4822498609876698504
 CircleCollider2D:
@@ -1670,6 +1742,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 7409460349300231889}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &6930138621904838461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,6 +1758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 7409460349300231889}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &658464168374448953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,6 +1774,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 7409460349300231889}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!61 &3014302451526320771
 BoxCollider2D:
@@ -1824,9 +1905,10 @@ PrefabInstance:
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1131807711, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1842,6 +1924,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8920937780648588377}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 527892260013529649}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!50 &5950624913206795464 stripped
 Rigidbody2D:
@@ -1886,6 +1971,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 5950624913206795464}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2840637897162820998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,6 +1987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 5950624913206795464}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8920937780648588377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,7 +2003,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 5950624913206795464}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &527892260013529649
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335718461482584589}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8333333
 --- !u!1001 &7936752274035398502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2054,6 +2184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 6776392381342342214}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3317169983750403898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,6 +2200,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 6776392381342342214}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &7882822826427976829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,6 +2216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 6776392381342342214}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!61 &2636754203407661873
 BoxCollider2D:
@@ -2201,6 +2340,7 @@ PrefabInstance:
       objectReference: {fileID: 234983462, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2216,6 +2356,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2775460210897725078}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3465692703402072845}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!50 &5589062243660281681 stripped
 Rigidbody2D:
@@ -2255,6 +2398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 5589062243660281681}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &6777742287114036854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2268,6 +2414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 5589062243660281681}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2775460210897725078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2281,7 +2430,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 5589062243660281681}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!68 &3465692703402072845
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830317663174336916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6524315, y: -0.6179743}
+  - {x: -1.1004872, y: -0.2390461}
+  - {x: -1.0993013, y: 0.23154354}
+  - {x: -0.9712095, y: 0.44162846}
+  - {x: -0.5635152, y: 0.7492075}
+  - {x: 0.4189806, y: 0.7906437}
+  - {x: 0.92867374, y: 0.56843376}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 0.8251004, y: -0.3059578}
+  - {x: 0.5650697, y: -0.2835722}
+  - {x: 0.32111835, y: -0.78788376}
+  - {x: -0.6562209, y: -0.62706184}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!4 &9029804589670450234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}

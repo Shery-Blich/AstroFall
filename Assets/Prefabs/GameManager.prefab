@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f00d5201bbdf604ca959dae974e8bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  GlobalSpeed: 2
-  GLOBAL_SPEED_UPDATE_INTERVAL_POW: 1
+  GlobalSpeed: 1
+  GlobalSpeedUpdatePow: 1
   UpdateSpeedIntervalForTextInMiliSeconds: 1
   StartFallSpeedForText: 1
   FallAccelerationForText: 0.1
@@ -70,7 +70,6 @@ MonoBehaviour:
   distanceToFallText: {fileID: 0}
   Asteroid_Stage_Length: 4000
   Trash_Stage_Length: 3500
-  START_FALL_HEIGHT: 10160
 --- !u!114 &3927706891424905279
 MonoBehaviour:
   m_ObjectHideFlags: 0
