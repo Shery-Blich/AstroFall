@@ -3,20 +3,17 @@ using UnityEngine.UIElements;
 
 public class Background_Controller : MonoBehaviour
 {
+    [SerializeField]
+    private float startSpeed = 1.0f;
+
+
     public Vector2 direction = new Vector2(0, +1); 
-    public float speed = 1f;
+    private float speed = 1f;
 
-    // private void OnEnable()
-    //{
-    //    PlayerController.BadGameOver += ShowEndScreen;
-    //    FallManager.GoodGameOver += ShowEndScreen;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    PlayerController.BadGameOver -= ShowEndScreen;
-    //    FallManager.GoodGameOver -= ShowEndScreen;
-    //}
+    public void UpdateSpeed(float speedMultiplier)
+    {
+        speed = speedMultiplier * startSpeed;
+    }
    
     void Update()
     {

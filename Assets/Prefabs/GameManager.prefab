@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0a07bde1c15644aa66bc2f27715a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotationController
+  mainCam: {fileID: 0}
+  portraitCameraSize: 6
+  landscapeCameraSize: 2.8
 --- !u!114 &1849576105223524430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +62,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isGameOver: 0
-  fallDistance: 0
+  backgroundControllers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   distanceToFallText: {fileID: 0}
 --- !u!114 &3927706891424905279
 MonoBehaviour:

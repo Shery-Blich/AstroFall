@@ -26,6 +26,8 @@ public class FallManager : MonoBehaviour
     private float timeSinceLastSpeedUpdate = 0.0f;
     private float timeSinceGlobalLastSpeedUpdate = 0.0f;
 
+    [SerializeField]
+    private Background_Controller[] backgroundControllers;
 
     [SerializeField]
     public TextMeshProUGUI distanceToFallText;
@@ -118,10 +120,16 @@ public class FallManager : MonoBehaviour
         if (currentFallSpeed < MAX_SPEED)
         {
             currentFallSpeed += FALL_ACCELERATION;
+
         }
         else
         {
             currentFallSpeed = MAX_SPEED;
+        }
+
+        foreach (Background_Controller BG in backgroundControllers)
+        {
+            BG.UpdateSpeed(currentFallSpeed);
         }
     }
 

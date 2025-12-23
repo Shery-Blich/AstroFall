@@ -1,9 +1,12 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator;
     private enum MovementDirection
     {
         Idle,
@@ -57,12 +60,15 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMobileMovement()
     {
-        try {
+        try
+        {
             var accelerationXVal = Accelerometer.current.acceleration.ReadValue().x;
 
             MoveToNewPos(accelerationXVal);
             SetTiltDirection(accelerationXVal);
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             print($"No Accelerometer Instance found, skipping mobile movement handling. Are you running in Editor?" +
                 $"\nError:");
             print(e);
@@ -71,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveToNewPos(float accelerationXVal)
     {
-        if(!IsMobileTitltEnoughForMovement(accelerationXVal))
+        if (!IsMobileTitltEnoughForMovement(accelerationXVal))
         {
             return;
         }
@@ -130,7 +136,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool IsMobileTitltEnoughForMovement(float accelerationXVal) => Mathf.Abs(accelerationXVal) > MIN_TITLT_FOR_MOVEMENT;  
+    private bool IsMobileTitltEnoughForMovement(float accelerationXVal) => Mathf.Abs(accelerationXVal) > MIN_TITLT_FOR_MOVEMENT;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -196,5 +202,25 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
 
         return movementdir;
+    }
+
+    //stub
+    private IEnumerator PlaceholderTimer()
+
+    {
+        yield return new WaitForSeconds(5);
+        animator.SetTrigger("PowerUpEnd");
+    }
+
+    public void ActivatePowerUp()
+    {
+
+        if (animator != null)
+        {
+            animator.SetTrigger("CollectNyanCat");
+            StartCoroutine(PlaceholderTimer());
+        }
+
+        Debug.Log("You hit nyan cat");
     }
 }
