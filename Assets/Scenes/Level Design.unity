@@ -168,6 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!1 &754777869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7830317663174336916, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 840706706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &761911983 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1566281553854086040, guid: fc8d95a9763732340959418013ae7059, type: 3}
@@ -203,6 +208,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1674094928746455933, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: ObstcalCollider
+      value: 
+      objectReference: {fileID: 1344316389}
+    - target: {fileID: 2492607808127526524, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: ObstcalCollider
+      value: 
+      objectReference: {fileID: 1344316389}
     - target: {fileID: 2663017749377684712, guid: fc8d95a9763732340959418013ae7059, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.23
@@ -243,26 +256,133 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3185703220007584846, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_Size.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185703220007584846, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185703220007584846, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654302492625300987, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+    - target: {fileID: 3876008523829886187, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: ObstcalCollider
+      value: 
+      objectReference: {fileID: 1344316389}
+    - target: {fileID: 5058188977869703082, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_Size.x
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058188977869703082, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_Size.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058188977869703082, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058188977869703082, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066157118131728017, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 131933584, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+    - target: {fileID: 6390916701703630367, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     - target: {fileID: 6489612337699265207, guid: fc8d95a9763732340959418013ae7059, type: 3}
       propertyPath: m_Name
       value: Obstacles
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5058188977869703082, guid: fc8d95a9763732340959418013ae7059, type: 3}
+    - {fileID: 6428545112331299891, guid: fc8d95a9763732340959418013ae7059, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7830317663174336916, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 948134337}
+    - targetCorrespondingSourceObject: {fileID: 8335718461482584589, guid: fc8d95a9763732340959418013ae7059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1886383667}
   m_SourcePrefab: {fileID: 100100000, guid: fc8d95a9763732340959418013ae7059, type: 3}
 --- !u!114 &948134329 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4828000336341335537, guid: fc8d95a9763732340959418013ae7059, type: 3}
   m_PrefabInstance: {fileID: 840706706}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 754777869}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!68 &948134337
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754777869}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6524315, y: -0.6179743}
+  - {x: -1.1004872, y: -0.2390461}
+  - {x: -1.0993013, y: 0.23154354}
+  - {x: -0.9712095, y: 0.44162846}
+  - {x: -0.5635152, y: 0.7492075}
+  - {x: 0.4189806, y: 0.7906437}
+  - {x: 0.92867374, y: 0.56843376}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 0.8251004, y: -0.3059578}
+  - {x: 0.5650697, y: -0.2835722}
+  - {x: 0.32111835, y: -0.78788376}
+  - {x: -0.6562209, y: -0.62706184}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &1242453426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,6 +480,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
+--- !u!1 &1245000473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8335718461482584589, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 840706706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1344316381 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1476546444727419204, guid: fc8d95a9763732340959418013ae7059, type: 3}
@@ -371,6 +496,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!58 &1344316389 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4822498609876698504, guid: fc8d95a9763732340959418013ae7059, type: 3}
+  m_PrefabInstance: {fileID: 840706706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1346609684 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1536268077375516698, guid: fc8d95a9763732340959418013ae7059, type: 3}
@@ -395,12 +525,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 818267300}
     - target: {fileID: 1849576105223524430, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
+      propertyPath: GlobalSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849576105223524430, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
       propertyPath: distanceToFallText
       value: 
       objectReference: {fileID: 389967964}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
       propertyPath: ObstacleCountInPortrait
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3927706891424905279, guid: 15f5965fee6713e418f1e20f84877612, type: 3}
       propertyPath: 'obstacleControllers.Array.data[0]'
@@ -583,12 +717,48 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 712570681511252182, guid: fc8d95a9763732340959418013ae7059, type: 3}
   m_PrefabInstance: {fileID: 840706706}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1245000473}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
+--- !u!58 &1886383667
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245000473}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8333333
 --- !u!114 &2114142972 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6296269558482682938, guid: fc8d95a9763732340959418013ae7059, type: 3}

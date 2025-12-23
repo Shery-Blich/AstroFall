@@ -5,8 +5,18 @@ public class Obstacle : MonoBehaviour
     [SerializeField]
     protected Rigidbody2D rb;
 
+    [SerializeField]
+    public float MaxSizeProtrait = 3.0f;
+
+    [SerializeField]
+    public float MinSizeProtrait = 1.0f;
+
+    [SerializeField]
+    public float HoriziontalSizeScaleToPortrait = 0.6f;
+
     protected float minForce;
     protected float Size { get; set; }
+
 
     // TODO: Use Enable & Disable instead of start and destory | multiple classes -> look for them
     void Start()
@@ -25,7 +35,7 @@ public class Obstacle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PathPaver")
-        {
+            {
             var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
             var moveAdjustment = Vector3.zero;
             moveAdjustment.y += viewportPosition.y + 2f;
@@ -36,7 +46,15 @@ public class Obstacle : MonoBehaviour
 
     protected virtual float SetSize()
     {
-        Size = Random.Range(1.0f, 2.5f);
+        Size = Random.Range(MinSizeProtrait, MaxSizeProtrait);
+
+        // We Zoom in with the camera to fit the art to the app
+        // to bypass it we need to fit the size of obstcales to the screen
+        if (Screen.orientation == ScreenOrientation.LandscapeRight || Screen.orientation == ScreenOrientation.LandscapeLeft)
+        {
+            Size *= HoriziontalSizeScaleToPortrait;
+        }
+
         transform.localScale = 0.3f * Size * Vector3.one;
 
         return Size;
@@ -44,13 +62,9 @@ public class Obstacle : MonoBehaviour
 
     protected virtual void AddForce(float minForce, float maxForce)
     {
-        rb.linearVelocityY = 0;
-        rb.linearVelocityX = 0;
-
-        var direction = new Vector2(0, Random.value).normalized;
-        float spwanSpeed = Random.Range(minForce, maxForce);
-
-        rb.AddForce(direction * spwanSpeed, ForceMode2D.Impulse);
+        rb.linearVelocity = Vector2.zero;
+        var spawnSpeed = Random.Range(minForce, maxForce);
+        rb.AddForce(Vector2.up * spawnSpeed, ForceMode2D.Impulse);
     }
 
     //TODO: Use variables to better explain what's going on here 
@@ -61,7 +75,7 @@ public class Obstacle : MonoBehaviour
 
         // Randomize horizontal movement to make it less predictable.
         // Convert back into world coordinates before assigning.
-        if (viewportPosition.x < 0 || viewportPosition.x > 1)
+        if (viewportPosition.x < -0.1 || viewportPosition.x > 1.1)
         {
             // Find something to replace the magic of 0.35
             moveAdjustment.y -= viewportPosition.y + 0.35f;
