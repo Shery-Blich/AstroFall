@@ -16,8 +16,17 @@ public class FallManager : MonoBehaviour
     [SerializeField]
     public int GLOBAL_SPEED_UPDATE_INTERVAL_POW = 1;
 
+<<<<<<< HEAD
     [SerializeField]
     public const float GLOBAL_SPEED_INTERVAL_UPDATE_BASE = 4.8f;
+=======
+    private float currentFallSpeed;
+    public float fallDistance;
+    private const float START_FALL_SPEED = 1.0f;
+    private const float FALL_ACCELERATION = 0.1f;
+    public const float START_FALL_HEIGHT = 10160.0f;
+    private const float MAX_SPEED = 2.0f;
+>>>>>>> main
 
     [SerializeField]
     public const float GLOBAL_SPEED_ACCELERATION = 0.5f;
@@ -172,5 +181,18 @@ public class FallManager : MonoBehaviour
         currentFallSpeed = 0;
         isGameOver = true;
         distanceToFallText.text = "Failed to reach earth!";
+    }
+    public void ResetRun()
+    {
+        isGameOver = false;
+        currentFallSpeed = START_FALL_SPEED;
+        fallDistance = 0;
+        globalUpdatePow = 1;
+        timeSinceLastSpeedUpdate = 0f;
+        timeSinceGlobalLastSpeedUpdate = 0f;
+
+        if (distanceToFallText != null)
+            distanceToFallText.text =
+                $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - fallDistance)} m";
     }
 }

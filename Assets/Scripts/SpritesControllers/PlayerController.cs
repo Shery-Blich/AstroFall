@@ -23,6 +23,17 @@ public class PlayerController : MonoBehaviour
     private const int MAX_WARNING_COUNT = 3;
     private int warningCount = 0;
 
+    /// For resetting - To have a reference to its starting position and rotation
+
+    Vector3 startPos;
+    Quaternion startRot;
+
+    private void Awake()
+    {
+        startPos = transform.position;
+        startRot = transform.rotation;
+    }
+
     private void Start()
     {
         this.gameObject.SetActive(true);
