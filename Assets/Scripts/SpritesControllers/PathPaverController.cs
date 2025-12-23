@@ -10,11 +10,22 @@ public class PathPaverController : MonoBehaviour
     public BoxCollider2D PathPaverCollider;
 
     [SerializeField]
-    public float MovementSpeed = 5.0f;
+    public float MaxSpeedLimit = 4.0f;
+
+    [SerializeField]
+    public float MinSpeedLimit = 2.0f;
+
+    [SerializeField]
+    public float CurrentSpeed = 2.0f;
+
+    [SerializeField]
+    public int ChangeSpeedIntervalSeconds = 4;
 
     private Vector2 TargetPositionLeftPoint;
     private Vector2 TargetPositionRightPoint;
     private Vector2 CurrentTarget;
+
+    private float timeSinceLastSpeedUpdate = 0.0f;
 
     public void OnEnable()
     {
@@ -26,10 +37,21 @@ public class PathPaverController : MonoBehaviour
         ScreenController.ScreenOrientationUpdate -= SetPathPaverTargets;
     }
 
+    public void Update()
+    {
+        timeSinceLastSpeedUpdate += Time.deltaTime; 
+        if (timeSinceLastSpeedUpdate >= ChangeSpeedIntervalSeconds)
+        {
+            CurrentSpeed = Random.Range(MinSpeedLimit, MaxSpeedLimit);
+            timeSinceLastSpeedUpdate = 0.0f;
+        }
+    }
+
     //TODO: Cleanup(break into functions), comment for entire class
     public void FixedUpdate()
     {
         Vector2 currPos = this.transform.position;
+
 
         if (currPos == TargetPositionLeftPoint)
         {
@@ -40,11 +62,8 @@ public class PathPaverController : MonoBehaviour
             CurrentTarget = TargetPositionLeftPoint;
         }
 
-        print($"Moving to x:{CurrentTarget.x}, y: {CurrentTarget.y}");
         transform.position = Vector2.MoveTowards(transform.position,
-            CurrentTarget, MovementSpeed * Time.deltaTime);
-
-        print($"Current Screen bounds: x:{ScreenController.Instance.ScreenBounds}");
+            CurrentTarget, MaxSpeedLimit * Time.deltaTime);
     }
 
     // We can't do it on start since we dependent on screen controller's start
@@ -53,7 +72,8 @@ public class PathPaverController : MonoBehaviour
     public void SetPathPaverTargets()
     {
         var screenBounds = ScreenController.Instance.ScreenBounds;
-        var yPos = -screenBounds.y ;
+        // Find a better number than this magic number
+        var yPos = -screenBounds.y - 1f;
         var xPoS = screenBounds.x - PathPaverCollider.size.x / 2;
 
         var initalTargetRandom = Random.Range(0, 1);

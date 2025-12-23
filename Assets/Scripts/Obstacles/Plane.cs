@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+// TODO: Allow Plane to come from the sides of the screen
 public class Plane : Obstacle
 {
     public void FreezeRotation()

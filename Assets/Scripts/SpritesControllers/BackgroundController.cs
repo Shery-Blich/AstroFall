@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Background_Controller : MonoBehaviour
+public class BackgroundController : MonoBehaviour
 {
     public Vector2 direction = new Vector2(0, +1); 
     private bool isScrolling = true;

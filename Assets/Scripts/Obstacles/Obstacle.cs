@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     protected float minForce;
     protected float Size { get; set; }
 
+    // TODO: Use Enable & Disable instead of start and destory | multiple classes -> look for them
     void Start()
     {
         StartObstacle();
@@ -21,9 +22,21 @@ public class Obstacle : MonoBehaviour
         FallManager.GoodGameOver -= OnGameOver;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PathPaver")
+        {
+            var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
+            var moveAdjustment = Vector3.zero;
+            moveAdjustment.y += viewportPosition.y + 2f;
+
+            transform.position = Camera.main.ViewportToWorldPoint(viewportPosition + moveAdjustment);
+        }
+    }
+
     protected virtual float SetSize()
     {
-        Size = Random.Range(1.0f, 2.0f);
+        Size = Random.Range(1.0f, 2.5f);
         transform.localScale = 0.3f * Size * Vector3.one;
 
         return Size;
@@ -40,6 +53,7 @@ public class Obstacle : MonoBehaviour
         rb.AddForce(direction * spwanSpeed, ForceMode2D.Impulse);
     }
 
+    //TODO: Use variables to better explain what's going on here 
     protected virtual (Vector3 viewportPosition, Vector3 moveAdjustment) GetNewObstaclePos()
     {
         var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
@@ -47,15 +61,16 @@ public class Obstacle : MonoBehaviour
 
         // Randomize horizontal movement to make it less predictable.
         // Convert back into world coordinates before assigning.
-        if (viewportPosition.x < -0.1f || viewportPosition.x > 1.1f)
+        if (viewportPosition.x < 0 || viewportPosition.x > 1)
         {
-            moveAdjustment.y = -viewportPosition.y;
+            // Find something to replace the magic of 0.35
+            moveAdjustment.y -= viewportPosition.y + 0.35f;
             moveAdjustment.x = Random.Range(-0.7f, 0.7f);
             AddForce(minForce + FallManager.Instance.GlobalSpeed, Size + FallManager.Instance.GlobalSpeed);
         }
         else if (viewportPosition.y > 1.1f)
         {
-            moveAdjustment.y -= 1.1f;
+            moveAdjustment.y -= viewportPosition.y + 0.35f;
             moveAdjustment.x += Random.Range(-0.2f, 0.2f);
             AddForce(minForce + FallManager.Instance.GlobalSpeed, Size + FallManager.Instance.GlobalSpeed);
         }

@@ -29,7 +29,7 @@ public class ObstacleController : MonoBehaviour
     {
         var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
 
-        if ((viewportPosition.x < 0 || viewportPosition.x > 1 || viewportPosition.y > 1))
+        if (viewportPosition.y < -0.1f)
         {
             ChangeActiveScripts(ObstaclesManager.Instance.CurrentObstacleStage);
         }
@@ -37,7 +37,8 @@ public class ObstacleController : MonoBehaviour
 
     private void ChangeActiveScripts(ObstacleType obstacleType)
     {
-        // No change needed
+        //TODO: Change Use events
+        // No change needed 
         if (obstacleType == currentObstacleType)
         {
             return;
