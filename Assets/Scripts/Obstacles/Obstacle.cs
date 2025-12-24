@@ -17,6 +17,8 @@ public class Obstacle : MonoBehaviour, IResettable
     protected float minForce;
     protected float Size { get; set; }
 
+    protected float spawnYLocation = 0.35f;
+
     // TODO: Use Enable & Disable instead of start and destory | multiple classes -> look for them
     /// For resetting - To have a reference to its starting position and rotation
 
@@ -86,13 +88,13 @@ public class Obstacle : MonoBehaviour, IResettable
         if (viewportPosition.x < -0.1 || viewportPosition.x > 1.1)
         {
             // Find something to replace the magic of 0.35
-            moveAdjustment.y -= viewportPosition.y + 0.35f;
+            moveAdjustment.y -= viewportPosition.y + spawnYLocation;
             moveAdjustment.x = Random.Range(-0.7f, 0.7f);
             AddForce(minForce + FallManager.Instance.GlobalSpeed, Size + FallManager.Instance.GlobalSpeed);
         }
         else if (viewportPosition.y > 1.1f)
         {
-            moveAdjustment.y -= viewportPosition.y + 0.35f;
+            moveAdjustment.y -= viewportPosition.y + spawnYLocation;
             moveAdjustment.x += Random.Range(-0.2f, 0.2f);
             AddForce(minForce + FallManager.Instance.GlobalSpeed, Size + FallManager.Instance.GlobalSpeed);
         }
