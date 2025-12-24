@@ -96,6 +96,14 @@ PrefabInstance:
       value: Obstacle (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.x
+      value: 1.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.y
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.25
       objectReference: {fileID: 0}
@@ -163,6 +171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 3830692522867605349}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &984452111908383457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 3830692522867605349}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &5029315389005886053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 3830692522867605349}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!50 &3830692522867605349 stripped
 Rigidbody2D:
@@ -248,17 +265,25 @@ PrefabInstance:
       value: Obstacle (7)
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.y
+      value: 1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.3333333
+      value: 1.6666666
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.9166666
+      value: 1.5833334
       objectReference: {fileID: 0}
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 616640118, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
@@ -315,6 +340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 4076731782486122284}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8707436574232912290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 4076731782486122284}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3401550057728759268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 4076731782486122284}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
 --- !u!50 &4076731782486122284 stripped
 Rigidbody2D:
@@ -413,6 +447,7 @@ PrefabInstance:
       objectReference: {fileID: -1672000868, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -428,6 +463,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3474119923441377911}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3443964090110293502}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!1 &89195691281090268 stripped
 GameObject:
@@ -462,6 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 2307625387042803737}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &4072272736288362070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,6 +516,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 2307625387042803737}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3474119923441377911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +532,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2307625387042803737}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &3443964090110293502
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89195691281090268}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8333333
 --- !u!4 &1208737117707494258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -565,6 +648,7 @@ PrefabInstance:
       objectReference: {fileID: -28849323, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -580,6 +664,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8411236110756641593}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3145776547895166317}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!1 &593985443078448427 stripped
 GameObject:
@@ -614,6 +701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 2955756150804689902}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2176516351636923142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 2955756150804689902}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8411236110756641593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +733,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2955756150804689902}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &3145776547895166317
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593985443078448427}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.625
 --- !u!4 &1856870209813954693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -661,11 +793,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.24
+      value: -1.81
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.7900057
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -717,6 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 2091873802, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -732,6 +865,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8789050662243030481}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8603317043076920516}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!50 &2020597427434151305 stripped
 Rigidbody2D:
@@ -776,6 +912,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 2020597427434151305}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &4894286819605772841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +928,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 2020597427434151305}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8789050662243030481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,7 +944,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 2020597427434151305}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &8603317043076920516
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409073193299856204}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8333333
 --- !u!1001 &4896441868038371116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -869,6 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: -1082395471, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -884,6 +1066,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1386745776432078833}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4153027459864600204}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!4 &4835784274666295143 stripped
 Transform:
@@ -923,6 +1108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 8348601943265082380}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &974566873664585318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,6 +1124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 8348601943265082380}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &1386745776432078833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,7 +1140,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 8348601943265082380}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &4153027459864600204
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973610587733715657}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.625
 --- !u!50 &8348601943265082380 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3472159673672895264, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -965,11 +1195,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.86
+      value: -1.81
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8799944
+      value: -6.34
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1026,13 +1256,14 @@ PrefabInstance:
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 981749849, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: -28849323, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1048,6 +1279,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3051516152995738006}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5890175576306478208}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!4 &5363943903066163559 stripped
 Transform:
@@ -1087,6 +1321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 8840732774663289356}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &6117466998454828590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,6 +1337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 8840732774663289356}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3051516152995738006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1353,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 8840732774663289356}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &5890175576306478208
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596121490773994697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.625
 --- !u!50 &8840732774663289356 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3472159673672895264, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1129,11 +1408,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.1000056
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1190,13 +1469,14 @@ PrefabInstance:
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: 2091873802, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1212,6 +1492,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2492607808127526524}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4822498609876698504}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!1 &4855877784192997727 stripped
 GameObject:
@@ -1246,6 +1529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 7086762627113340826}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3876008523829886187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,6 +1545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 7086762627113340826}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2492607808127526524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,7 +1561,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 7086762627113340826}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &4822498609876698504
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855877784192997727}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8333333
 --- !u!4 &5951828097405697265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1293,11 +1621,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8399944
+      value: -4.87
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1354,13 +1682,14 @@ PrefabInstance:
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2002754017, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: 234983462, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1376,6 +1705,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 658464168374448953}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3014302451526320771}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!1 &5181680527185532948 stripped
 GameObject:
@@ -1410,6 +1742,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 7409460349300231889}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &6930138621904838461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,6 +1758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 7409460349300231889}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &658464168374448953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,7 +1774,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 7409460349300231889}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!61 &3014302451526320771
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181680527185532948}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.25, y: 1.6666666}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.84, y: 1.12}
+  m_EdgeRadius: 0
 --- !u!4 &6202488026446511546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
@@ -1500,6 +1887,14 @@ PrefabInstance:
       value: Obstacle (11)
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.x
+      value: 2.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.y
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 3.3333333
       objectReference: {fileID: 0}
@@ -1510,9 +1905,10 @@ PrefabInstance:
     - target: {fileID: 4182247452043491831, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1131807711, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
+      objectReference: {fileID: 1152168769, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1528,6 +1924,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8920937780648588377}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 527892260013529649}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!50 &5950624913206795464 stripped
 Rigidbody2D:
@@ -1572,6 +1971,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 5950624913206795464}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2840637897162820998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1585,6 +1987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 5950624913206795464}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &8920937780648588377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,7 +2003,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 5950624913206795464}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!58 &527892260013529649
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335718461482584589}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8333333
 --- !u!1001 &7936752274035398502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1609,11 +2053,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.33
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.01
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1621,19 +2065,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9139503
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.40582612
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1645,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 47.886
       objectReference: {fileID: 0}
     - target: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_Name
@@ -1677,6 +2121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1692,6 +2137,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7882822826427976829}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2636754203407661873}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!50 &6776392381342342214 stripped
 Rigidbody2D:
@@ -1736,6 +2184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 6776392381342342214}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &3317169983750403898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,6 +2200,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 6776392381342342214}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &7882822826427976829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,7 +2216,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 6776392381342342214}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!61 &2636754203407661873
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164863612257356419}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.3333333, y: 1.9166666}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.51, y: 1.45}
+  m_EdgeRadius: 0
 --- !u!1001 &9061172821004041329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1816,6 +2319,14 @@ PrefabInstance:
       value: Obstacle (9)
       objectReference: {fileID: 0}
     - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.x
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      propertyPath: m_Size.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.25
       objectReference: {fileID: 0}
@@ -1829,6 +2340,7 @@ PrefabInstance:
       objectReference: {fileID: 234983462, guid: 014753fc51f1b8c4490a590def89d2f3, type: 3}
     m_RemovedComponents:
     - {fileID: 9096166846423537522, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+    - {fileID: 2632643241522630722, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1844,6 +2356,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2775460210897725078}
+    - targetCorrespondingSourceObject: {fileID: 1230926089336364517, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3465692703402072845}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}
 --- !u!50 &5589062243660281681 stripped
 Rigidbody2D:
@@ -1883,6 +2398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   rb: {fileID: 5589062243660281681}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &6777742287114036854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,6 +2414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   rb: {fileID: 5589062243660281681}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
 --- !u!114 &2775460210897725078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,7 +2430,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
   rb: {fileID: 5589062243660281681}
+  MaxSizeProtrait: 3
+  MinSizeProtrait: 1
+  HoriziontalSizeScaleToPortrait: 0.6
   minRotationSpeed: 200
+--- !u!68 &3465692703402072845
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830317663174336916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6524315, y: -0.6179743}
+  - {x: -1.1004872, y: -0.2390461}
+  - {x: -1.0993013, y: 0.23154354}
+  - {x: -0.9712095, y: 0.44162846}
+  - {x: -0.5635152, y: 0.7492075}
+  - {x: 0.4189806, y: 0.7906437}
+  - {x: 0.92867374, y: 0.56843376}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 1.125, y: 0.04543972}
+  - {x: 0.8251004, y: -0.3059578}
+  - {x: 0.5650697, y: -0.2835722}
+  - {x: 0.32111835, y: -0.78788376}
+  - {x: -0.6562209, y: -0.62706184}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!4 &9029804589670450234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 67430585003505739, guid: 6a2384c2daa2c9f4484d0f2ef9a7e7fa, type: 3}

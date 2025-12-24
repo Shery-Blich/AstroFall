@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0a07bde1c15644aa66bc2f27715a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotationController
+  MainCam: {fileID: 0}
+  portraitCameraSize: 6
+  landscapeCameraSize: 2.8
 --- !u!114 &1849576105223524430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,9 +61,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f00d5201bbdf604ca959dae974e8bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  isGameOver: 0
-  fallDistance: 0
+  GlobalSpeed: 1
+  GlobalSpeedUpdatePow: 1
+  UpdateSpeedIntervalForTextInMiliSeconds: 1
+  StartFallSpeedForText: 1
+  FallAccelerationForText: 0.1
+  MaxSpeedForTextChange: 2
   distanceToFallText: {fileID: 0}
+  Asteroid_Stage_Length: 4000
+  Trash_Stage_Length: 3500
 --- !u!114 &3927706891424905279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,4 +96,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   CurrentObstacleStage: 0
-  ObstacleCountInPortrait: 4
+  ObstacleCountInPortrait: 5

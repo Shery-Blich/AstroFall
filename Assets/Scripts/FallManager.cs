@@ -7,28 +7,52 @@ public class FallManager : MonoBehaviour
 
     public static FallManager Instance { get; private set; }
     public static event Action GoodGameOver;
-    public bool isGameOver = false;
-
-    public float GlobalSpeed{ get; private set; }
-    private int globalUpdatePow = 1;
-    private const float globalUpdateBase = 4.8f;
-    private const float GLOBAL_SPEED_ACCELERATION = 0.5f;
+    public static event Action<ObstacleTypeEnum> OnStageChanged;
+    public bool isGameOver { get; private set; } = false;
 
 
-    private float currentFallSpeed;
-    public float fallDistance;
-    private const float START_FALL_SPEED = 1.0f;
-    private const float FALL_ACCELERATION = 0.1f;
+    // TODO: Use ScriptableObjects instead of entire params to represent each stage
+    [SerializeField]
+    public float GlobalSpeed;
+
+    [SerializeField]
+    public int GlobalSpeedUpdatePow = 1;
+
+    [SerializeField]
+    public const float GLOBAL_SPEED_INTERVAL_UPDATE_BASE = 4.8f;
+
+    [SerializeField]
     public const float START_FALL_HEIGHT = 10160.0f;
-    private const float MAX_SPEED = 2.0f;
 
-    private int updateSpeedInterval = 1;
-    private float timeSinceLastSpeedUpdate = 0.0f;
-    private float timeSinceGlobalLastSpeedUpdate = 0.0f;
+    [SerializeField]
+    public const float GLOBAL_SPEED_ACCELERATION = 0.5f;
 
+    [SerializeField]
+    public int UpdateSpeedIntervalForTextInMiliSeconds = 1;
+
+    [SerializeField]
+    public float StartFallSpeedForText = 1.0f;
+
+    [SerializeField]
+    public float FallAccelerationForText = 0.1f;
+
+    [SerializeField]
+    public float MaxSpeedForTextChange = 2f;
 
     [SerializeField]
     public TextMeshProUGUI distanceToFallText;
+
+    [SerializeField]
+    public float Asteroid_Stage_Length= 4000.0f;
+
+    [SerializeField]
+    public float Trash_Stage_Length = 3500.0f;
+
+    public float FallDistance { get; private set; }
+    private float timeSinceLastSpeedUpdate = 0.0f;
+    private float timeSinceGlobalLastSpeedUpdate = 0.0f;
+    private float currentFallSpeed;
+
 
     private void Awake()
     {
@@ -48,14 +72,17 @@ public class FallManager : MonoBehaviour
 
     void Start()
     {
+        currentFallSpeed = StartFallSpeedForText;
+        FallDistance = 0;
+    }
+
+    private void OnEnable()
+    {
         PlayerController.BadGameOver += OnBadGameOver;
-        currentFallSpeed = START_FALL_SPEED;
-        fallDistance = 0;
-        GlobalSpeed = UnityEngine.Random.Range(0.5f, 1f);
         GoodGameOver += OnGoodGameOver;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         PlayerController.BadGameOver -= OnBadGameOver;
         GoodGameOver -= OnGoodGameOver;
@@ -67,7 +94,7 @@ public class FallManager : MonoBehaviour
         timeSinceGlobalLastSpeedUpdate += Time.fixedDeltaTime;
         if (!isGameOver)
         {
-            if (timeSinceLastSpeedUpdate >= updateSpeedInterval)
+            if (timeSinceLastSpeedUpdate >= UpdateSpeedIntervalForTextInMiliSeconds)
             {
                 UpdateSpeed();
                 timeSinceLastSpeedUpdate = 0.0f;
@@ -76,38 +103,44 @@ public class FallManager : MonoBehaviour
 
             UpdateGlobalSpeedIfNeeded();
             UpdateDistance();
-
-            if (ObstaclesManager.Instance.CurrentObstacleStage != CalcObstacleType())
-            {
-                UpdateObstacleTypeIfNeeded();
-            }
+            UpdateObstacleTypeIfNeeded();
         }
     }
 
     // Change obstacle types based on how much has the player fallen
-    // Asteroids until 4000m, Trash until 7500m, Planes after that
-    private ObstacleType CalcObstacleType()
+    // Asteroids -> Trash -> Planes, each stage has a fixed length,
+    // for the switch we check the fall distance against the cumulative lengths of each stage
+    private ObstacleTypeEnum CalcObstacleType()
     {
-        return fallDistance switch
+        if (FallDistance <= Asteroid_Stage_Length)
         {
-            <= 4000 => ObstacleType.Asteroid,
-            <= 7500 => ObstacleType.Trash,
-            _ => ObstacleType.Plane
-        };
+            return ObstacleTypeEnum.Asteroid;
+        }
+
+        if (FallDistance <= Asteroid_Stage_Length + Trash_Stage_Length)
+        {
+            return ObstacleTypeEnum.Trash;
+        }
+
+        return ObstacleTypeEnum.Plane;
     }
 
     private void UpdateObstacleTypeIfNeeded()
     {
-        print($"Obstacle type changed to in fall manager: {CalcObstacleType()}");
-        ObstaclesManager.Instance.UpdateObstacleTypes(CalcObstacleType());
+        var currType = CalcObstacleType();
+        if (ObstaclesManager.Instance.CurrentObstacleStage != currType)
+        {
+            print($"Obstacle type changed to in fall manager: {currType}");
+            OnStageChanged?.Invoke(currType);
+        }
     }
 
     private void UpdateGlobalSpeedIfNeeded()
     {
-        if (Mathf.Pow(globalUpdateBase, globalUpdatePow) <= timeSinceGlobalLastSpeedUpdate)
+        if (Mathf.Pow(GLOBAL_SPEED_INTERVAL_UPDATE_BASE, GlobalSpeedUpdatePow) <= timeSinceGlobalLastSpeedUpdate)
         {
             timeSinceGlobalLastSpeedUpdate = 0;
-            globalUpdatePow++;
+            GlobalSpeedUpdatePow++;
             GlobalSpeed += GLOBAL_SPEED_ACCELERATION;
             print($"Global speed increased to: {GlobalSpeed}");
         }
@@ -115,22 +148,22 @@ public class FallManager : MonoBehaviour
 
     private void UpdateSpeed()
     {
-        if (currentFallSpeed < MAX_SPEED)
+        if (currentFallSpeed < MaxSpeedForTextChange)
         {
-            currentFallSpeed += FALL_ACCELERATION;
+            currentFallSpeed += FallAccelerationForText;
         }
         else
         {
-            currentFallSpeed = MAX_SPEED;
+            currentFallSpeed = MaxSpeedForTextChange;
         }
     }
 
     private void UpdateDistance()
     {
-        fallDistance += currentFallSpeed;
-        distanceToFallText.text = $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - fallDistance)} m\n{CalcObstacleType()} Stage";
+        FallDistance += currentFallSpeed;
+        distanceToFallText.text = $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - FallDistance)} m\n{CalcObstacleType()} Stage";
         
-        if(fallDistance >= START_FALL_HEIGHT)
+        if(FallDistance >= START_FALL_HEIGHT)
         {
            GoodGameOver?.Invoke();
         }
@@ -152,14 +185,14 @@ public class FallManager : MonoBehaviour
     public void ResetRun()
     {
         isGameOver = false;
-        currentFallSpeed = START_FALL_SPEED;
-        fallDistance = 0;
-        globalUpdatePow = 1;
+        currentFallSpeed = StartFallSpeedForText;
+        FallDistance = 0;
+        GlobalSpeedUpdatePow = 1;
         timeSinceLastSpeedUpdate = 0f;
         timeSinceGlobalLastSpeedUpdate = 0f;
 
         if (distanceToFallText != null)
             distanceToFallText.text =
-                $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - fallDistance)} m";
+                $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - FallDistance)} m";
     }
 }
