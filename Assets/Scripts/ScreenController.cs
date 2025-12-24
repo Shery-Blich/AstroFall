@@ -36,7 +36,7 @@ public class ScreenController : MonoBehaviour
 
     private void Start()
     {
-        SetCamera();
+        // SetCamera();
         SetRotationLock(true);
         SetScreenBounds();
         SetObstaclesCount();
