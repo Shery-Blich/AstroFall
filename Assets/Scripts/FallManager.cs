@@ -7,8 +7,11 @@ public class FallManager : MonoBehaviour
 
     public static FallManager Instance { get; private set; }
     public static event Action GoodGameOver;
+    public static event Action<ObstacleTypeEnum> OnStageChanged;
     public bool isGameOver { get; private set; } = false;
 
+
+    // TODO: Use ScriptableObjects instead of entire params to represent each stage
     [SerializeField]
     public float GlobalSpeed;
 
@@ -69,13 +72,17 @@ public class FallManager : MonoBehaviour
 
     void Start()
     {
-        PlayerController.BadGameOver += OnBadGameOver;
         currentFallSpeed = StartFallSpeedForText;
         FallDistance = 0;
+    }
+
+    private void OnEnable()
+    {
+        PlayerController.BadGameOver += OnBadGameOver;
         GoodGameOver += OnGoodGameOver;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         PlayerController.BadGameOver -= OnBadGameOver;
         GoodGameOver -= OnGoodGameOver;
@@ -96,36 +103,36 @@ public class FallManager : MonoBehaviour
 
             UpdateGlobalSpeedIfNeeded();
             UpdateDistance();
-
-            if (ObstaclesManager.Instance.CurrentObstacleStage != CalcObstacleType())
-            {
-                UpdateObstacleTypeIfNeeded();
-            }
+            UpdateObstacleTypeIfNeeded();
         }
     }
 
     // Change obstacle types based on how much has the player fallen
     // Asteroids -> Trash -> Planes, each stage has a fixed length,
     // for the switch we check the fall distance against the cumulative lengths of each stage
-    private ObstacleType CalcObstacleType()
+    private ObstacleTypeEnum CalcObstacleType()
     {
         if (FallDistance <= Asteroid_Stage_Length)
         {
-            return ObstacleType.Asteroid;
+            return ObstacleTypeEnum.Asteroid;
         }
 
         if (FallDistance <= Asteroid_Stage_Length + Trash_Stage_Length)
         {
-            return ObstacleType.Trash;
+            return ObstacleTypeEnum.Trash;
         }
 
-        return ObstacleType.Plane;
+        return ObstacleTypeEnum.Plane;
     }
 
     private void UpdateObstacleTypeIfNeeded()
     {
-        print($"Obstacle type changed to in fall manager: {CalcObstacleType()}");
-        ObstaclesManager.Instance.UpdateObstacleTypes(CalcObstacleType());
+        var currType = CalcObstacleType();
+        if (ObstaclesManager.Instance.CurrentObstacleStage != currType)
+        {
+            print($"Obstacle type changed to in fall manager: {currType}");
+            OnStageChanged?.Invoke(currType);
+        }
     }
 
     private void UpdateGlobalSpeedIfNeeded()

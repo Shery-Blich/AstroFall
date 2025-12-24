@@ -30,11 +30,13 @@ public class PathPaverController : MonoBehaviour
     public void OnEnable()
     {
         ScreenController.ScreenOrientationUpdate += SetPathPaverTargets;
+        FallManager.OnStageChanged += DisableOnStage;
     }
 
     public void OnDisable()
     {
         ScreenController.ScreenOrientationUpdate -= SetPathPaverTargets;
+        FallManager.OnStageChanged -= DisableOnStage;
     }
 
     public void Update()
@@ -89,5 +91,13 @@ public class PathPaverController : MonoBehaviour
         {
             CurrentTarget = TargetPositionRightPoint;
         }   
+    }
+
+    public void DisableOnStage(ObstacleTypeEnum obstacleType)
+    {
+        if (obstacleType == ObstacleTypeEnum.Plane)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }

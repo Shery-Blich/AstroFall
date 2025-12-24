@@ -13,11 +13,12 @@ public class ObstacleController : MonoBehaviour
     [SerializeField]
     Trash trashScript;
 
-    private ObstacleType currentObstacleType;
+    // Single Source of Truth for all types
+    private ObstacleTypeEnum currentObstacleType;
     
     private void Start()
     {
-        ChangeActiveScripts(currentObstacleType);
+        UpdateActiveScripts(currentObstacleType);
     }
 
     private void Update()
@@ -25,21 +26,24 @@ public class ObstacleController : MonoBehaviour
         UpdateObstecalType();
     }
 
+    // TODO: Use events and screen controller to get bounds and use those for checking change instead of cacling world to viewport
     private void UpdateObstecalType()
     {
-        var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
+        var viewportPosition = ScreenController.Instance.MainCam.WorldToViewportPoint(transform.position);
 
         if (viewportPosition.y < -0.1f)
         {
-            ChangeActiveScripts(ObstaclesManager.Instance.CurrentObstacleStage);
+            UpdateActiveScripts(ObstaclesManager.Instance.CurrentObstacleStage);
         }
     }
 
-    private void ChangeActiveScripts(ObstacleType obstacleType)
+    private void UpdateActiveScripts(ObstacleTypeEnum obstacleType)
     {
-        //TODO: Change Use events
-        // No change needed 
-        if (obstacleType == currentObstacleType)
+        // Since Obstacles are updated only once they are outside the screen,
+        // we check every time we leave if the current stage changed
+        // if it didn't we skip the update
+        // otherwise we update the type
+        if (!IsUpdateNeeded(obstacleType))
         {
             return;
         }
@@ -47,11 +51,11 @@ public class ObstacleController : MonoBehaviour
         print($"Updating Obstacle {this.gameObject.name} Type to {ObstaclesManager.Instance.CurrentObstacleStage}");
         switch (obstacleType)
         {
-            case ObstacleType.Trash:
+            case ObstacleTypeEnum.Trash:
                 SetScriptActivation(false, trash: true, false);
                 break;
 
-            case ObstacleType.Plane:
+            case ObstacleTypeEnum.Plane:
                 SetScriptActivation(false, false, plane: true);
                 planeScript.FreezeRotation();
                 break;
@@ -71,5 +75,7 @@ public class ObstacleController : MonoBehaviour
         asteroidScript.enabled = astroid;
         trashScript.enabled = trash;
         planeScript.enabled = plane;
-    }    
+    }
+
+    private bool IsUpdateNeeded(ObstacleTypeEnum obstacleType) => obstacleType != currentObstacleType;
 }

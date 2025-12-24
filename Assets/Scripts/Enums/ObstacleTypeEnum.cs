@@ -1,4 +1,4 @@
-public enum ObstacleType
+public enum ObstacleTypeEnum
 {
     Asteroid,
     Trash,

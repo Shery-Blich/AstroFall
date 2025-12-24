@@ -6,11 +6,21 @@ public class ObstaclesManager : MonoBehaviour
     [SerializeField]
     public ObstacleController[] obstacleControllers;
 
-    public ObstacleType CurrentObstacleStage = ObstacleType.Asteroid;
+    public ObstacleTypeEnum CurrentObstacleStage = ObstacleTypeEnum.Asteroid;
     
     public int ObstacleCountInPortrait = 4;
 
     public static ObstaclesManager Instance{ get; private set; }
+
+    private void OnEnable()
+    {
+        FallManager.OnStageChanged += UpdateObstacleTypes;
+    }
+
+    private void OnDisable()
+    {
+        FallManager.OnStageChanged -= UpdateObstacleTypes;
+    }
 
     private void Awake()
     {
@@ -43,7 +53,7 @@ public class ObstaclesManager : MonoBehaviour
         }
     }
 
-    public void UpdateObstacleTypes(ObstacleType gameStage)
+    public void UpdateObstacleTypes(ObstacleTypeEnum gameStage)
     {
         this.CurrentObstacleStage = gameStage;
     }
