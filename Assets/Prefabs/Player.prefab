@@ -4846,9 +4846,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1593977559613812471}
   - component: {fileID: 3270353965223607281}
-  - component: {fileID: 5989567946516658898}
-  - component: {fileID: 1995984421007232486}
   - component: {fileID: 4557739099219703109}
+  - component: {fileID: 193855985030874161}
+  - component: {fileID: 451153055613294930}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4930,31 +4930,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5989567946516658898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745709734147941252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ac0ed183a456234695778a80930a6f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!114 &1995984421007232486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745709734147941252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09edb000fc359714d931ef742bdf46de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  spriteRenderer: {fileID: 3270353965223607281}
 --- !u!60 &4557739099219703109
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5049,3 +5024,28 @@ PolygonCollider2D:
       - {x: 0.6166667, y: -1.0500001}
       - {x: 0.9166667, y: -0.95000005}
   m_UseDelaunayMesh: 0
+--- !u!114 &193855985030874161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745709734147941252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26f469735aa5de43bc89eb87ae0b520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoundryController
+  spriteRenderer: {fileID: 3270353965223607281}
+--- !u!114 &451153055613294930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745709734147941252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016419b73edee3a40b0d548c48dc715d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController

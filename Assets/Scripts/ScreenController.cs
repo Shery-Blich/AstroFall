@@ -1,11 +1,10 @@
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class ScreenController : MonoBehaviour
 {
     [SerializeField]
-    private Camera mainCam;
+    public Camera MainCam;
 
     [SerializeField]
     private float portraitCameraSize = 6;
@@ -15,6 +14,8 @@ public class ScreenController : MonoBehaviour
     public static ScreenController Instance { get; private set; }
 
     public Vector2 ScreenBounds { get; private set; }
+
+    public static event Action ScreenOrientationUpdate;
 
 
     private void Awake()
@@ -36,36 +37,42 @@ public class ScreenController : MonoBehaviour
 
     private void Start()
     {
-        // SetCamera();
+        SetScreen();
+    }
+
+    public void SetScreen()
+    {
         SetRotationLock(true);
+        SetCamera();
         SetScreenBounds();
         SetObstaclesCount();
-    
+        ScreenOrientationUpdate?.Invoke();
     }
 
     public void SetCamera()
     {
         if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
         {
-            mainCam.orthographicSize = portraitCameraSize;
+            MainCam.orthographicSize = portraitCameraSize;
         }
-
         else if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
         {
-            mainCam.orthographicSize = landscapeCameraSize;
+            MainCam.orthographicSize = landscapeCameraSize;
         }
     }
 
     public void SetScreenBounds()
     {
-        this.ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        this.ScreenBounds = MainCam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     }
 
     public void SetObstaclesCount()
     {
         ScreenOrientation currentOrientation = Screen.orientation;
-        ObstaclesManager.Instance.SetObstaclesToOrientation(isPortrait:
-            currentOrientation == ScreenOrientation.Portrait || currentOrientation == ScreenOrientation.PortraitUpsideDown);
+        var isPortrait = currentOrientation == ScreenOrientation.Portrait || currentOrientation == ScreenOrientation.PortraitUpsideDown;
+        ObstaclesManager.Instance.SetObstaclesToOrientation(isPortrait);
+
+        print($"Set obstacles for orientation: {currentOrientation}");
     }
 
     public void SetRotationLock(bool shouldLock)
