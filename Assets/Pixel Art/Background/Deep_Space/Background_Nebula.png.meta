@@ -1,10 +1,37 @@
 fileFormatVersion: 2
-guid: 6c1d2a0f09f2d0c4a92deede6c88a826
+guid: 18a33048fa3023d48b8b171023a9d23d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5764180966629666969
-    second: Earth_BG1_0
+      213: -7817386162635087501
+    second: Background_Nebula_0
+  - first:
+      213: 2643586916572849394
+    second: Background_Nebula_1
+  - first:
+      213: -7694329183404602565
+    second: Background_Nebula_2
+  - first:
+      213: 1560483241203973853
+    second: Background_Nebula_3
+  - first:
+      213: 2676632904707603344
+    second: Background_Nebula_4
+  - first:
+      213: 606298376542953202
+    second: Background_Nebula_5
+  - first:
+      213: 8258743689116225375
+    second: Background_Nebula_6
+  - first:
+      213: -8086439581168830118
+    second: Background_Nebula_7
+  - first:
+      213: -6661328572175642914
+    second: Background_Nebula_8
+  - first:
+      213: 5648410750867195643
+    second: Background_Nebula_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
