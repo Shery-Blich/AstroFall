@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 3152635995755267644}
   - component: {fileID: 5544006792643824609}
   - component: {fileID: 7661938409917514009}
+  - component: {fileID: 793339248636132929}
   m_Layer: 0
   m_Name: Nyan-Cat
   m_TagString: Untagged
@@ -128,6 +129,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &793339248636132929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090165093842658289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b1396ffcb12984c818b8ddb5e5aac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  speed: 1
+  lifeTime: 10
+  direction: {x: 0, y: 0, z: 0}
+  sprite: {fileID: 2697863120874807285}
 --- !u!1 &5423863581888391341
 GameObject:
   m_ObjectHideFlags: 0
