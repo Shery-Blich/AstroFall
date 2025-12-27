@@ -71,20 +71,12 @@ public class GameUIManager : MonoBehaviour
             FallManager.Instance.ResetRun();
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Level Design");
     }
 
     public void Play()
     {
-        panelStory.SetActive(false);
-        panelCredits.SetActive(false);
-        panelMainMenu.SetActive(false);
-        panelHUD.SetActive(true);
-        panelPause.SetActive(false);
-        panelGoodEnd.SetActive(false);
-        panelBadEnd.SetActive(false);
-
-        StartRun();
+        SceneManager.LoadScene("Level Design");
     }
 
     public void MainMenu()
