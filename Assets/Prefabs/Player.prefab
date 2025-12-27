@@ -10066,4 +10066,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   animator: {fileID: 2655857774621623710}
   playerColiider: {fileID: 1748538388075041773}
-  godModeDuration: 10
+  godModeDuration: 12
