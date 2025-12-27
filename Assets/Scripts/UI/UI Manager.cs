@@ -1,137 +1,88 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameUIManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    [Header("UIPanels")]
-    [SerializeField] private GameObject panelMainMenu;
-    [SerializeField] private GameObject panelStory;
-    [SerializeField] private GameObject panelCredits;
+    [Header("Screens")]
+    [SerializeField] GameObject pauseScreen;
+    [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject loseScreen;
 
-    [SerializeField] private GameObject panelHUD;
-    [SerializeField] private GameObject panelPause;
+    private bool isPaused = false;
+    private bool isGameEnded = false;
 
-    [SerializeField] private GameObject panelGoodEnd;
-    [SerializeField] private GameObject panelBadEnd;
-
-    private bool isPlaying = false;
+    private void Awake()
+    {
+        // all panels are closed
+        pauseScreen.SetActive(false);
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
+    }
 
     private void OnEnable()
     {
-        PlayerController.BadGameOver += OnBadEnd;
-        FallManager.GoodGameOver += OnGoodEnd;
+        FallManager.GoodGameOver += OnWin;
+        PlayerController.BadGameOver += OnLose;
     }
 
     private void OnDisable()
     {
-        PlayerController.BadGameOver -= OnBadEnd;
-        FallManager.GoodGameOver -= OnGoodEnd;
+        FallManager.GoodGameOver -= OnWin;
+        PlayerController.BadGameOver -= OnLose;
     }
 
-    private void Start()
-    {
-        ShowMainMenu();
-        Time.timeScale = 0f;
-    }
-
-    //  BUTTONS
-    public void Story()
-    {
-        panelStory.SetActive(true);
-        Time.timeScale = 0f;
-    }
-
-    public void Credits()
-    {
-        panelCredits.SetActive(true);
-        Time.timeScale = 0f;
-    }
+    //  PAUSE 
 
     public void Pause()
     {
-        if (!isPlaying) return;
+        if (isPaused || isGameEnded) return;
 
-        panelPause.SetActive(true);
+        isPaused = true;
         Time.timeScale = 0f;
+        pauseScreen.SetActive(true);
     }
 
     public void Resume()
     {
-        panelPause.SetActive(false);
+        if (!isPaused || isGameEnded) return;
+
+        isPaused = false;
         Time.timeScale = 1f;
+        pauseScreen.SetActive(false);
     }
+
+    //  GAME END 
+    private void OnWin()
+    {
+        if (isGameEnded) return;
+
+        isGameEnded = true;
+        Time.timeScale = 0f;
+
+        winScreen.SetActive(true);
+    }
+
+    private void OnLose()
+    {
+        if (isGameEnded) return;
+
+        isGameEnded = true;
+        Time.timeScale = 0f;
+
+        loseScreen.SetActive(true);
+    }
+
+    // NAVIGATION 
 
     public void RestartGame()
     {
-        Time.timeScale = 1f;
-
-        if (FallManager.Instance != null)
-        {
-            FallManager.Instance.ResetRun();
-        }
-
+        Time.timeScale = 0f;
         SceneManager.LoadScene("Level Design");
     }
 
-    public void Play()
+    public void GoToMainMenu()
     {
-        SceneManager.LoadScene("Level Design");
-    }
-
-    public void MainMenu()
-    {
-        panelStory.SetActive(false);
-        panelCredits.SetActive(false);
-        Time.timeScale = 0f;
-        ShowMainMenu();
-    }
-
-    // INTERNAL FLOW & keeping only one active panel at a time
-    private void StartRun()
-    {
-        isPlaying = true;
         Time.timeScale = 1f;
+        SceneManager.LoadScene("Main Menu");
     }
-
-    private void ShowMainMenu()
-    {
-        isPlaying = false;
-
-        Time.timeScale = 0f;
-
-        panelMainMenu.SetActive(true);
-        panelStory.SetActive(false);
-        panelCredits.SetActive(false);
-
-        panelHUD.SetActive(false);
-        panelPause.SetActive(false);
-        panelGoodEnd.SetActive(false);
-        panelBadEnd.SetActive(false);
-    }
-
-    private void OnGoodEnd()
-    {
-        isPlaying = false;
-
-        Time.timeScale = 0f;
-
-        panelHUD.SetActive(false);
-        panelPause.SetActive(false);
-        panelGoodEnd.SetActive(true);
-        panelBadEnd.SetActive(false);
-    }
-
-    private void OnBadEnd()
-    {
-        isPlaying = false;
-
-        Time.timeScale = 0f;
-
-        panelHUD.SetActive(false);
-        panelPause.SetActive(false);
-        panelGoodEnd.SetActive(false);
-        panelBadEnd.SetActive(true);
-    }
-
 }
