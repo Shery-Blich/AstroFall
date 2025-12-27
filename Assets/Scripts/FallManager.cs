@@ -48,7 +48,6 @@ public class FallManager : MonoBehaviour
     [SerializeField]
     public float Trash_Stage_Length = 3500.0f;
 
-    private Background_Controller[] backgroundControllers;
 
     public float FallDistance { get; private set; }
     private float timeSinceLastSpeedUpdate = 0.0f;
@@ -161,10 +160,6 @@ public class FallManager : MonoBehaviour
             currentFallSpeed = MaxSpeedForTextChange;
         }
 
-        foreach (Background_Controller BG in backgroundControllers)
-        {
-            BG.UpdateSpeed(currentFallSpeed);
-        }
     }
 
     private void UpdateDistance()

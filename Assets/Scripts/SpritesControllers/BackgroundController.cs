@@ -4,6 +4,9 @@ using UnityEngine.UIElements;
 
 public class BackgroundController : MonoBehaviour
 {
+    [SerializeField]
+    private float startSpeed = 1.0f;
+
     public Vector2 direction = new Vector2(0, +1); 
     private bool isScrolling = true;
 
@@ -23,7 +26,7 @@ public class BackgroundController : MonoBehaviour
     {
         if (!isScrolling) return;
 
-        transform.position += (Vector3)(direction.normalized * FallManager.Instance.GlobalSpeed * Time.deltaTime);
+        transform.position += (Vector3)(direction.normalized * FallManager.Instance.GlobalSpeed * Time.deltaTime*startSpeed);
     }
 
     private void StopScroll()
