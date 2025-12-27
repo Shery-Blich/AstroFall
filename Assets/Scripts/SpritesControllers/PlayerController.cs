@@ -2,11 +2,21 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
+
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private Collider2D playerColiider;
+
+    [SerializeField]
+    private float godModeDuration;
+
+    private bool isInGodMode;
     private enum MovementDirection
     {
         Idle,
@@ -166,12 +176,16 @@ public class PlayerController : MonoBehaviour
 
         print("Player Collided with " + collision.gameObject.name);
 
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") && !isInGodMode)
         {
             HandelBadGameOver();
         }
     }
 
+    public void StartGodMode()
+    {
+
+    }
     private void HandelBadGameOver()
     {
         print("Game Over Event Triggered - PlayerController");
@@ -227,8 +241,10 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PlaceholderTimer()
 
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(godModeDuration);
         animator.SetTrigger("PowerUpEnd");
+        isInGodMode = false;
+        playerColiider.enabled = true;
     }
 
     public void ActivatePowerUp()
@@ -236,6 +252,8 @@ public class PlayerController : MonoBehaviour
 
         if (animator != null)
         {
+            isInGodMode = true;
+            playerColiider.enabled = false;
             animator.SetTrigger("CollectNyanCat");
             StartCoroutine(PlaceholderTimer());
         }
