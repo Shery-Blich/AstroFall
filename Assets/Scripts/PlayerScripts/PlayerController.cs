@@ -4,18 +4,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private enum MovementDirection
-    {
-        Idle,
-        Left,
-        Right
-    }
-
+    [SerializeField]
+    PlayerAudioController playerAudioController;
     private MovementDirection playerMovementDir;
     private float tiltDuration = 0.0f;
     private float moveSpeed = 7.0f;
-
-
     public static event Action BadGameOver;
     public const float MAX_MOVEMENT_SPEED = 15.0f;
     private const float MIN_TITLT_FOR_MOVEMENT = 0.05f;
@@ -122,16 +115,15 @@ public class PlayerController : MonoBehaviour
 
     private void TitltPlayer(MovementDirection movementState)
     {
+        this.playerAudioController.UpdateTiltSound(movementState);
+
         switch (movementState)
         {
-            //TODO: Add sound effect for movement
             case MovementDirection.Right:
-                //SoundManager.Instance.PlaySFX(SFXTypeEnum.MovementSound);
                 transform.rotation = Quaternion.Euler(0, 0, -15);
                 break;
 
             case MovementDirection.Left:
-                //SoundManager.Instance.PlaySFX(SFXTypeEnum.MovementSound);
                 transform.rotation = Quaternion.Euler(0, 0, 15);
                 break;
 
