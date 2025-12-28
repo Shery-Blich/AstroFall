@@ -76,8 +76,11 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 0f;
+        isPaused = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level Design");
+        ScreenController.Instance.SetScreen();
+
     }
 
     public void GoToMainMenu()
