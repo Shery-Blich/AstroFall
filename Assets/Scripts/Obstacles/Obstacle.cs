@@ -20,17 +20,9 @@ public class Obstacle : MonoBehaviour
     protected float spawnYLocation = 0.35f;
 
     // TODO: Use Enable & Disable instead of start and destory | multiple classes -> look for them
-    /// For resetting - To have a reference to its starting position and rotation
-
-    private Vector3 startPosition;
-    private Quaternion startRotation;
-
 
     void Start()
     {
-        startPosition = transform.position;
-        startRotation = transform.rotation;
-
         StartObstacle();
         PlayerController.BadGameOver += OnGameOver;
         FallManager.GoodGameOver += OnGameOver;
@@ -40,6 +32,17 @@ public class Obstacle : MonoBehaviour
     {
         PlayerController.BadGameOver -= OnGameOver;
         FallManager.GoodGameOver -= OnGameOver;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Play sound only for one of the colliding objects to avoid duplicate sounds
+        // To do that only the object with the higher instance ID plays the sound
+        // TODO: find a better way to handle this
+        if (collision.gameObject.CompareTag("Obstacle") && collision.gameObject.GetInstanceID() > gameObject.GetInstanceID())
+        {
+            SoundManager.Instance.PlaySFX(SFXTypeEnum.ObstacleCollision);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -127,7 +130,5 @@ public class Obstacle : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-
-    // / IResettable implementation
 
 }
