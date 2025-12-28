@@ -7,6 +7,11 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] GameObject creditsScreen;
     [SerializeField] GameObject mainMenuScreen;
 
+    private void Start()
+    {
+        SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
+    }
+
     public void OnPlay()
     {
         SceneManager.LoadScene("Level Design");
