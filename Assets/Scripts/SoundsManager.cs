@@ -30,7 +30,7 @@ public class SoundManager : MonoBehaviour
     private Dictionary<MusicTypeEnum, AudioClip> musicSounds;
 
     // Task Management
-    private CancellationTokenSource _musicCts;
+    private CancellationTokenSource musicCancelletionToken;
 
     [SerializeField]
     public float fadeDuration = 1.0f;
@@ -69,8 +69,9 @@ public class SoundManager : MonoBehaviour
     // We start menu music on default
     public void Start()
     {
-        print("SoundManager: Starting up");
-        PlayMusic(MusicTypeEnum.MainMenuMusic);
+        print("SoundManager: Starting up, with Menu Music");
+        musicSource.clip = this.musicSounds[MusicTypeEnum.MainMenuMusic];
+        musicSource.Play();
     }
 
     public void OnEnable()
@@ -108,45 +109,45 @@ public class SoundManager : MonoBehaviour
         print("SoundManager: Playing SFX " + sfxType.ToString());
     }
 
-    //TODO: Make more readable
-    public async void PlayMusic(MusicTypeEnum musicType)
+    private bool IsMusicTransitionPossible(MusicTypeEnum musicType)
     {
         if(!musicSounds.ContainsKey(musicType))
         {
+            //TODO: Add exception?
             print("SoundManager: Music type " + musicType + " not found!");
+            return false;
+        }
+
+        if (musicSource.isPlaying && musicSource.clip == musicSounds[musicType])
+        {
+            print("SoundManager: Music " + musicType + " is already playing.");
+            return false;
+        }
+
+        return true;
+    }
+
+    public async void PlayMusic(MusicTypeEnum musicType)
+    {
+        if(!IsMusicTransitionPossible(musicType))
+        {
             return;
         }
 
         var sound = musicSounds[musicType];
 
-        if(musicSource.clip == null)
-        {
-            musicSource.clip = sound;
-            musicSource.loop = true;
-            musicSource.Play();
-            print("SoundManager: Playing music " + musicType.ToString());
-            return;
-        }
-
-        if (musicSource.isPlaying && musicSource.clip == sound)
-        {
-            print("SoundManager: Music " + musicType.ToString() + " is already playing.");
-
-            return;
-        }
-
         try
         {
-            print($"Transitioning from {musicSource.clip.name} to music {musicType.ToString()}");
-            _musicCts?.Cancel();
-            _musicCts?.Dispose();
-            _musicCts = new CancellationTokenSource();
-            await FadeTransitionAsync(sound, _musicCts.Token);
-            print("Transition Succesful");
+            print($"Transitioning from {musicSource.clip.name} to music {musicType}");
+            musicCancelletionToken?.Cancel();
+            musicCancelletionToken?.Dispose();
+            musicCancelletionToken = new CancellationTokenSource();
+            await FadeTransitionAsync(sound, musicCancelletionToken.Token);
+            print($"Transition Succesful to {musicType}");
         }
         catch (OperationCanceledException)
         {
-            print("Music transition cancelled.");
+            print("Music transition cancelled");
         }
         catch (Exception ex)
         {
