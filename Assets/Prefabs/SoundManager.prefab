@@ -304,21 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00204459c3d4689458757537f29dec44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  sfxSounds:
-  - name: MovementSound
-    clip: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  - name: GameOverSoundLose
-    clip: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  - name: GameOverSoundWin
-    clip: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  - name: ButtonClickSound
-    clip: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  - name: ObstcaleToObstacleCollisionSound
-    clip: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  musicSounds:
-  - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: 4513d3cf25e91a14eb64e620adf064ef, type: 3}
-  - name: GameMusic
-    clip: {fileID: 8300000, guid: 66b9273b79ab23347a6867d2325e0706, type: 3}
+  gameOver: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
+  gameWin: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 4513d3cf25e91a14eb64e620adf064ef, type: 3}
+  gameMusic: {fileID: 8300000, guid: 66b9273b79ab23347a6867d2325e0706, type: 3}
+  obstcaleCollision: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
+  playerfall: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
   musicSource: {fileID: 8485952442717349010}
   sfxSource: {fileID: 295163645881529522}

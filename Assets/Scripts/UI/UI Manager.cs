@@ -91,7 +91,6 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowMainMenu()
     {
-        SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
         isPlaying = false;
 
         Time.timeScale = 0f;

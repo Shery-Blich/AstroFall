@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum SFXTypeEnum
 {
-    GameOverSoundLose,
     GameOverSoundWin,
+    GameOverSoundLose,
+    ObstacleCollision,
+    PlayerFall,
 }
 
 public enum MusicTypeEnum
@@ -16,12 +19,48 @@ public enum MusicTypeEnum
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-    public Sound[] sfxSounds;
-    public Sound[] musicSounds;
-    //TODO: USE Dict instead of arrays
-    //public Dictionary<SFXTypeEnum, Sound> sfxSounds;
-    //public Dictionary<MusicTypeEnum, Sound> musicSounds;
+
+    [SerializeField]
+    public AudioClip gameOver,gameWin, mainMenuMusic, gameMusic, obstcaleCollision, playerfall;
     public AudioSource musicSource, sfxSource;
+
+    private Dictionary<SFXTypeEnum, AudioClip> sfxSounds;
+    private Dictionary<MusicTypeEnum, AudioClip> musicSounds;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            sfxSounds = new Dictionary<SFXTypeEnum, AudioClip>
+            {
+                { SFXTypeEnum.GameOverSoundWin, gameWin },
+                { SFXTypeEnum.GameOverSoundLose, gameOver },
+                { SFXTypeEnum.ObstacleCollision, obstcaleCollision },
+                { SFXTypeEnum.PlayerFall, playerfall },
+            };
+
+            musicSounds = new Dictionary<MusicTypeEnum, AudioClip>
+            {
+                { MusicTypeEnum.MainMenuMusic, mainMenuMusic },
+                { MusicTypeEnum.GameMusic, gameMusic },
+            };
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    // We start menu music on default
+    public void Start()
+    {
+        print("SoundManager: Starting up");
+        PlayMusic(MusicTypeEnum.MainMenuMusic);
+    }
 
     public void OnEnable()
     {
@@ -45,81 +84,40 @@ public class SoundManager : MonoBehaviour
        PlaySFX(SFXTypeEnum.GameOverSoundWin);
     }
 
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public void Start()
-    {
-        print("SoundManager: Playing Main Menu Music");
-        PlayMusic(MusicTypeEnum.MainMenuMusic);
-    }
 
     //TODO
     public void PlaySFX(SFXTypeEnum sfxType)
     {
-        var sound = Array.Find(sfxSounds, s => s.name == sfxType.ToString());
-        if (sound == null)
+        if(!sfxSounds.ContainsKey(sfxType))
         {
             print("SoundManager: SFX type " + sfxType + " not found!");
             return;
         }
 
-        if (sfxSource.isPlaying && sfxSource.clip == sound.clip)
-        {
-            print("SoundManager: SFX " + sfxType.ToString() + " is already playing.");
-            return;
-        }
-
-        sfxSource.PlayOneShot(sound.clip);
-
-
-        //if (!sfxSounds.ContainsKey(sfxType))
-        //{
-        //    Debug.Log("SoundManager: SFX type " + sfxType + " not found!");
-        //    return;
-        //}
-
-        //Sound sfxSound = sfxSounds[sfxType];
-        //sfxSource.PlayOneShot(sfxSound.clip);
+        sfxSource.PlayOneShot(sfxSounds[sfxType]);
+        print("SoundManager: Playing SFX " + sfxType.ToString());
     }
 
     public void PlayMusic(MusicTypeEnum musicType)
     {
-        var sound = Array.Find(musicSounds, s => s.name == musicType.ToString());
-        if (sound == null)
+        if(!musicSounds.ContainsKey(musicType))
         {
             print("SoundManager: Music type " + musicType + " not found!");
             return;
         }
 
-        if (musicSource.isPlaying && musicSource.clip == sound.clip)
+        var sound = musicSounds[musicType];
+
+        if (musicSource.isPlaying && musicSource.clip == sound)
         {
             print("SoundManager: Music " + musicType.ToString() + " is already playing.");
 
             return;
         }
 
-        musicSource.clip = sound.clip;
+        musicSource.clip = sound;
         musicSource.loop = true;
         musicSource.Play();
-        Debug.Log("SoundManager: Playing music " + musicType.ToString());
-        //if (!musicSounds.ContainsKey(musicType))
-        //{
-        //    Debug.Log("SoundManager: Music type " + musicType + " not found!");
-        //    return;
-        //}
-
-        //Sound musicSound = musicSounds[musicType];
-        //musicSource.Play();
+        print("SoundManager: Playing music " + musicType.ToString());
     }
 }
