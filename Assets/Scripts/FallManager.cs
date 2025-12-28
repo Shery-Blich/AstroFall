@@ -74,6 +74,7 @@ public class FallManager : MonoBehaviour
     {
         currentFallSpeed = StartFallSpeedForText;
         FallDistance = 0;
+        SoundManager.Instance.PlayMusic(MusicTypeEnum.GameMusic);
     }
 
     private void OnEnable()

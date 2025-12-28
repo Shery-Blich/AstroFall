@@ -1,14 +1,10 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum SFXTypeEnum
 {
-    MovementSound,
     GameOverSoundLose,
     GameOverSoundWin,
-    ButtonClickSound,
-    ObstcaleToObstacleCollisionSound,
 }
 
 public enum MusicTypeEnum
@@ -74,11 +70,16 @@ public class SoundManager : MonoBehaviour
         var sound = Array.Find(sfxSounds, s => s.name == sfxType.ToString());
         if (sound == null)
         {
-            Debug.LogWarning("SoundManager: SFX type " + sfxType + " not found!");
+            print("SoundManager: SFX type " + sfxType + " not found!");
             return;
         }
 
-        sfxSource.clip = sound.clip;
+        if (sfxSource.isPlaying && sfxSource.clip == sound.clip)
+        {
+            print("SoundManager: SFX " + sfxType.ToString() + " is already playing.");
+            return;
+        }
+
         sfxSource.PlayOneShot(sound.clip);
 
 
@@ -97,12 +98,19 @@ public class SoundManager : MonoBehaviour
         var sound = Array.Find(musicSounds, s => s.name == musicType.ToString());
         if (sound == null)
         {
-            Debug.LogWarning("SoundManager: Music type " + musicType + " not found!");
+            print("SoundManager: Music type " + musicType + " not found!");
+            return;
+        }
+
+        if (musicSource.isPlaying && musicSource.clip == sound.clip)
+        {
+            print("SoundManager: Music " + musicType.ToString() + " is already playing.");
+
             return;
         }
 
         musicSource.clip = sound.clip;
-        musicSource.resource = sound.clip;
+        musicSource.loop = true;
         musicSource.Play();
         Debug.Log("SoundManager: Playing music " + musicType.ToString());
         //if (!musicSounds.ContainsKey(musicType))

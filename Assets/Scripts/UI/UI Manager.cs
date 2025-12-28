@@ -66,11 +66,6 @@ public class GameUIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        if (FallManager.Instance != null)
-        {
-            FallManager.Instance.ResetRun();
-        }
-
         SceneManager.LoadScene("Level Design");
     }
 
@@ -96,6 +91,7 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowMainMenu()
     {
+        SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
         isPlaying = false;
 
         Time.timeScale = 0f;
