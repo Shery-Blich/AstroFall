@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ScreenController : MonoBehaviour
 {
-    [SerializeField]
     public Camera MainCam;
 
     [SerializeField]
@@ -31,7 +30,7 @@ public class ScreenController : MonoBehaviour
         else
         {
             // If another instance exists, it means the new one is a duplicate, so we destroy it
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 
@@ -51,6 +50,8 @@ public class ScreenController : MonoBehaviour
 
     public void SetCamera()
     {
+        Camera cam = Camera.main;
+
         if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
         {
             MainCam.orthographicSize = portraitCameraSize;
