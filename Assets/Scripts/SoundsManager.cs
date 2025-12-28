@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public enum SFXTypeEnum
@@ -26,6 +28,15 @@ public class SoundManager : MonoBehaviour
 
     private Dictionary<SFXTypeEnum, AudioClip> sfxSounds;
     private Dictionary<MusicTypeEnum, AudioClip> musicSounds;
+
+    // Task Management
+    private CancellationTokenSource _musicCts;
+
+    [SerializeField]
+    public float fadeDuration = 1.0f;
+
+    [SerializeField]
+    public float OriginalVolume = 1f;
 
     public void Awake()
     {
@@ -85,7 +96,6 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    //TODO
     public void PlaySFX(SFXTypeEnum sfxType)
     {
         if(!sfxSounds.ContainsKey(sfxType))
@@ -98,7 +108,8 @@ public class SoundManager : MonoBehaviour
         print("SoundManager: Playing SFX " + sfxType.ToString());
     }
 
-    public void PlayMusic(MusicTypeEnum musicType)
+    //TODO: Make more readable
+    public async void PlayMusic(MusicTypeEnum musicType)
     {
         if(!musicSounds.ContainsKey(musicType))
         {
@@ -108,6 +119,15 @@ public class SoundManager : MonoBehaviour
 
         var sound = musicSounds[musicType];
 
+        if(musicSource.clip == null)
+        {
+            musicSource.clip = sound;
+            musicSource.loop = true;
+            musicSource.Play();
+            print("SoundManager: Playing music " + musicType.ToString());
+            return;
+        }
+
         if (musicSource.isPlaying && musicSource.clip == sound)
         {
             print("SoundManager: Music " + musicType.ToString() + " is already playing.");
@@ -115,9 +135,48 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        musicSource.clip = sound;
-        musicSource.loop = true;
+        try
+        {
+            print($"Transitioning from {musicSource.clip.name} to music {musicType.ToString()}");
+            _musicCts?.Cancel();
+            _musicCts?.Dispose();
+            _musicCts = new CancellationTokenSource();
+            await FadeTransitionAsync(sound, _musicCts.Token);
+            print("Transition Succesful");
+        }
+        catch (OperationCanceledException)
+        {
+            print("Music transition cancelled.");
+        }
+        catch (Exception ex)
+        {
+            print($"Error during music transition: {ex.Message}");
+        }
+    }
+
+    private async Task FadeTransitionAsync(AudioClip newClip, CancellationToken token)
+    {
+        if (musicSource.isPlaying)
+        {
+            while (musicSource.volume > 0)
+            {
+                token.ThrowIfCancellationRequested();
+                musicSource.volume -= OriginalVolume * Time.deltaTime / fadeDuration;
+                await Task.Yield();
+            }
+        }
+
+        musicSource.Stop();
+        musicSource.clip = newClip;
         musicSource.Play();
-        print("SoundManager: Playing music " + musicType.ToString());
+
+        while (musicSource.volume < OriginalVolume)
+        {
+            token.ThrowIfCancellationRequested();
+            musicSource.volume += OriginalVolume * Time.deltaTime / fadeDuration;
+            await Task.Yield();
+        }
+
+        musicSource.volume = OriginalVolume;
     }
 }

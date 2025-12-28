@@ -1949,6 +1949,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
+      propertyPath: playerfall
+      value: 
+      objectReference: {fileID: 8300000, guid: bd6da4e5542c4214789d8ab9b4e33110, type: 3}
+    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
+      propertyPath: fadeDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
+      propertyPath: obstcaleCollision
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533729946665929879, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
+      propertyPath: m_Name
+      value: MusicSource
+      objectReference: {fileID: 0}
     - target: {fileID: 7738296214511247634, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
       propertyPath: m_Name
       value: SoundManager
