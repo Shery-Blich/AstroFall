@@ -4,13 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private enum MovementDirection
-    {
-        Idle,
-        Left,
-        Right
-    }
-
+    [SerializeField]
+    PlayerAudioController playerAudioController;
     private MovementDirection playerMovementDir;
     private float tiltDuration = 0.0f;
     private float moveSpeed = 7.0f;
@@ -120,15 +115,15 @@ public class PlayerController : MonoBehaviour
 
     private void TitltPlayer(MovementDirection movementState)
     {
+        this.playerAudioController.UpdateTiltSound(movementState);
+
         switch (movementState)
         {
             case MovementDirection.Right:
-                //SoundManager.Instance.PlaySFX(SFXTypeEnum.PlayerFall);
                 transform.rotation = Quaternion.Euler(0, 0, -15);
                 break;
 
             case MovementDirection.Left:
-                //SoundManager.Instance.PlaySFX(SFXTypeEnum.PlayerFall);
                 transform.rotation = Quaternion.Euler(0, 0, 15);
                 break;
 

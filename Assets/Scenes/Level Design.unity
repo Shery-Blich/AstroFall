@@ -546,7 +546,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403222749}
-  - component: {fileID: 403222748}
   - component: {fileID: 403222747}
   m_Layer: 0
   m_Name: Obstacle manager
@@ -579,21 +578,6 @@ MonoBehaviour:
   - {fileID: 948134329}
   CurrentObstacleStage: 0
   ObstacleCountInPortrait: 4
---- !u!114 &403222748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403222746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
-  asteroidScript: {fileID: 0}
-  planeScript: {fileID: 0}
-  trashScript: {fileID: 0}
 --- !u!4 &403222749
 Transform:
   m_ObjectHideFlags: 0
