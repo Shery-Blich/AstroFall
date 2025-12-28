@@ -34,7 +34,6 @@ public class ObstaclesManager : MonoBehaviour
         {
             Instance = this;
             // Persist the same instance across scenes
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
