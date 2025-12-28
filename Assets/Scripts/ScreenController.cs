@@ -30,7 +30,7 @@ public class ScreenController : MonoBehaviour
        else
         {
             // If another instance exists, it means the new one is a duplicate, so we destroy it
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 
