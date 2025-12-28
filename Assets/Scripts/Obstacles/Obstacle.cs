@@ -42,6 +42,14 @@ public class Obstacle : MonoBehaviour
         FallManager.GoodGameOver -= OnGameOver;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            SoundManager.Instance.PlaySFX(SFXTypeEnum.ObstcaleToObstacleCollisionSound);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PathPaver")
