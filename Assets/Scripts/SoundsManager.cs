@@ -24,19 +24,19 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField]
     public AudioClip gameOver,gameWin, mainMenuMusic, gameMusic, obstcaleCollision, playerfall;
+
+    [SerializeField]
     public AudioSource musicSource, sfxSource;
-
-    private Dictionary<SFXTypeEnum, AudioClip> sfxSounds;
-    private Dictionary<MusicTypeEnum, AudioClip> musicSounds;
-
-    // Task Management
-    private CancellationTokenSource musicCancelletionToken;
 
     [SerializeField]
     public float fadeDuration = 1.0f;
 
     [SerializeField]
     public float OriginalVolume = 1f;
+
+    private Dictionary<SFXTypeEnum, AudioClip> sfxSounds;
+    private Dictionary<MusicTypeEnum, AudioClip> musicSounds;
+    private CancellationTokenSource musicCancelletionToken;
 
     public void Awake()
     {
