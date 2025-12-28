@@ -20,10 +20,8 @@ public class PlayerAudioController : MonoBehaviour
         tiltSource.Play();
     }
 
-    // Call this from your PlayerController inside TiltPlayer
     public void UpdateTiltSound(MovementDirection state)
     {
-        // If moving Left or Right, we want sound. Otherwise, silence.
         if (state == MovementDirection.Left || state == MovementDirection.Right)
         {
             targetVolume = maxVolume;
@@ -36,7 +34,6 @@ public class PlayerAudioController : MonoBehaviour
 
     void Update()
     {
-        // Smoothly interpolate the volume to avoid "popping" sounds
         tiltSource.volume = Mathf.MoveTowards(tiltSource.volume, targetVolume, Time.deltaTime * fadeSpeed);
     }
 }
