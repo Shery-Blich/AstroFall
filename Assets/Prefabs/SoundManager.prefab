@@ -308,7 +308,9 @@ MonoBehaviour:
   gameWin: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: 4513d3cf25e91a14eb64e620adf064ef, type: 3}
   gameMusic: {fileID: 8300000, guid: 66b9273b79ab23347a6867d2325e0706, type: 3}
-  obstcaleCollision: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  playerfall: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
+  obstcaleCollision: {fileID: 0}
+  playerfall: {fileID: 8300000, guid: bd6da4e5542c4214789d8ab9b4e33110, type: 3}
   musicSource: {fileID: 8485952442717349010}
   sfxSource: {fileID: 295163645881529522}
+  fadeDuration: 0.5
+  OriginalVolume: 1

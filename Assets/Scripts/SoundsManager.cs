@@ -65,15 +65,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-
-    // We start menu music on default
-    public void Start()
-    {
-        print("SoundManager: Starting up, with Menu Music");
-        musicSource.clip = this.musicSounds[MusicTypeEnum.MainMenuMusic];
-        musicSource.Play();
-    }
-
     public void OnEnable()
     {
         PlayerController.BadGameOver += PlayGameOverSound;
@@ -118,12 +109,6 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        if (musicSource.isPlaying && musicSource.clip == musicSounds[musicType])
-        {
-            print("SoundManager: Music " + musicType + " is already playing.");
-            return false;
-        }
-
         return true;
     }
 
@@ -134,11 +119,21 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
+        if(musicSource.clip == null)
+        {
+            musicSource.clip = musicSounds[musicType];
+            musicSource.volume = OriginalVolume;
+            musicSource.Play();
+            print($"SoundManager: Starting up with Music {musicType}");
+
+            return;
+        }
+
         var sound = musicSounds[musicType];
 
         try
         {
-            print($"Transitioning from {musicSource.clip.name} to music {musicType}");
+            print($"Transitioning from {musicSource.clip?.name ?? "No music"} to music {musicType}");
             musicCancelletionToken?.Cancel();
             musicCancelletionToken?.Dispose();
             musicCancelletionToken = new CancellationTokenSource();
