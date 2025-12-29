@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         this.gameObject.SetActive(true);
-        FallManager.GoodGameOver += HandelGoodGameOver;
 
         // We need to enable the accelerometer device explicitly for the APK to work on mobile
         if (Accelerometer.current != null)
@@ -29,10 +28,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        BadGameOver -= HandelBadGameOver;
+        FallManager.GoodGameOver += HandelGoodGameOver;
+        BadGameOver += HandelBadGameOver;
+        ScreenController.ScreenOrientationUpdate += HandleOrientationChange;
+    }
+
+    private void OnDisable()
+    {
         FallManager.GoodGameOver -= HandelGoodGameOver;
+        BadGameOver -= HandelBadGameOver;
+        ScreenController.ScreenOrientationUpdate -= HandleOrientationChange;
     }
 
     // Update is called once per frame, to make tilting smooth we use Update to make sure tilting happenes at relevant frame(no delay or jitter)
@@ -162,6 +169,17 @@ public class PlayerController : MonoBehaviour
         print("Game Over Event Triggered - PlayerController, Player won!");
     }
 
+    private void HandleOrientationChange()
+    {
+        // Adjust player position based on orientation
+        // Because camera zooms in and out based on orientation we need to adjust player position to fit the screen
+        // TODO: Expand the art so we don't need to adjust player position on orientation change
+        if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
+        {
+            var newYPos = transform.position.y - (ScreenController.Instance.landscapeCameraSize / 1.5f);
+            transform.position = new Vector2(transform.position.x, newYPos);
+        }
+    }
 
     // We use Keyboard for testing purposes, making it easier & faster to test for collisions and other gameplay elements
     // On general this is a mobile only game, keyboard input allows you for movement that is not allowed on mobile(like vertical movement)

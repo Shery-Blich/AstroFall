@@ -6,10 +6,11 @@ public class ScreenController : MonoBehaviour
     public Camera MainCam;
 
     [SerializeField]
-    private float portraitCameraSize = 6;
+    public float portraitCameraSize = 6;
 
     [SerializeField]
-    private float landscapeCameraSize = 2.8f;
+    public float landscapeCameraSize = 2.8f;
+
     public static ScreenController Instance { get; private set; }
 
     public Vector2 ScreenBounds { get; private set; }
