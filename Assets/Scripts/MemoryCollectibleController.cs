@@ -89,7 +89,8 @@ public class MemoryCollectibleController : MonoBehaviour
 
     private void CollectedByPlayer()
     {
-        // Add SFX and particles here
+        // Add particles here
+        SoundManager.Instance.PlaySFX(SFXTypeEnum.CollectiblePicked);
         MemoriesManager.Instance.CollectedMemories++;
         this.DeactivateObject();
     }

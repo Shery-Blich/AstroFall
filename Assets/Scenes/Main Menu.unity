@@ -2098,10 +2098,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 295163645881529522, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: m_Volume
-      value: 0.55
-      objectReference: {fileID: 0}
     - target: {fileID: 1404119480229471650, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.55551
@@ -2143,33 +2139,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: gameWin
+      propertyPath: collectiblePicked
       value: 
-      objectReference: {fileID: 8300000, guid: 7b873606113a8914ca348ac4f6d4804d, type: 3}
-    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: gameOver
-      value: 
-      objectReference: {fileID: 8300000, guid: ba9e9daa649e1f947b1df9965c91cb11, type: 3}
-    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: gameMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: 0d54a3664acf5e34a96f70da38124bb2, type: 3}
-    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: playerfall
-      value: 
-      objectReference: {fileID: 8300000, guid: 5eb9ec6f7edd7c7488e49d327819fbc2, type: 3}
-    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: fadeDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: mainMenuMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: dc41b71a6b4910a4e825e8648ce230ff, type: 3}
-    - target: {fileID: 3298012962368694283, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
-      propertyPath: obstcaleCollision
-      value: 
-      objectReference: {fileID: 8300000, guid: 5f8c485572e756c499c4fa16777fc2f9, type: 3}
+      objectReference: {fileID: 8300000, guid: 98a2e37f0758eb846979ed5fa6658701, type: 3}
     - target: {fileID: 7738296214511247634, guid: ba304782fbe02924ca032d73402b8a19, type: 3}
       propertyPath: m_Name
       value: SoundManager
