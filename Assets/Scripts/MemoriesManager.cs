@@ -5,6 +5,7 @@ using UnityEngine;
 public class MemoriesManager : MonoBehaviour
 {
     public static MemoriesManager Instance;
+    public int CollectedMemories;
 
     [SerializeField]
     public MemoryCollectibleController[] memoryCollectibleControllers;
@@ -21,12 +22,7 @@ public class MemoriesManager : MonoBehaviour
     [SerializeField]
     private float currSpawnDelayTimeLapse = 0.0f;
 
-    public Queue<MemoryCollectibleController> InactiveMemories { get; private set; }
-
-    // SerializeField to show in inspector for debugging purposes
-    // Remove once UI for memories is implemented
-    [SerializeField]
-    public int CollectedMemories;
+    private Queue<MemoryCollectibleController> inactiveMemories;
 
     private void Awake()
     {
@@ -35,7 +31,7 @@ public class MemoriesManager : MonoBehaviour
             Instance = this;
         }
 
-        InactiveMemories = new Queue<MemoryCollectibleController>(memoryCollectibleControllers);
+        inactiveMemories = new Queue<MemoryCollectibleController>(memoryCollectibleControllers);
     }
 
     void Start()
@@ -50,24 +46,24 @@ public class MemoriesManager : MonoBehaviour
         currSpawnDelayTimeLapse += Time.deltaTime;
         if (currSpawnDelay < currSpawnDelayTimeLapse)
         {
-            if (!InactiveMemories.Any())
+            if (!inactiveMemories.Any())
             {
                 return;
             }
 
-            InactiveMemories.Dequeue().RespawnCoin();
+            inactiveMemories.Dequeue().RespawnCoin();
             currSpawnDelay = Random.Range(MinSpawnDelay, MaxSpawnDelay);
             currSpawnDelayTimeLapse = 0.0f;
         }
     }
 
-    private void QueueMemoryForRespawn(MemoryCollectibleController memory)
+    public void QueueMemoryForRespawn(MemoryCollectibleController memory)
     {
-        if (InactiveMemories.Count == memoryCollectibleControllers.Length)
+        if (inactiveMemories.Count == memoryCollectibleControllers.Length)
         {
             return;
         }
 
-        this.InactiveMemories.Enqueue(memory);
+        this.inactiveMemories.Enqueue(memory);
     }
 }

@@ -40,9 +40,6 @@ public class FallManager : MonoBehaviour
     public float MaxSpeedForTextChange = 2f;
 
     [SerializeField]
-    public TextMeshProUGUI distanceToFallText;
-
-    [SerializeField]
     public float Asteroid_Stage_Length= 4000.0f;
 
     [SerializeField]
@@ -108,6 +105,11 @@ public class FallManager : MonoBehaviour
         }
     }
 
+    public int GetDistanceToEarth()
+    {
+        return Mathf.RoundToInt(START_FALL_HEIGHT - FallDistance);
+    }
+
     // Change obstacle types based on how much has the player fallen
     // Asteroids -> Trash -> Planes, each stage has a fixed length,
     // for the switch we check the fall distance against the cumulative lengths of each stage
@@ -162,7 +164,6 @@ public class FallManager : MonoBehaviour
     private void UpdateDistance()
     {
         FallDistance += currentFallSpeed;
-        distanceToFallText.text = $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - FallDistance)} m\n{CalcObstacleType()} Stage";
         
         if(FallDistance >= START_FALL_HEIGHT)
         {
@@ -174,13 +175,11 @@ public class FallManager : MonoBehaviour
     {
         currentFallSpeed = 0;
         isGameOver = true;
-        distanceToFallText.text = "You have landed!";
     }
 
     private void OnBadGameOver()
     {
         currentFallSpeed = 0;
         isGameOver = true;
-        distanceToFallText.text = "Failed to reach earth!";
     }
 }

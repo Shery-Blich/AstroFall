@@ -1482,7 +1482,6 @@ MonoBehaviour:
   StartFallSpeedForText: 1
   FallAccelerationForText: 0.1
   MaxSpeedForTextChange: 2
-  distanceToFallText: {fileID: 389967964}
   Asteroid_Stage_Length: 4000
   Trash_Stage_Length: 3500
 --- !u!4 &999386136
@@ -1637,6 +1636,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051120853}
   m_CullTransparentMesh: 1
+--- !u!1 &1140607745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1140607747}
+  - component: {fileID: 1140607746}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1140607746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140607745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3587087ba04bb34bab9e1172e51e0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ScoreText: {fileID: 389967964}
+--- !u!4 &1140607747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140607745}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 900.17395, y: 2814.259, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1173933797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,54 +1754,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_text
-      value: 'Distance To Earth: 10,160'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 7bb02f5e3ca3a9e4caacb46d8d93890b, type: 2}
-    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1419893999792239511, guid: 7bb02f5e3ca3a9e4caacb46d8d93890b, type: 2}
-    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 781.8715
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 253.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 997.9143
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944335432821977906, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -473
-      objectReference: {fileID: 0}
     - target: {fileID: 5628839817804507638, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2128,10 +2124,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8745709734147941252, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8745709734147941252, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3755,3 +3747,4 @@ SceneRoots:
   - {fileID: 47751069}
   - {fileID: 999386136}
   - {fileID: 6253754166708415789}
+  - {fileID: 1140607747}

@@ -90,14 +90,19 @@ public class MemoryCollectibleController : MonoBehaviour
     private void CollectedByPlayer()
     {
         // Add particles here
-        SoundManager.Instance.PlaySFX(SFXTypeEnum.CollectiblePicked);
         MemoriesManager.Instance.CollectedMemories++;
         this.DeactivateObject();
+        SoundManager.Instance.PlaySFX(SFXTypeEnum.CollectiblePicked);
     }
 
     public void DeactivateObject()
     {
-        MemoriesManager.Instance.InactiveMemories.Enqueue(this);
+        if (!this.gameObject.activeSelf)
+        {
+            return;
+        }
+
+        MemoriesManager.Instance.QueueMemoryForRespawn(this);
         this.gameObject.SetActive(false);
     }
 }
