@@ -174,7 +174,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.55
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -304,13 +304,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00204459c3d4689458757537f29dec44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  gameOver: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  gameWin: {fileID: 8300000, guid: 1983bd586165e0c4a90b683ca4452d74, type: 3}
-  mainMenuMusic: {fileID: 8300000, guid: 4513d3cf25e91a14eb64e620adf064ef, type: 3}
-  gameMusic: {fileID: 8300000, guid: 66b9273b79ab23347a6867d2325e0706, type: 3}
-  obstcaleCollision: {fileID: 0}
-  playerfall: {fileID: 8300000, guid: bd6da4e5542c4214789d8ab9b4e33110, type: 3}
+  gameOver: {fileID: 8300000, guid: ba9e9daa649e1f947b1df9965c91cb11, type: 3}
+  gameWin: {fileID: 8300000, guid: 7b873606113a8914ca348ac4f6d4804d, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: dc41b71a6b4910a4e825e8648ce230ff, type: 3}
+  gameMusic: {fileID: 8300000, guid: 0d54a3664acf5e34a96f70da38124bb2, type: 3}
+  obstcaleCollision: {fileID: 8300000, guid: 5f8c485572e756c499c4fa16777fc2f9, type: 3}
+  playerfall: {fileID: 8300000, guid: 5eb9ec6f7edd7c7488e49d327819fbc2, type: 3}
+  collectiblePicked: {fileID: 8300000, guid: 98a2e37f0758eb846979ed5fa6658701, type: 3}
   musicSource: {fileID: 8485952442717349010}
   sfxSource: {fileID: 295163645881529522}
-  fadeDuration: 0.5
+  fadeDuration: 0.1
   OriginalVolume: 1

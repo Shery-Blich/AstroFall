@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Memories
+    uniqueID: 1068709423
+    locked: 0
   - name: Game
     uniqueID: 3337950657
     locked: 0

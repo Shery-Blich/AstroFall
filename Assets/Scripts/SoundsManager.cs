@@ -10,6 +10,7 @@ public enum SFXTypeEnum
     GameOverSoundLose,
     ObstacleCollision,
     PlayerFall,
+    CollectiblePicked,
 }
 
 public enum MusicTypeEnum
@@ -29,6 +30,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip gameMusic;
     [SerializeField] public AudioClip obstcaleCollision;
     [SerializeField] public AudioClip playerfall;
+    [SerializeField] public AudioClip collectiblePicked;
+
     [Header("Audio Sources")]
     [SerializeField] public AudioSource musicSource;
     [SerializeField] public AudioSource sfxSource;
@@ -53,6 +56,7 @@ public class SoundManager : MonoBehaviour
                 { SFXTypeEnum.GameOverSoundLose, gameOver },
                 { SFXTypeEnum.ObstacleCollision, obstcaleCollision },
                 { SFXTypeEnum.PlayerFall, playerfall },
+                { SFXTypeEnum.CollectiblePicked, collectiblePicked },
             };
 
             musicSounds = new Dictionary<MusicTypeEnum, AudioClip>
