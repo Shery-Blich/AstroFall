@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -29,6 +30,30 @@ public class UIManager : MonoBehaviour
     {
         FallManager.GoodGameOver -= OnWin;
         PlayerController.BadGameOver -= OnLose;
+    }
+
+    //TODO: Talk with course leads about the best practice here
+    private void Update()
+    {
+        // This works on both keyboard and mobile back button
+        // as Unity maps the mobile back button to the Escape key
+        if (Keyboard.current?.escapeKey.wasPressedThisFrame == true)
+        {
+            HandleBackPressed();
+        }
+    }
+
+    private void HandleBackPressed()
+    {
+        print("Back pressed, toggling pause menu");
+        if (isPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
     }
 
     //  PAUSE 
