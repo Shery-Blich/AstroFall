@@ -22,26 +22,31 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField]
-    public AudioClip gameOver,gameWin, mainMenuMusic, gameMusic, obstcaleCollision, playerfall;
+    [Header("Audio Clips")]
+    [SerializeField] public AudioClip gameOver;
+    [SerializeField] public AudioClip gameWin;
+    [SerializeField] public AudioClip mainMenuMusic;
+    [SerializeField] public AudioClip gameMusic;
+    [SerializeField] public AudioClip obstcaleCollision;
+    [SerializeField] public AudioClip playerfall;
+    [Header("Audio Sources")]
+    [SerializeField] public AudioSource musicSource;
+    [SerializeField] public AudioSource sfxSource;
 
-    [SerializeField]
-    public AudioSource musicSource, sfxSource;
-
-    [SerializeField]
-    public float fadeDuration = 1.0f;
-
-    [SerializeField]
-    public float OriginalVolume = 1f;
-
+    [Header("Music Settings")]
+    [SerializeField] public float fadeDuration = 1.0f;
+    [SerializeField] public float OriginalVolume = 1f;
     private Dictionary<SFXTypeEnum, AudioClip> sfxSounds;
     private Dictionary<MusicTypeEnum, AudioClip> musicSounds;
     private CancellationTokenSource musicCancelletionToken;
 
-    public void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
             sfxSounds = new Dictionary<SFXTypeEnum, AudioClip>
             {
                 { SFXTypeEnum.GameOverSoundWin, gameWin },
@@ -55,9 +60,6 @@ public class SoundManager : MonoBehaviour
                 { MusicTypeEnum.MainMenuMusic, mainMenuMusic },
                 { MusicTypeEnum.GameMusic, gameMusic },
             };
-
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -65,17 +67,19 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         PlayerController.BadGameOver += PlayGameOverSound;
         FallManager.GoodGameOver += PlayWinSound;
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         PlayerController.BadGameOver -= PlayGameOverSound;
         FallManager.GoodGameOver -= PlayWinSound;
     }
+
+    // GAME EVENTS
 
     private void PlayGameOverSound()
     {
@@ -84,28 +88,51 @@ public class SoundManager : MonoBehaviour
 
     private void PlayWinSound()
     {
-       PlaySFX(SFXTypeEnum.GameOverSoundWin);
+        PlaySFX(SFXTypeEnum.GameOverSoundWin);
     }
 
+    // SFX
 
     public void PlaySFX(SFXTypeEnum sfxType)
     {
-        if(!sfxSounds.ContainsKey(sfxType))
+        if (!sfxSounds.ContainsKey(sfxType))
         {
-            print("SoundManager: SFX type " + sfxType + " not found!");
+            Debug.LogWarning($"SoundManager: SFX type {sfxType} not found!");
             return;
         }
 
         sfxSource.PlayOneShot(sfxSounds[sfxType]);
-        print("SoundManager: Playing SFX " + sfxType.ToString());
+        Debug.Log($"SoundManager: Playing SFX {sfxType}");
     }
+
+    /// Plays a sound effect ONLY if the given transform is visible on screen.
+    public void PlaySFXIfVisible(SFXTypeEnum sfxType, Transform sourceTransform)
+    {
+        if (!IsTransformVisible(sourceTransform))
+            return;
+
+        PlaySFX(sfxType);
+    }
+
+    private bool IsTransformVisible(Transform t)
+    {
+        if (t == null || Camera.main == null)
+            return false;
+
+        Vector3 viewportPos = Camera.main.WorldToViewportPoint(t.position);
+
+        return viewportPos.z > 0 &&
+               viewportPos.x >= 0f && viewportPos.x <= 1f &&
+               viewportPos.y >= 0f && viewportPos.y <= 1f;
+    }
+
+    // MUSIC
 
     private bool IsMusicTransitionPossible(MusicTypeEnum musicType)
     {
-        if(!musicSounds.ContainsKey(musicType))
+        if (!musicSounds.ContainsKey(musicType))
         {
-            //TODO: Add exception?
-            print("SoundManager: Music type " + musicType + " not found!");
+            Debug.LogWarning($"SoundManager: Music type {musicType} not found!");
             return false;
         }
 
@@ -114,39 +141,31 @@ public class SoundManager : MonoBehaviour
 
     public async void PlayMusic(MusicTypeEnum musicType)
     {
-        if(!IsMusicTransitionPossible(musicType))
-        {
+        if (!IsMusicTransitionPossible(musicType))
             return;
-        }
-
-        if(musicSource.clip == null)
+        if (musicSource.clip == null)
         {
             musicSource.clip = musicSounds[musicType];
             musicSource.volume = OriginalVolume;
             musicSource.Play();
-            print($"SoundManager: Starting up with Music {musicType}");
-
+            Debug.Log($"SoundManager: Starting music {musicType}");
             return;
         }
-
-        var sound = musicSounds[musicType];
-
         try
         {
-            print($"Transitioning from {musicSource.clip?.name ?? "No music"} to music {musicType}");
             musicCancelletionToken?.Cancel();
             musicCancelletionToken?.Dispose();
             musicCancelletionToken = new CancellationTokenSource();
-            await FadeTransitionAsync(sound, musicCancelletionToken.Token);
-            print($"Transition Succesful to {musicType}");
+
+            await FadeTransitionAsync(musicSounds[musicType], musicCancelletionToken.Token);
         }
         catch (OperationCanceledException)
         {
-            print("Music transition cancelled");
+            Debug.Log("SoundManager: Music transition cancelled");
         }
         catch (Exception ex)
         {
-            print($"Error during music transition: {ex.Message}");
+            Debug.LogError($"SoundManager: Music transition error - {ex.Message}");
         }
     }
 
