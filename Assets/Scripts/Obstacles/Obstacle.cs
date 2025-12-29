@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour
     protected Rigidbody2D rb;
 
     [SerializeField]
-    public float MaxSizeProtrait = 3.0f;
+    public float MaxSizeProtrait = 2.5f;
 
     [SerializeField]
     public float MinSizeProtrait = 1.0f;

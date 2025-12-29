@@ -439,17 +439,6 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 4557739099219703109, guid: 27633043fb019c245ba5e0b8ad63d3e3, type: 3}
   m_PrefabInstance: {fileID: 1691978547}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &279431486 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2057376924584349675, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1 &359057008
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,62 +526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!1 &403222746
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 403222749}
-  - component: {fileID: 403222747}
-  m_Layer: 0
-  m_Name: Obstacle manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &403222747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403222746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576443d046969cc438ecddf47a1ac66e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstaclesManager
-  obstacleControllers:
-  - {fileID: 1344316381}
-  - {fileID: 761911983}
-  - {fileID: 1492819774}
-  - {fileID: 826912728}
-  - {fileID: 1346609684}
-  - {fileID: 1563301420}
-  - {fileID: 523639770}
-  - {fileID: 279431486}
-  - {fileID: 948134329}
-  CurrentObstacleStage: 0
-  ObstacleCountInPortrait: 4
---- !u!4 &403222749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403222746}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.91342, y: 1.11828, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &498894492
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,17 +813,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514911272}
   m_CullTransparentMesh: 1
---- !u!114 &523639770 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3262928221754741906, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1 &525821388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,33 +1161,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734213545}
   m_CullTransparentMesh: 1
---- !u!114 &761911983 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1566281553854086040, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!20 &818267300 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2452593479445485814, guid: 2d512446eab84cf4ba8a7e68cfb7b4ad, type: 3}
   m_PrefabInstance: {fileID: 3713737479697920199}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &826912728 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9038234047077020215, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1001 &840706706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,9 +1219,7 @@ PrefabInstance:
       value: Obstacles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8335718461482584589, guid: fc8d95a9763732340959418013ae7059, type: 3}
-    - {fileID: 5973610587733715657, guid: fc8d95a9763732340959418013ae7059, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc8d95a9763732340959418013ae7059, type: 3}
@@ -1532,17 +1430,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892370722}
   m_CullTransparentMesh: 1
---- !u!114 &948134329 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4828000336341335537, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1 &999386134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,28 +1900,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299233523}
   m_CullTransparentMesh: 1
---- !u!114 &1344316381 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1476546444727419204, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
---- !u!114 &1346609684 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1536268077375516698, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1 &1351420275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,28 +2056,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449097775}
   m_CullTransparentMesh: 1
---- !u!114 &1492819774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2522136595923205429, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
---- !u!114 &1563301420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8050527472936648353, guid: fc8d95a9763732340959418013ae7059, type: 3}
-  m_PrefabInstance: {fileID: 840706706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25866c35f3088d46bc716b51bf6dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
 --- !u!1001 &1691978547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3674,4 +3517,3 @@ SceneRoots:
   - {fileID: 5793452961095759166}
   - {fileID: 47751069}
   - {fileID: 999386136}
-  - {fileID: 403222749}
