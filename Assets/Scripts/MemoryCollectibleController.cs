@@ -15,22 +15,10 @@ public class MemoryCollectibleController : MonoBehaviour
     public float HoriziontalSizeScaleToPortrait = 0.6f;
 
     [SerializeField]
-    public float minInitalSpeed = 1.0f;
-
-    [SerializeField]
-    public float maxInitalSpeed = 2.0f;
+    public float initalSpeed = 1.0f;
 
     [SerializeField]
     public Transform pathPaverPos;
-
-    [SerializeField]
-    public float MinSpawnDelay = 0f;
-
-    [SerializeField]
-    public float MaxSpawnDelay = 2f;
-
-    private float currSpawnDelay = 0.0f;
-    private float currSpawnDelayTimeLapse = 0.0f;
 
 
     void Start()
@@ -62,53 +50,53 @@ public class MemoryCollectibleController : MonoBehaviour
     {
         SetNewPosIfNeeded();
     }
+
     protected void SetNewPosIfNeeded()
     {
         var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
 
         if (viewportPosition.y > 1.0f)
         {
-            if (currSpawnDelayTimeLapse < currSpawnDelay)
-            {
-                currSpawnDelayTimeLapse += Time.deltaTime;
-                return;
-            }
-
-            RespawnCoin();
+            this.DeactivateObject();
         }
     }
 
     protected void StartObstacle()
     {
-        AddForce(FallManager.Instance.GlobalSpeed + minInitalSpeed, FallManager.Instance.GlobalSpeed + maxInitalSpeed);
+        AddForce();
         transform.position = pathPaverPos.position;
-        currSpawnDelay = Random.Range(MinSpawnDelay, MaxSpawnDelay);
     }
 
-    protected void AddForce(float minForce, float maxForce)
+    protected void AddForce()
     {
+        var currSpeed = FallManager.Instance.GlobalSpeed + initalSpeed;
         rb.linearVelocity = Vector2.zero;
-        var spawnSpeed = Random.Range(minForce, maxForce);
-        rb.AddForce(Vector2.up * spawnSpeed, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * currSpeed, ForceMode2D.Impulse);
     }
 
     public void RespawnCoin()
     {
+        if (!this.gameObject.activeSelf)
+        {
+            this.gameObject.SetActive(true);
+        }
+        
         this.memeoryCollider.enabled = true;
         this.sprite.enabled = true;
-        currSpawnDelayTimeLapse = 0.0f;
+
         StartObstacle();
     }
 
     private void CollectedByPlayer()
     {
-        this.memeoryCollider.enabled = false;
-        this.sprite.enabled = false;
+        // Add SFX and particles here
+        MemoriesManager.Instance.CollectedMemories++;
+        this.DeactivateObject();
     }
 
-    private void DeactivateObject()
+    public void DeactivateObject()
     {
+        MemoriesManager.Instance.InactiveMemories.Enqueue(this);
         this.gameObject.SetActive(false);
     }
-
 }

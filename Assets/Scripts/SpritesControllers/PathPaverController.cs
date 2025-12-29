@@ -97,7 +97,7 @@ public class PathPaverController : MonoBehaviour
     {
         if (obstacleType == ObstacleTypeEnum.Plane)
         {
-            this.gameObject.SetActive(false);
+            this.PathPaverCollider.enabled = false;
         }
     }
 }
