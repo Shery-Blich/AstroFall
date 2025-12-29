@@ -3592,10 +3592,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 832460776042684463, guid: 19328b286cc7dea48a8175d45f0fc21a, type: 3}
-      propertyPath: pathPaverPos
-      value: 
-      objectReference: {fileID: 1032884275}
     - target: {fileID: 1604357132319111919, guid: 19328b286cc7dea48a8175d45f0fc21a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03
@@ -3636,11 +3632,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2839117307185561073, guid: 19328b286cc7dea48a8175d45f0fc21a, type: 3}
+    - target: {fileID: 1810957649221991677, guid: 19328b286cc7dea48a8175d45f0fc21a, type: 3}
       propertyPath: pathPaverPos
       value: 
       objectReference: {fileID: 1032884275}
     - target: {fileID: 5207412644489545997, guid: 19328b286cc7dea48a8175d45f0fc21a, type: 3}
+      propertyPath: pathPaverPos
+      value: 
+      objectReference: {fileID: 1032884275}
+    - target: {fileID: 7693741228792239110, guid: 19328b286cc7dea48a8175d45f0fc21a, type: 3}
       propertyPath: pathPaverPos
       value: 
       objectReference: {fileID: 1032884275}

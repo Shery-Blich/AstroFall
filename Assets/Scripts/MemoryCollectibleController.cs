@@ -6,10 +6,16 @@ public class MemoryCollectibleController : MonoBehaviour
     protected Rigidbody2D rb;
 
     [SerializeField]
-    public SpriteRenderer sprite;
+    public Collider2D memeoryCollider;
 
     [SerializeField]
-    public Collider2D memeoryCollider;
+    public GameObject pickUpEffect;
+
+    [SerializeField]
+    public GameObject goUpEffect;
+
+    [SerializeField]
+    public GameObject sprite;
 
     [SerializeField]
     public float HoriziontalSizeScaleToPortrait = 0.6f;
@@ -80,18 +86,22 @@ public class MemoryCollectibleController : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
-        
+
+        this.sprite.SetActive(true);
+        this.pickUpEffect.SetActive(false);
+        this.goUpEffect.SetActive(true);
         this.memeoryCollider.enabled = true;
-        this.sprite.enabled = true;
 
         StartObstacle();
     }
 
     private void CollectedByPlayer()
     {
-        // Add particles here
+        
         MemoriesManager.Instance.CollectedMemories++;
-        this.DeactivateObject();
+        this.pickUpEffect.SetActive(true);
+        this.sprite.SetActive(false);
+        this.goUpEffect.SetActive(false);
         SoundManager.Instance.PlaySFX(SFXTypeEnum.CollectiblePicked);
     }
 
