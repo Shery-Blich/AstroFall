@@ -162,7 +162,7 @@ public class FallManager : MonoBehaviour
     private void UpdateDistance()
     {
         FallDistance += currentFallSpeed;
-        distanceToFallText.text = $"Distance To Earth:\n{(int)(START_FALL_HEIGHT - FallDistance)} m\n{CalcObstacleType()} Stage";
+        distanceToFallText.text = $"Distance To Earth:{(int)(START_FALL_HEIGHT - FallDistance)}";
         
         if(FallDistance >= START_FALL_HEIGHT)
         {
@@ -174,13 +174,11 @@ public class FallManager : MonoBehaviour
     {
         currentFallSpeed = 0;
         isGameOver = true;
-        distanceToFallText.text = "You have landed!";
     }
 
     private void OnBadGameOver()
     {
         currentFallSpeed = 0;
         isGameOver = true;
-        distanceToFallText.text = "Failed to reach earth!";
     }
 }
