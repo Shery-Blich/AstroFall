@@ -61,7 +61,7 @@ public class FallManager : MonoBehaviour
         {
             Instance = this;
             // Persist the same instance across scenes
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -74,6 +74,7 @@ public class FallManager : MonoBehaviour
     {
         currentFallSpeed = StartFallSpeedForText;
         FallDistance = 0;
+        SoundManager.Instance.PlayMusic(MusicTypeEnum.GameMusic);
     }
 
     private void OnEnable()
