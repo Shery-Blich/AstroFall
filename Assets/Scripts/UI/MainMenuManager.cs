@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
@@ -10,6 +11,16 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
+    }
+
+    private void Update()
+    {
+        // This works on both keyboard and mobile back button
+        // as Unity maps the mobile back button to the Escape key
+        if (Keyboard.current?.escapeKey.wasPressedThisFrame == true)
+        {
+            HandleBackPressed();
+        }
     }
 
     public void OnPlay()
@@ -34,5 +45,14 @@ public class MainMenuController : MonoBehaviour
         storyScreen.SetActive(false);
         creditsScreen.SetActive(false);
         mainMenuScreen.SetActive(true);
+    }
+
+    private void HandleBackPressed()
+    {
+        print("Back pressed, returning to main menu if not there");
+        if (!mainMenuScreen.activeSelf)
+        {
+            OnBackToMenu();
+        }
     }
 }
