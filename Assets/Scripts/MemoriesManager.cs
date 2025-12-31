@@ -11,16 +11,19 @@ public class MemoriesManager : MonoBehaviour
     public MemoryCollectibleController[] memoryCollectibleControllers;
 
     [SerializeField]
-    public float MinSpawnDelay = 0.2f;
+    public float MinSpawnDelay = 2.5f;
 
     [SerializeField]
-    public float MaxSpawnDelay = 2f;
+    public float MaxSpawnDelay = 3.5f;
 
     [SerializeField]
     private float currSpawnDelay = 0.0f;
 
     [SerializeField]
     private float currSpawnDelayTimeLapse = 0.0f;
+
+    [SerializeField]
+    private float HorizontalSpawnRateMultiplier = 2.2f;
 
     private Queue<MemoryCollectibleController> inactiveMemories;
 
