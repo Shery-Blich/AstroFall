@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1915645956615811917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826589323775883480}
+  - component: {fileID: 7120177256922360032}
+  m_Layer: 0
+  m_Name: DeepSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1826589323775883480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915645956615811917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2504865715145857491}
+  - {fileID: 2692247506116044099}
+  - {fileID: 8697496240491164036}
+  m_Father: {fileID: 3741679697095058886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7120177256922360032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915645956615811917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e8476e67cf1ff42ab1169d23b372de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundController
+  direction: {x: 0, y: 1}
+  portraitScale: 0.85
+  landscapeScale: 1
+  portraitYOffset: 5
+  landscapeYOffset: 0
 --- !u!1 &2305733365626028160
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,9 +81,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2504865715145857491}
-  - {fileID: 2692247506116044099}
-  - {fileID: 8697496240491164036}
+  - {fileID: 1826589323775883480}
   - {fileID: 4927951952685332574}
   - {fileID: 3314613049980899931}
   m_Father: {fileID: 0}
@@ -140,6 +190,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Background_Controller
   direction: {x: 0, y: 1}
+  portraitScale: 0.85
+  landscapeScale: 1
+  portraitYOffset: 5
+  landscapeYOffset: 0
 --- !u!1 &4853354711971992582
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +298,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Background_Controller
   direction: {x: 0, y: 1}
+  portraitScale: 0.85
+  landscapeScale: 1
+  portraitYOffset: 5
+  landscapeYOffset: 0
 --- !u!1 &6007676099163348903
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +312,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2692247506116044099}
   - component: {fileID: 1614088414599958736}
-  - component: {fileID: 4581486827053944626}
   m_Layer: 0
   m_Name: Background_DeepSpace_Planets
   m_TagString: Untagged
@@ -271,11 +328,11 @@ Transform:
   m_GameObject: {fileID: 6007676099163348903}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.92034, y: -3.67447, z: 0}
+  m_LocalPosition: {x: 3.9203403, y: -3.674469, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3741679697095058886}
+  m_Father: {fileID: 1826589323775883480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1614088414599958736
 SpriteRenderer:
@@ -335,19 +392,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4581486827053944626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6007676099163348903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03e8476e67cf1ff42ab1169d23b372de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Background_Controller
-  direction: {x: 0, y: 1}
 --- !u!1 &6582814810887152410
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +402,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2504865715145857491}
   - component: {fileID: 3808953036227295273}
-  - component: {fileID: 2923042507839468332}
   m_Layer: 0
   m_Name: Background_DeepSpace
   m_TagString: Untagged
@@ -375,11 +418,11 @@ Transform:
   m_GameObject: {fileID: 6582814810887152410}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.92034, y: -3.67447, z: 0}
+  m_LocalPosition: {x: 3.9203403, y: -3.674469, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3741679697095058886}
+  m_Father: {fileID: 1826589323775883480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3808953036227295273
 SpriteRenderer:
@@ -439,19 +482,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2923042507839468332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6582814810887152410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03e8476e67cf1ff42ab1169d23b372de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Background_Controller
-  direction: {x: 0, y: 1}
 --- !u!1 &8091651175374570582
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +492,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8697496240491164036}
   - component: {fileID: 8298452728161426573}
-  - component: {fileID: 7101495538196320277}
   m_Layer: 0
   m_Name: 'Background_DeepSpace_Nebula '
   m_TagString: Untagged
@@ -479,11 +508,11 @@ Transform:
   m_GameObject: {fileID: 8091651175374570582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.92034, y: -3.67447, z: 0}
+  m_LocalPosition: {x: 3.9203403, y: -3.674469, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3741679697095058886}
+  m_Father: {fileID: 1826589323775883480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8298452728161426573
 SpriteRenderer:
@@ -543,16 +572,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7101495538196320277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8091651175374570582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03e8476e67cf1ff42ab1169d23b372de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Background_Controller
-  direction: {x: 0, y: 1}
