@@ -69,4 +69,23 @@ public class MemoriesManager : MonoBehaviour
 
         this.inactiveMemories.Enqueue(memory);
     }
+
+    private void IncreaseSpawnSpeed()
+    {
+        if(!ScreenController.Instance.IsPortrait())
+        {
+            this.MaxSpawnDelay /= this.HorizontalSpawnRateMultiplier;
+            this.MinSpawnDelay /= this.HorizontalSpawnRateMultiplier;
+        }
+    }
+
+    private void OnEnable()
+    {
+        ScreenController.ScreenOrientationUpdate += IncreaseSpawnSpeed;
+    }
+
+    private void OnDisable()
+    {
+        ScreenController.ScreenOrientationUpdate -= IncreaseSpawnSpeed;
+    }
 }
