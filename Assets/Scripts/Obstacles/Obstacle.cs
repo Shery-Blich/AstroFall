@@ -48,7 +48,7 @@ public class Obstacle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PathPaver")
-            {
+        {
             var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
             var moveAdjustment = Vector3.zero;
             moveAdjustment.y += viewportPosition.y + 2f;

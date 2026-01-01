@@ -44,14 +44,21 @@ public class ScreenController : MonoBehaviour
     {
         Camera cam = Camera.main;
 
-        if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
+        if (IsPortrait())
         {
             MainCam.orthographicSize = portraitCameraSize;
+
         }
-        else if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
+        else
         {
             MainCam.orthographicSize = landscapeCameraSize;
         }
+    }
+
+    public bool IsPortrait()
+    {
+        ScreenOrientation currentOrientation = Screen.orientation;
+        return currentOrientation == ScreenOrientation.Portrait || currentOrientation == ScreenOrientation.PortraitUpsideDown;
     }
 
     public void SetScreenBounds()

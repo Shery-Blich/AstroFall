@@ -59,9 +59,9 @@ public class MemoryCollectibleController : MonoBehaviour
 
     protected void SetNewPosIfNeeded()
     {
-        var viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
+        var viewportPosition = ScreenController.Instance.MainCam.WorldToViewportPoint(transform.position);
 
-        if (viewportPosition.y > 1.0f)
+        if (viewportPosition.y > 1.2f)
         {
             this.DeactivateObject();
         }
