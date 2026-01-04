@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,6 +9,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] GameObject storyScreen;
     [SerializeField] GameObject creditsScreen;
     [SerializeField] GameObject mainMenuScreen;
+    [SerializeField] TextMeshProUGUI MemoriesCollectedCounter;
 
     private void Start()
     {
@@ -21,6 +24,21 @@ public class MainMenuController : MonoBehaviour
         {
             HandleBackPressed();
         }
+    }
+
+    private void OnEnable()
+    {
+        SaveScript.OnLoadSaveData += UpdateMemoriesCounter;
+    }
+
+    private void OnDisable()
+    {
+        SaveScript.OnLoadSaveData -= UpdateMemoriesCounter;
+    }
+
+    private void UpdateMemoriesCounter(int LoadedMemoriesCounter)
+    {
+        this.MemoriesCollectedCounter.text = $"Memories Collected: {LoadedMemoriesCounter}";
     }
 
     public void OnPlay()
