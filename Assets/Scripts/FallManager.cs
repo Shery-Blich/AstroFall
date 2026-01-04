@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
+// Rename to StateManager?
 public class FallManager : MonoBehaviour
 {
 
@@ -57,8 +58,6 @@ public class FallManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            // Persist the same instance across scenes
-           // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -110,6 +109,7 @@ public class FallManager : MonoBehaviour
         return Mathf.RoundToInt(START_FALL_HEIGHT - FallDistance);
     }
 
+
     // Change obstacle types based on how much has the player fallen
     // Asteroids -> Trash -> Planes, each stage has a fixed length,
     // for the switch we check the fall distance against the cumulative lengths of each stage
@@ -149,6 +149,7 @@ public class FallManager : MonoBehaviour
         }
     }
 
+    // TODO: Move speed managment to its own class
     private void UpdateSpeed()
     {
         if (currentFallSpeed < MaxSpeedForTextChange)

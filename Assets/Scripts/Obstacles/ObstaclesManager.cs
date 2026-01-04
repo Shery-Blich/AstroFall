@@ -42,6 +42,8 @@ public class ObstaclesManager : MonoBehaviour
         }
     }
 
+    // TODO: Instantiate obstacles based on orientation
+    // And Use polling desgin pattern
     public void SetObstaclesToOrientation(bool isPortrait)
     {
         for (int i = 0; i < obstacleControllers.Length; i++)
