@@ -19,6 +19,8 @@ public class Obstacle : MonoBehaviour
 
     protected float spawnYLocation = 0.35f;
 
+    private bool isVisible = false;
+
     // TODO: Use Enable & Disable instead of start and destory | multiple classes -> look for them
 
     void Start()
@@ -34,8 +36,24 @@ public class Obstacle : MonoBehaviour
         FallManager.GoodGameOver -= OnGameOver;
     }
 
+    void OnBecameVisible()
+    {
+        isVisible = true;
+    }
+
+    void OnBecameInvisible()
+    {
+        isVisible = false;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Only play sound if the obstacle is visible
+        if (!isVisible)
+        {
+            return;
+        }
+
         // Play sound only for one of the colliding objects to avoid duplicate sounds
         // To do that only the object with the higher instance ID plays the sound
         // TODO: find a better way to handle this
