@@ -74,6 +74,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1576154381560767933, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576154381560767933, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 300
       objectReference: {fileID: 0}
@@ -234,6 +238,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1576154381560767933, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576154381560767933, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 300
       objectReference: {fileID: 0}
@@ -251,11 +259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3233664286472644715, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 3233664286472644715, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.63
+      value: 7.32
       objectReference: {fileID: 0}
     - target: {fileID: 3233664286472644715, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -391,6 +399,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 364304255712943265, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576154381560767933, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1576154381560767933, guid: 3ca80d7fb84ea3845ad6796aa54e143a, type: 3}

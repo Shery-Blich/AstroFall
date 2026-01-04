@@ -6,7 +6,7 @@ public class SaveScript : MonoBehaviour
 {
     public static Action<int> OnLoadSaveData;
 
-    public SaveScript Instance;
+    public static SaveScript Instance;
 
     private string savePath;
 
@@ -24,11 +24,6 @@ public class SaveScript : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        LoadGame();
-    }
-
     private void OnEnable()
     {
         FallManager.GoodGameOver += SaveData;
@@ -39,14 +34,6 @@ public class SaveScript : MonoBehaviour
     {
         FallManager.GoodGameOver -= SaveData;
         PlayerController.BadGameOver -= SaveData;
-    }
-
-    private bool IsFileDateOlder(string fileDate, string otherDate)
-    {
-        var fileDateTime = DateTime.Parse(fileDate);
-        var otherDateTime = DateTime.Parse(otherDate);
-
-        return fileDateTime < otherDateTime;
     }
 
     public void SaveData()
@@ -89,7 +76,6 @@ public class SaveScript : MonoBehaviour
         if (!File.Exists(savePath))
         {
             Debug.Log("No save file found at: " + savePath + " Skipping load data");
-
             return null;
         }
 
@@ -97,7 +83,7 @@ public class SaveScript : MonoBehaviour
         {
             var json = File.ReadAllText(savePath);
             var loadedData = JsonUtility.FromJson<SaveDataModel>(json);
-            Debug.Log($"Loaded {loadedData.TotalMemories} memories!");
+            Debug.Log($"Loaded {loadedData.TotalMemories} memories from: {savePath}");
 
             OnLoadSaveData?.Invoke(loadedData.TotalMemories);
 

@@ -14,6 +14,9 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
+
+        //TODO: Add loading screen to not "Pop" the save data load on the screen
+        SaveScript.Instance.LoadGame();
     }
 
     private void Update()
