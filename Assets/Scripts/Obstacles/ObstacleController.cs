@@ -37,36 +37,36 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
+    // TODO: create sub objects for each type and enable/disable them instead of scripts, Look into State Pattern
+    // OR Factory based on the change event script and change a current object variable
     private void UpdateActiveScripts(ObstacleTypeEnum obstacleType)
     {
         // Since Obstacles are updated only once they are outside the screen,
         // we check every time we leave if the current stage changed
         // if it didn't we skip the update
         // otherwise we update the type
-        if (!IsUpdateNeeded(obstacleType))
+        if (IsUpdateNeeded(obstacleType))
         {
-            return;
+            print($"Updating Obstacle {this.gameObject.name} Type to {ObstaclesManager.Instance.CurrentObstacleStage}");
+            switch (obstacleType)
+            {
+                case ObstacleTypeEnum.Trash:
+                    SetScriptActivation(false, trash: true, false);
+                    break;
+
+                case ObstacleTypeEnum.Plane:
+                    SetScriptActivation(false, false, plane: true);
+                    planeScript.FreezeRotation();
+                    break;
+
+                // Default to Asteroid
+                default:
+                    SetScriptActivation(astroid: true, false, false);
+                    break;
+            }
+
+            currentObstacleType = obstacleType;
         }
-
-        print($"Updating Obstacle {this.gameObject.name} Type to {ObstaclesManager.Instance.CurrentObstacleStage}");
-        switch (obstacleType)
-        {
-            case ObstacleTypeEnum.Trash:
-                SetScriptActivation(false, trash: true, false);
-                break;
-
-            case ObstacleTypeEnum.Plane:
-                SetScriptActivation(false, false, plane: true);
-                planeScript.FreezeRotation();
-                break;
-
-            // Default to Asteroid
-            default:
-                SetScriptActivation(astroid: true, false, false);
-                break;
-        }
-
-        currentObstacleType = obstacleType;
     }
 
     private void SetScriptActivation(bool astroid, bool trash, bool plane)

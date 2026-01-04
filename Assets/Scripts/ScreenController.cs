@@ -36,6 +36,8 @@ public class ScreenController : MonoBehaviour
         SetRotationLock(true);
         SetCamera();
         SetScreenBounds();
+
+        // TODO: Move set ObstaclesCount to listen to screen orientation change event
         SetObstaclesCount();
         ScreenOrientationUpdate?.Invoke();
     }

@@ -49,14 +49,12 @@ public class MemoriesManager : MonoBehaviour
         currSpawnDelayTimeLapse += Time.deltaTime;
         if (currSpawnDelay < currSpawnDelayTimeLapse)
         {
-            if (!inactiveMemories.Any())
+            if (inactiveMemories.Any())
             {
-                return;
+                inactiveMemories.Dequeue().RespawnCoin();
+                currSpawnDelay = Random.Range(MinSpawnDelay, MaxSpawnDelay);
+                currSpawnDelayTimeLapse = 0.0f;
             }
-
-            inactiveMemories.Dequeue().RespawnCoin();
-            currSpawnDelay = Random.Range(MinSpawnDelay, MaxSpawnDelay);
-            currSpawnDelayTimeLapse = 0.0f;
         }
     }
 

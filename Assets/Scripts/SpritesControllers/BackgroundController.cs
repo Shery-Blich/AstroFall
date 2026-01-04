@@ -19,10 +19,11 @@ public class BackgroundController : MonoBehaviour
 
     void Update()
     {
-        if (!isScrolling) return;
-
-        transform.position +=
-            (Vector3)(direction.normalized * FallManager.Instance.GlobalSpeed * Time.deltaTime);
+        if (isScrolling)
+        {
+            transform.position +=
+                        (Vector3)(direction.normalized * FallManager.Instance.GlobalSpeed * Time.deltaTime);
+        }   
     }
 
     private void StopScroll()
