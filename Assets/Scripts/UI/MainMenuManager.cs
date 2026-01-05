@@ -87,6 +87,7 @@ public class MainMenuController : MonoBehaviour
         print("Back pressed, returning to main menu if not there");
         if (!mainMenuScreen.activeSelf)
         {
+            UIAudioManager.Instance.PlayClick();
             OnBackToMenu();
         }
     }

@@ -46,6 +46,8 @@ public class UIManager : MonoBehaviour
     private void HandleBackPressed()
     {
         print("Back pressed, toggling pause menu");
+        UIAudioManager.Instance.PlayClick();
+
         if (isPaused)
         {
             Resume();
