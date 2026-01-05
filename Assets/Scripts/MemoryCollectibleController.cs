@@ -24,6 +24,9 @@ public class MemoryCollectibleController : MonoBehaviour
     public float initalSpeed = 1.0f;
 
     [SerializeField]
+    public float spinSpeed = 140f;
+
+    [SerializeField]
     public Transform pathPaverPos;
 
 
@@ -55,9 +58,15 @@ public class MemoryCollectibleController : MonoBehaviour
     protected void Update()
     {
         SetNewPosIfNeeded();
+        ApplySpin();
     }
 
-    protected void SetNewPosIfNeeded()
+    public void ApplySpin()
+    {
+        sprite.transform.Rotate(Vector3.forward, spinSpeed * FallManager.Instance.GlobalSpeed * Time.deltaTime);
+    }
+
+protected void SetNewPosIfNeeded()
     {
         var viewportPosition = ScreenController.Instance.MainCam.WorldToViewportPoint(transform.position);
 
