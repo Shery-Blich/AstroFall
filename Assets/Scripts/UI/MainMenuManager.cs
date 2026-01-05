@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using TMPro;
 using UnityEngine;
@@ -13,10 +14,23 @@ public class MainMenuController : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
-
         //TODO: Add loading screen to not "Pop" the save data load on the screen
-        SaveScript.Instance.LoadGame();
+        // Cold Start - First time loading the game
+        // On some andorid phones when being set to battery saving/flight mode
+        // premission to the file system is slower to be granted
+        // causing a freeze when trying to load the save data on start
+        // To avoid this we use an async load on the first load
+        if (SaveScript.Instance.IsColdStart)
+        {
+            SaveScript.Instance.IsColdStart = false;
+            SaveScript.Instance.LoadGameAsync().Forget();
+        }
+        else
+        {
+            SaveScript.Instance.LoadGame();
+        }
+
+        SoundManager.Instance.PlayMusic(MusicTypeEnum.MainMenuMusic);
     }
 
     private void Update()

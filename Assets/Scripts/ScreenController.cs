@@ -34,6 +34,7 @@ public class ScreenController : MonoBehaviour
     public void SetScreen()
     {
         SetRotationLock(true);
+        SetScreenAutoSleep(false);
         SetCamera();
         SetScreenBounds();
 
@@ -102,8 +103,25 @@ public class ScreenController : MonoBehaviour
 
         print($"Rotation lock set to: {shouldLock}");
     }
+
+    // Because the game is tilt only, and doesnt require the user to touch the screen
+    // We need to disable auto sleep to avoid the screen turning off during gameplay
+    public void SetScreenAutoSleep(bool shouldAutoSleep)
+    {
+        if (shouldAutoSleep)
+        {
+            Screen.sleepTimeout = SleepTimeout.SystemSetting;
+        }
+        else
+        {
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        }
+
+        print($"Screen auto sleep set to: {shouldAutoSleep}");
+    }
     private void OnDestroy()
     {
         SetRotationLock(false);
+        SetScreenAutoSleep(true);
     }
 }

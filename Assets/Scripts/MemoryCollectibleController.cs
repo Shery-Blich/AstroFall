@@ -99,6 +99,7 @@ public class MemoryCollectibleController : MonoBehaviour
     {
         
         MemoriesManager.Instance.CollectedMemories++;
+        this.memeoryCollider.enabled = false;
         this.pickUpEffect.SetActive(true);
         this.sprite.SetActive(false);
         this.goUpEffect.SetActive(false);

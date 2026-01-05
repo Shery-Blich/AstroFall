@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.2d.animation": "12.0.2",
+    "com.unity.2d.animation": "12.0.3",
     "com.unity.2d.aseprite": "2.0.2",
     "com.unity.2d.psdimporter": "11.0.1",
     "com.unity.2d.sprite": "1.0.0",
@@ -49,6 +49,16 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
-  }
+    "com.unity.modules.xr": "1.0.0",
+    "com.cysharp.unitask": "2.5.10"
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.cysharp.unitask"
+      ]
+    }
+  ]
 }
