@@ -11,18 +11,17 @@ public class CollectiblePulse: MonoBehaviour
     private void Start()
     {
         _initialScale = transform.localScale;
-        // Fire and forget the pulse loop
         PulseLoop().Forget();
     }
 
     private async UniTaskVoid PulseLoop()
     {
-        while (this != null) // Loop as long as the object exists
+        while (this != null) 
         {
             float wave = Mathf.Sin(Time.time * pulseSpeed) * pulseAmount;
             transform.localScale = _initialScale + Vector3.one * wave;
 
-            await UniTask.Yield(); // Wait for the next frame
+            await UniTask.Yield();
         }
     }
 }
