@@ -1,5 +1,5 @@
 # AstroFall
-## A mobile game telling the (exaggerated) story of [Vesna Vulović](https://en.wikipedia.org/wiki/Vesna_Vulovi%C4%87)
+## A  Roguelike mobile game telling the (exaggerated) story of [Vesna Vulović](https://en.wikipedia.org/wiki/Vesna_Vulovi%C4%87)
 
 ## Git Flow for new features
 1. Open Visual Studio on The project's folder
@@ -23,3 +23,6 @@
 10. Merge the pull request once it's working, ready and tested!
 
 Using Unity 6000.2.13f1
+
+Link to [Itch](https://smaxpaineb.itch.io/astrofall)
+for the downloadable app on Android 8.0+
