@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
         // TODO: Expand the art so we don't need to adjust player position on orientation change
         if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
         {
-            var newYPos = transform.position.y - (ScreenController.Instance.landscapeCameraSize / 1.5f);
+            var newYPos = transform.position.y - (ScreenController.Instance.landscapeCameraSize / 1.15f);
             transform.position = new Vector2(transform.position.x, newYPos);
         }
     }
