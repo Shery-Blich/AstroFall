@@ -1546,6 +1546,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 818267300}
+    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bb02f5e3ca3a9e4caacb46d8d93890b, type: 2}
+    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1419893999792239511, guid: 7bb02f5e3ca3a9e4caacb46d8d93890b, type: 2}
+    - target: {fileID: 4744572056843096719, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5628839817804507638, guid: 147e1eb57444eb24cadf5f299285e3c7, type: 3}
       propertyPath: m_Name
       value: Canvas
